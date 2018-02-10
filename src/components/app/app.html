@@ -1,0 +1,109 @@
+<div>
+    <navbar class="show-navbar"></navbar>
+
+    <section class="app pad">
+        <div class="form-row">
+            <div class="col-md-10">
+                <input class="form-control form-control-lg"
+                    type="search"
+                    v-model="q"
+                    @keyup="keyup"
+                    :placeholder="placeholder"
+                    :class="{'is-invalid': error}"
+                    spellcheck="false"
+                    autofocus
+                >
+                <b-form-invalid-feedback v-if="error">
+                    {{error.message}}
+                    :{{error.location.start.offset}}
+                </b-form-invalid-feedback>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary btn-lg" @click="submit">Search</button>
+            </div>
+        </div>
+        <div v-if="q.length > 0">
+
+            <div v-for="(field, i) in suggestFields" class="suggest-fields">
+                <span @click="selectField(field)" class="suggest-field" :class="{active: i === selectedFieldIndex}">{{field}}</span>
+            </div>
+
+            <div class="query-display well pad" :class="{'show': q.length && !error}">
+                <!-- <small>Query:</small> -->
+                <query :message="q" :query="query" :depth="1"></query>
+            </div>
+
+            <div v-if="looksLike.scholarlyId">
+                <icon name="check"></icon>
+                scholarlyId {{idType}}
+            </div>
+            <div v-if="looksLike.classification">
+                <icon name="check"></icon>
+                classification
+            </div>
+            <div v-if="looksLike.patentQuery && !looksLike.scholarly">
+                <icon name="check"></icon>
+                patentQuery
+            </div>
+            <div v-if="looksLike.scholarQuery && !looksLike.patentQuery">
+                <icon name="check"></icon>
+                scholarQuery
+            </div>
+            <div v-if="looksLike.patentQuery && looksLike.scholarQuery"  class="alert alert-danger">
+                <icon name="warning"></icon>
+                <strong>Warning: </strong>
+                boolean query references both scholarly and patent fields, which may result in reduced results.
+            </div>
+
+            <div v-if="invalidFields.length" class="alert alert-danger">
+                <div>
+                    <icon name="warning"></icon>
+                    Invalid Fields
+                </div>
+                <ul>
+                    <li v-for="field in invalidFields">{{field}}</li>
+                </ul>
+            </div>
+
+            <div v-if="loading.articles || loading.patents">
+                Loading...
+            </div>
+
+            <div v-if="articles.length">
+                <h3>Top 10 Cited Articles:</h3>
+                <ol>
+                    <li v-for="article in articles">
+                        {{article.title}}
+                    </li>
+                </ol>
+                <a :href="'/lens/scholar/search?q=' + q">View all results in scholar search</a>
+            </div>
+
+            <div v-if="patents.length">
+                <h3>Most relevant Patents:</h3>
+                <ul>
+                    <li v-for="patent in patents">
+                        {{patent.displayKey}}:
+                        {{patent.title}}
+                    </li>
+                </ul>
+                <a :href="'/lens/search?q=' + q">View all results in patent search</a>
+            </div>
+        </div>
+
+        <div v-if="!q.length" class="get-started">
+            <h2>What can I search for?</h2>
+            <p class="lead">Start typing to start your guided knowledge journey with the Lens.</p>
+            <p>Depending on the contents of your query, we will attempt to provide intelligent results.</p>
+            <p>Full boolean query syntax is supported for patent and scholarly searches.</p>
+            <!--
+            <ul class="hidden">
+                <li v-for="suggestion in suggestions">
+                    <span class="" @click="suggest(suggestion)">{{suggestion}}</span>
+                </li>
+            </ul>
+            -->
+        </div>
+
+    </section>
+</div>

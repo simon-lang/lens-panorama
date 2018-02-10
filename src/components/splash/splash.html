@@ -1,0 +1,16 @@
+<div>
+    <div class="splash">
+        <div class="text-center">
+            <img class="logo" src="assets/img/logo.png" alt="LENS.ORG - Solving the problem of problem solving">
+            <div class="links pad">
+                <a class="btn btn-secondary" v-scroll-to="'#docs'">
+                    Learn More
+                </a>
+                <router-link class="btn btn-primary" to="/app">
+                    Get Started
+                </router-link>
+            </div>
+        </div>
+    </div>
+    <div class="docs container" id="docs" v-html="docs"></div>
+</div>

@@ -1,0 +1,30 @@
+@import "_variables";
+
+// $body-bg: #000;
+// $body-color: #111;
+// $enable-rounded: false;
+// $enable-gradients: true;
+$border-radius-lg: 2px;
+
+$theme-colors: (
+  "primary": #1b75bc,
+  "secondary": #ffb300,
+  "tertiary": #418e37,
+  "danger": #b10d28
+);
+
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+body {
+  font-size: 1em;
+  font-family: "Source Sans Pro";
+}
+
+.pad {
+    padding: 1em;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+}

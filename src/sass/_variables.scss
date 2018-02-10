@@ -1,0 +1,89 @@
+/* Colours */
+$col-pri: #1b75bc;				/* Primary Color */
+$col-pri-2: #004767;			/* Primary Color Hover*/
+$col-pri-3: #001e3c;			/* Primary Color Focused */
+$col-sec: #ffb300;				/* Secondary Color */
+$col-sec-2: #ff8800;			/* Secondary Color Hover */
+$col-ter: #5bb025;				/* Tertiary Color */
+$col-ter-2: #418e37;			/* Tertiary Color Hover */
+$col-qua: #ffffff;				/* Quaternary Color */
+$col-qua-txt: #a0a0a0;			/* Quaternary Text Color */
+$col-qua-2: #f1f1f1;			/* Quaternary Color Hover */
+$col-qua-3: #dadada;			/* Quaternary Color border */
+$col-meta: #808285;				/* Meta Color 1 */
+$col-meta-2: #c5c5c5;			/* Meta Color 2 */
+$col-cambia: #1f9cac;			/* Cambia Reference Color */
+$col-cambia-2: #009098;			/* Cambia Reference 2*/
+$col-black: #000000;			/* Black Color */
+$col-white: #ffffff;			/* White Color */
+
+
+/* Contextual Colours */
+$col-info: #1f9cac;				/* Info Color */
+$col-info-bg: #f4fafb;			/* Info Background Color */
+$col-success: #5bb025;			/* Success Color */
+$col-success-bg: #f8fcf6;		/* Success Background Color */
+$col-warning: #ffb300;			/* Warning Color */
+$col-warning-bg: #fffbf2;		/* Warning Background Color */
+$col-error: #d71920;			/* Error Color */
+$col-error-2: #b10d28;			/* Error Color Hover */
+$col-error-bg: #fdf3f4;			/* Error Background Color */
+
+
+/* Meta Notice Colors */
+$col-meta-bio: #bb73ca;
+$col-meta-inventor: #fb7c1f;
+$col-meta-landscape: #b0c455;
+$col-meta-notes: #8abbed;
+$col-meta-collections: #d9c567;
+$col-meta-public-collections: #c0a678;
+
+/* Header */
+$col-head-bg: #000;				/* Header Background Color */
+$col-head-bg-2: #212121;		/* Header Background Color Alt */
+$col-head-txt: #fff;			/* Header Text Color */
+$col-head-a: #fff;				/* Header Link Color */
+$col-head-a-hover: #7fa1bc;		/* Header Link Hover Color */
+$col-head-borders: #313131;		/* Header Borders Color */
+
+
+/* Form + Field Background */
+$col-field: #000000;			/* Form + Field Text Color*/
+$col-field-bg: #fafafa;			/* Form + Field Background Color*/
+$col-field-border: #dadada;		/* Form + Field Border Color*/
+$col-field-focus: #78bd4c;		/* Form + Field Focus Border Color*/
+
+
+/* Global Border */
+$col-borders: #e4e4e4;			/* Global Borders Color */
+
+
+/* Global Sidebar */
+$col-aside-bg: #f3f3f3;			/* Global Sidebar background Color */
+
+
+/* Footer */
+$col-foot-bg: #fafafa;			/* Footer Background Color */
+$col-foot-txt: #000;			/* Footer Text Color */
+$col-foot-a: #000;				/* Footer Link Color */
+$col-foot-a-hover: #1b75bc;		/* Footer Link Hover Color */
+$col-foot-meta: #808285;		/* Footer Meta Color */
+
+
+/* Baseline*/
+$col-baseline-bg: #000;			/* Baseline Background Color */
+$col-baseline-txt: #fff;		/* Baseline Text Color */
+$col-baseline-a: #fff;			/* Baseline Link Color */
+$col-baseline-a-hover: #fff;	/* Baseline Link Hover Color */
+
+
+/* Typography */
+$txt-h1: 2rem;
+$txt-h2: 1.85rem;
+$txt-h3: 1.325rem;
+$txt-h4: 1.2rem;
+$txt-h5: 1rem;
+$txt-h6: .85rem;
+$txt-lead: 1.5rem;
+$txt-meta: .85rem;
+$txt-small: .75rem;

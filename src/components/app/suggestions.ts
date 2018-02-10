@@ -1,0 +1,18 @@
+export default [
+    'abstract:(a OR b) && title:(c OR d)',
+    '"nesting example" AND author:"Richard Jefferson" OR abstract:glucuronidase AND title:GUS',
+    '"range example" AND year_published:[1970 TO 1980]',
+    '"invalid field" && title:(leishmani* AND diagnos*) || abstract:(leishmani* AND diagnos*) && classification:(A61K* OR C12N*)',
+    'error example"',
+    '"scholar fields" AND source.title: Nature',
+    'year_published: 1970 OR citation_id:"3327686"',
+    'boolean and case AND matters or and or and AND or and or and OR and or && symbols || work',
+    'Most recent articles in Nature Journal',
+    'Most patent citations for MeSH Term: "Glucuronidase"',
+    'Query "malaria vaccine" with open access / fulltext',
+    'Chemical "Sildenafil Citrate" with funding data, but no clinical trial data',
+    'Subject Oncology with no funding data',
+    'All Japanese publications between 1900 and 1930',
+    'Author "Lipman DJ"',
+    'Citation ID 3327686',
+]

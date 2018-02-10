@@ -1,0 +1,42 @@
+<span>
+    <span class="field" v-if="query.field && query.field !== '<implicit>'" v-bind:class="{invalid: !validField(query.field)}">{{query.field}}:</span>
+    <span class="paren" v-if="depth > 1">(</span>
+    <span class="left">
+        <span v-if="query.left && query.left.operator">
+            <query v-bind:query="query.left" v-bind:depth="depth + 1"></query>
+        </span>
+        <span v-if="query.left && !query.left.operator">
+            <span class="field" v-if="query.left.field && query.left.field !== '<implicit>'" v-bind:class="{invalid: !validField(query.left.field)}">{{query.left.field}}:</span>
+            <span v-if="query.left.term_min">
+                [
+                <span class="term">{{query.left.term_min}}</span>
+                <span class="operator">TO</span>
+                <span class="term">{{query.left.term_max}}</span>]
+            </span>
+            <span v-if="query.left.term">
+                {{query.left.prefix}}
+                <span class="term">{{formatTerm(query.left.term)}}</span>
+            </span>
+        </span>
+    </span>
+    <span v-if="query.operator && query.operator !== '<implicit>'" class="operator">{{query.operator}}</span>
+    <span class="right">
+        <span v-if="query.right && query.right.operator">
+            <query v-bind:query="query.right" v-bind:depth="depth + 1"></query>
+        </span>
+        <span v-if="query.right && !query.right.operator">
+            <span class="field" v-if="query.right.field && query.right.field !== '<implicit>'" v-bind:class="{invalid: !validField(query.right.field)}">{{query.right.field}}:</span>
+            <span v-if="query.right.term_min">
+                [
+                <span class="term">{{query.right.term_min}}</span>
+                <span class="operator">TO</span>
+                <span class="term">{{query.right.term_max}}</span>]
+            </span>
+            <span v-if="query.right.term">
+                {{query.right.prefix}}
+                <span class="term">{{formatTerm(query.right.term)}}</span>
+            </span>
+        </span>
+    </span>
+    <span class="paren" v-if="depth > 1">)</span>
+</span>

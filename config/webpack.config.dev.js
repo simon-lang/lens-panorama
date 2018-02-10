@@ -1,0 +1,78 @@
+const helpers = require('./helpers')
+const webpackConfig = require('./webpack.config.base')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const DefinePlugin = require('webpack/lib/DefinePlugin')
+const env = require('../environment/dev.env')
+const Visualizer = require('webpack-visualizer-plugin')
+
+webpackConfig.module.rules = [...webpackConfig.module.rules,
+    {
+        test: /\.css$/,
+        use: [
+            {
+                loader: 'style-loader'
+            },
+            {
+                loader: 'css-loader'
+            },
+        ]
+    },
+    {
+        test: /\.scss$/,
+        use: [
+            {
+                loader: 'style-loader'
+            },
+            {
+                loader: 'css-loader'
+            },
+            {
+                loader: 'sass-loader'
+            }
+        ]
+    },
+    {
+        test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader'
+    },
+    {
+        test: /\.md$/,
+        use: [
+            {
+                loader: "html-loader"
+            },
+            {
+                loader: "markdown-loader",
+                options: { }
+            }
+        ]
+    }
+]
+
+webpackConfig.plugins = [...webpackConfig.plugins,
+    new HtmlWebpackPlugin({
+        inject: true,
+        template: helpers.root('/src/index.html'),
+        favicon: helpers.root('/src/favicon.ico')
+    }),
+    new DefinePlugin({
+        'process.env': env
+    }),
+    new Visualizer({
+        filename: './statistics.html'
+}),
+]
+
+webpackConfig.devServer = {
+    port: 8080,
+    host: 'localhost',
+    historyApiFallback: true,
+    watchOptions: {
+        aggregateTimeout: 300,
+        poll: 1000
+    },
+    contentBase: './src',
+    open: true
+}
+
+module.exports = webpackConfig
