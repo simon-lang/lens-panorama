@@ -127,7 +127,6 @@ export class ClientComponent extends Vue {
             this.looksLike = {}
             this.suggestFields = []
 
-
             // if (this.q.slice(-1) === '"') {
             //     const count = (this.q.match(/"/g) || []).length
             //     if (count % 2) {
@@ -191,8 +190,6 @@ export class ClientComponent extends Vue {
         this.articles = []
         articleService.list(query).then(([articles, res]) => {
             this.articles = articles
-            console.log(res)
-            console.log('!!!')
             this.loading.articles = false
         }).catch(err => {
             console.warn(err)
