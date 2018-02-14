@@ -1,1 +1,3 @@
-export * from './query'
+// created from 'create-ts-index'
+
+export * from './query';

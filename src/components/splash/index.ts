@@ -1,1 +1,3 @@
-export * from './splash'
+// created from 'create-ts-index'
+
+export * from './splash';
