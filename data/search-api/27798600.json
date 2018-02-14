@@ -1,0 +1,368 @@
+{
+    "has_conflicting_metadata": false,
+    "clinical_trial": [],
+    "citation_id": [
+        "10.1038/nature20173",
+        "27798600"
+    ],
+    "has_chemical": true,
+    "source": {
+        "country": "United Kingdom",
+        "asjc_code": [
+            "1000"
+        ],
+        "issn": [
+            "14764687",
+            "00280836"
+        ],
+        "publisher": "Nature Publishing Group",
+        "nlmid": [
+            "0410462"
+        ],
+        "title": "Nature",
+        "type": "Journal",
+        "ssid": [
+            "21206"
+        ],
+        "asjc_subject": [
+            "Multidisciplinary"
+        ]
+    },
+    "title": "Hypoxia induces heart regeneration in adult mice.",
+    "has_mesh_term": true,
+    "referenced_by_patent_count": 0,
+    "has_clinical_trial": false,
+    "has_affiliation": true,
+    "date_published": "2017-01-12",
+    "crossref_reference_count": 28,
+    "has_abstract": true,
+    "id": "27798600",
+    "keyword": [],
+    "year_published": 2017,
+    "crossref_referenced_by_count": 27,
+    "funding": [
+        {
+            "country": "United Kingdom",
+            "funding_id": "RG/13/11/30384",
+            "organisation": "British Heart Foundation"
+        },
+        {
+            "country": "United States",
+            "funding_id": "1R01HL115275-01",
+            "organisation": "NIH HHS"
+        },
+        {
+            "country": "United States",
+            "funding_id": "UL1 TR001105",
+            "organisation": "NCATS NIH HHS"
+        }
+    ],
+    "issue": "7636",
+    "author": [
+        {
+            "affiliation": [
+                "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "Y",
+            "normalised_name": "Nakada Y",
+            "last_name": "Nakada",
+            "first_name": "Yuji"
+        },
+        {
+            "affiliation": [
+                "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "DC",
+            "normalised_name": "Canseco DC",
+            "last_name": "Canseco",
+            "first_name": "Diana C"
+        },
+        {
+            "affiliation": [
+                "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "S",
+            "normalised_name": "Thet S",
+            "last_name": "Thet",
+            "first_name": "SuWannee"
+        },
+        {
+            "affiliation": [
+                "Department of Radiation Oncology, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "S",
+            "normalised_name": "Abdisalaam S",
+            "last_name": "Abdisalaam",
+            "first_name": "Salim"
+        },
+        {
+            "affiliation": [
+                "Department of Radiation Oncology, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "A",
+            "normalised_name": "Asaithamby A",
+            "last_name": "Asaithamby",
+            "first_name": "Aroumougame"
+        },
+        {
+            "affiliation": [
+                "Cardiovascular Division, King's College London BHF Centre of Research Excellence, Faculty of Medicine, James Black Centre, London SE5 9NU, UK."
+            ],
+            "initials": "CX",
+            "normalised_name": "Santos CX",
+            "last_name": "Santos",
+            "first_name": "Celio X"
+        },
+        {
+            "affiliation": [
+                "Cardiovascular Division, King's College London BHF Centre of Research Excellence, Faculty of Medicine, James Black Centre, London SE5 9NU, UK."
+            ],
+            "initials": "AM",
+            "normalised_name": "Shah AM",
+            "last_name": "Shah",
+            "first_name": "Ajay M"
+        },
+        {
+            "affiliation": [
+                "Department of Cell Biology and Physiology, McAllister Heart Institute, the University of North Carolina, Chapel Hill, North Carolina 27599-7545, USA."
+            ],
+            "initials": "H",
+            "normalised_name": "Zhang H",
+            "last_name": "Zhang",
+            "first_name": "Hua"
+        },
+        {
+            "affiliation": [
+                "Department of Cell Biology and Physiology, McAllister Heart Institute, the University of North Carolina, Chapel Hill, North Carolina 27599-7545, USA."
+            ],
+            "initials": "JE",
+            "normalised_name": "Faber JE",
+            "last_name": "Faber",
+            "first_name": "James E"
+        },
+        {
+            "affiliation": [
+                "Free Radical Biology and Aging Research Program, Oklahoma Medical Research Foundation, Oklahoma City, Oklahoma 73104, USA."
+            ],
+            "initials": "MT",
+            "normalised_name": "Kinter MT",
+            "last_name": "Kinter",
+            "first_name": "Michael T"
+        },
+        {
+            "affiliation": [
+                "Free Radical Biology and Aging Research Program, Oklahoma Medical Research Foundation, Oklahoma City, Oklahoma 73104, USA."
+            ],
+            "initials": "LI",
+            "normalised_name": "Szweda LI",
+            "last_name": "Szweda",
+            "first_name": "Luke I"
+        },
+        {
+            "affiliation": [
+                "McDermott Center for Human Growth and Development, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "C",
+            "normalised_name": "Xing C",
+            "last_name": "Xing",
+            "first_name": "Chao"
+        },
+        {
+            "affiliation": [
+                "Children's Medical Center Research Institute at UT Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "Z",
+            "normalised_name": "Hu Z",
+            "last_name": "Hu",
+            "first_name": "Zeping"
+        },
+        {
+            "affiliation": [
+                "Children's Medical Center Research Institute at UT Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "RJ",
+            "normalised_name": "Deberardinis RJ",
+            "last_name": "Deberardinis",
+            "first_name": "Ralph J"
+        },
+        {
+            "affiliation": [
+                "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "G",
+            "normalised_name": "Schiattarella G",
+            "last_name": "Schiattarella",
+            "first_name": "Gabriele"
+        },
+        {
+            "affiliation": [
+                "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "JA",
+            "normalised_name": "Hill JA",
+            "last_name": "Hill",
+            "first_name": "Joseph A"
+        },
+        {
+            "affiliation": [
+                "Department of Radiology, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "O",
+            "normalised_name": "Oz O",
+            "last_name": "Oz",
+            "first_name": "Orhan"
+        },
+        {
+            "affiliation": [
+                "Department of Physiology and Developmental Biology, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "Z",
+            "normalised_name": "Lu Z",
+            "last_name": "Lu",
+            "first_name": "Zhigang"
+        },
+        {
+            "affiliation": [
+                "Department of Physiology and Developmental Biology, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "CC",
+            "normalised_name": "Zhang CC",
+            "last_name": "Zhang",
+            "first_name": "Cheng Cheng"
+        },
+        {
+            "affiliation": [
+                "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                "Life Science Center, Tsukuba Advanced Research Alliance, University of Tsukuba, 1-1-1 Tennoudai, Tsukuba, Ibaraki 305-8577, Japan."
+            ],
+            "initials": "W",
+            "normalised_name": "Kimura W",
+            "last_name": "Kimura",
+            "first_name": "Wataru"
+        },
+        {
+            "affiliation": [
+                "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                "Center for Regenerative Science and Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA."
+            ],
+            "initials": "HA",
+            "normalised_name": "Sadek HA",
+            "last_name": "Sadek",
+            "first_name": "Hesham A"
+        }
+    ],
+    "citation_id_type": [
+        "pmid",
+        "doi"
+    ],
+    "abstract": "The adult mammalian heart is incapable of regeneration following cardiomyocyte loss, which underpins the lasting and severe effects of cardiomyopathy. Recently, it has become clear that the mammalian heart is not a post-mitotic organ. For example, the neonatal heart is capable of regenerating lost myocardium, and the adult heart is capable of modest self-renewal. In both of these scenarios, cardiomyocyte renewal occurs via the proliferation of pre-existing cardiomyocytes, and is regulated by aerobic-respiration-mediated oxidative DNA damage. Therefore, we reasoned that inhibiting aerobic respiration by inducing systemic hypoxaemia would alleviate oxidative DNA damage, thereby inducing cardiomyocyte proliferation in adult mammals. Here we report that, in mice, gradual exposure to severe systemic hypoxaemia, in which inspired oxygen is gradually decreased by 1% and maintained at 7% for 2 weeks, results in inhibition of oxidative metabolism, decreased reactive oxygen species production and oxidative DNA damage, and reactivation of cardiomyocyte mitosis. Notably, we find that exposure to hypoxaemia 1 week after induction of myocardial infarction induces a robust regenerative response with decreased myocardial fibrosis and improvement of left ventricular systolic function. Genetic fate-mapping analysis confirms that the newly formed myocardium is derived from pre-existing cardiomyocytes. These results demonstrate that the endogenous regenerative properties of the adult mammalian heart can be reactivated by exposure to gradual systemic hypoxaemia, and highlight the potential therapeutic role of hypoxia in regenerative medicine.",
+    "volume": "541",
+    "mesh_term": [
+        {
+            "mesh_ui": "D009206",
+            "qualifier_ui": "Q000166",
+            "qualifier_name": "cytology",
+            "mesh_heading": "Myocardium"
+        },
+        {
+            "mesh_ui": "D012038",
+            "mesh_heading": "Regeneration"
+        },
+        {
+            "mesh_ui": "D008928",
+            "qualifier_ui": "Q000378",
+            "qualifier_name": "metabolism",
+            "mesh_heading": "Mitochondria"
+        },
+        {
+            "mesh_ui": "D009203",
+            "qualifier_ui": "Q000378",
+            "qualifier_name": "metabolism",
+            "mesh_heading": "Myocardial Infarction"
+        },
+        {
+            "mesh_ui": "D000818",
+            "mesh_heading": "Animals"
+        },
+        {
+            "mesh_ui": "D008297",
+            "mesh_heading": "Male"
+        },
+        {
+            "mesh_ui": "D019069",
+            "mesh_heading": "Cell Respiration"
+        },
+        {
+            "mesh_ui": "D051379",
+            "mesh_heading": "Mice"
+        },
+        {
+            "mesh_ui": "D000860",
+            "qualifier_ui": "Q000378",
+            "qualifier_name": "metabolism",
+            "mesh_heading": "Hypoxia"
+        },
+        {
+            "mesh_ui": "D032383",
+            "qualifier_ui": "Q000166",
+            "qualifier_name": "cytology",
+            "mesh_heading": "Myocytes, Cardiac"
+        },
+        {
+            "mesh_ui": "D017382",
+            "qualifier_ui": "Q000378",
+            "qualifier_name": "metabolism",
+            "mesh_heading": "Reactive Oxygen Species"
+        },
+        {
+            "mesh_ui": "D016277",
+            "mesh_heading": "Ventricular Function, Left"
+        },
+        {
+            "mesh_ui": "D008938",
+            "mesh_heading": "Mitosis"
+        },
+        {
+            "mesh_ui": "D008810",
+            "mesh_heading": "Mice, Inbred C57BL"
+        },
+        {
+            "mesh_ui": "D044968",
+            "qualifier_ui": "Q000379",
+            "qualifier_name": "methods",
+            "mesh_heading": "Regenerative Medicine"
+        },
+        {
+            "mesh_ui": "D009202",
+            "qualifier_ui": "Q000378",
+            "qualifier_name": "metabolism",
+            "mesh_heading": "Cardiomyopathies"
+        },
+        {
+            "mesh_ui": "D049109",
+            "mesh_heading": "Cell Proliferation"
+        },
+        {
+            "mesh_ui": "D006321",
+            "qualifier_ui": "Q000254",
+            "qualifier_name": "growth & development",
+            "mesh_heading": "Heart"
+        },
+        {
+            "mesh_ui": "D004249",
+            "mesh_heading": "DNA Damage"
+        }
+    ],
+    "has_funding": true,
+    "start_page": 222,
+    "chemical": [
+        {
+            "substance_name": "Reactive Oxygen Species",
+            "mesh_ui": "D017382",
+            "registry_number": "0"
+        }
+    ],
+    "is_referenced_by_patent": false,
+    "has_keyword": false,
+    "reference_count": 28
+}

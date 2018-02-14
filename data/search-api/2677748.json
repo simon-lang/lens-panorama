@@ -1,0 +1,199 @@
+{
+    "has_conflicting_metadata": false,
+    "clinical_trial": [],
+    "citation_id": [
+        "2677748",
+        "10.1038/341544a0"
+    ],
+    "has_chemical": true,
+    "source": {
+        "country": "United Kingdom",
+        "asjc_code": [
+            "1000"
+        ],
+        "issn": [
+            "00280836",
+            "14764687"
+        ],
+        "publisher": "Nature Publishing Group",
+        "nlmid": [
+            "0410462"
+        ],
+        "title": "Nature",
+        "type": "Journal",
+        "ssid": [
+            "21206"
+        ],
+        "asjc_subject": [
+            "Multidisciplinary"
+        ]
+    },
+    "title": "Binding activities of a repertoire of single immunoglobulin variable domains secreted from Escherichia coli.",
+    "has_mesh_term": true,
+    "referenced_by_patent_count": 2740,
+    "has_clinical_trial": false,
+    "has_affiliation": true,
+    "date_published": "1989-10-12",
+    "crossref_reference_count": 0,
+    "has_abstract": true,
+    "id": "2677748",
+    "keyword": [],
+    "year_published": 1989,
+    "crossref_referenced_by_count": 572,
+    "funding": [],
+    "issue": "6242",
+    "end_page": 546,
+    "author": [
+        {
+            "affiliation": [
+                "MRC Laboratory of Molecular Biology, Cambridge, UK."
+            ],
+            "initials": "ES",
+            "normalised_name": "Ward ES",
+            "last_name": "Ward",
+            "first_name": "E S"
+        },
+        {
+            "affiliation": [],
+            "initials": "D",
+            "normalised_name": "Gussow D",
+            "last_name": "Güssow",
+            "first_name": "D"
+        },
+        {
+            "affiliation": [],
+            "initials": "AD",
+            "normalised_name": "Griffiths AD",
+            "last_name": "Griffiths",
+            "first_name": "A D"
+        },
+        {
+            "affiliation": [],
+            "initials": "PT",
+            "normalised_name": "Jones PT",
+            "last_name": "Jones",
+            "first_name": "P T"
+        },
+        {
+            "affiliation": [],
+            "initials": "G",
+            "normalised_name": "Winter G",
+            "last_name": "Winter",
+            "first_name": "G"
+        }
+    ],
+    "citation_id_type": [
+        "pmid",
+        "doi"
+    ],
+    "abstract": "In antibodies, a heavy and a light chain variable domain, VH and VL, respectively, pack together and the hypervariable loops on each domain contribute to binding antigen. We find, however, that isolated VH domains with good antigen-binding affinities can also be prepared. Using the polymerase chain reaction, diverse libraries of VH genes were cloned from the spleen genomic DNA of mice immunized with either lysozyme or keyhole-limpet haemocyanin. From these libraries, VH domains were expressed and secreted from Escherichia coli. Binding activities were detected against both antigens, and two VH domains were characterized with affinities for lysozyme in the 20 nM range. Isolated variable domains may offer an alternative to monoclonal antibodies and serve as the key to building high-affinity human antibodies. We suggest the name 'single domain antibodies (dAbs)' for these antigen binding demands.",
+    "volume": "341",
+    "mesh_term": [
+        {
+            "mesh_ui": "D001483",
+            "mesh_heading": "Base Sequence"
+        },
+        {
+            "mesh_ui": "D000595",
+            "mesh_heading": "Amino Acid Sequence"
+        },
+        {
+            "mesh_ui": "D005803",
+            "mesh_heading": "Genes, Immunoglobulin"
+        },
+        {
+            "mesh_ui": "D000818",
+            "mesh_heading": "Animals"
+        },
+        {
+            "mesh_ui": "D011994",
+            "qualifier_ui": "Q000276",
+            "qualifier_name": "immunology",
+            "mesh_heading": "Recombinant Proteins"
+        },
+        {
+            "mesh_ui": "D016133",
+            "mesh_heading": "Polymerase Chain Reaction"
+        },
+        {
+            "mesh_ui": "D003001",
+            "mesh_heading": "Cloning, Molecular"
+        },
+        {
+            "mesh_ui": "D000936",
+            "mesh_heading": "Antigen-Antibody Complex"
+        },
+        {
+            "mesh_ui": "D051379",
+            "mesh_heading": "Mice"
+        },
+        {
+            "mesh_ui": "D012333",
+            "qualifier_ui": "Q000235",
+            "qualifier_name": "genetics",
+            "mesh_heading": "RNA, Messenger"
+        },
+        {
+            "mesh_ui": "D004926",
+            "qualifier_ui": "Q000235",
+            "qualifier_name": "genetics",
+            "mesh_heading": "Escherichia coli"
+        },
+        {
+            "mesh_ui": "D008969",
+            "mesh_heading": "Molecular Sequence Data"
+        },
+        {
+            "mesh_ui": "D005822",
+            "mesh_heading": "Genetic Vectors"
+        },
+        {
+            "mesh_ui": "D006801",
+            "mesh_heading": "Humans"
+        },
+        {
+            "mesh_ui": "D009113",
+            "qualifier_ui": "Q000276",
+            "qualifier_name": "immunology",
+            "mesh_heading": "Muramidase"
+        },
+        {
+            "mesh_ui": "D007135",
+            "qualifier_ui": "Q000235",
+            "qualifier_name": "genetics",
+            "mesh_heading": "Immunoglobulin Variable Region"
+        }
+    ],
+    "has_funding": false,
+    "start_page": 544,
+    "chemical": [
+        {
+            "substance_name": "Recombinant Proteins",
+            "mesh_ui": "D011994",
+            "registry_number": "0"
+        },
+        {
+            "substance_name": "Antigen-Antibody Complex",
+            "mesh_ui": "D000936",
+            "registry_number": "0"
+        },
+        {
+            "substance_name": "Muramidase",
+            "mesh_ui": "D009113",
+            "registry_number": "EC 3.2.1.17"
+        },
+        {
+            "substance_name": "Immunoglobulin Variable Region",
+            "mesh_ui": "D007135",
+            "registry_number": "0"
+        },
+        {
+            "substance_name": "RNA, Messenger",
+            "mesh_ui": "D012333",
+            "registry_number": "0"
+        }
+    ],
+    "is_referenced_by_patent": true,
+    "has_keyword": false,
+    "reference_count": 0
+}

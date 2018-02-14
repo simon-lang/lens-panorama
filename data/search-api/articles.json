@@ -1,0 +1,2790 @@
+{
+    "query_result": {
+        "took": 2,
+        "timed_out": false,
+        "_shards": {
+            "total": 1,
+            "successful": 1,
+            "failed": 0
+        },
+        "hits": {
+            "total": 561,
+            "max_score": null,
+            "hits": [
+                {
+                    "_index": "works",
+                    "_type": "work",
+                    "_id": "10385692",
+                    "_score": null,
+                    "_source": {
+                        "has_conflicting_metadata": false,
+                        "clinical_trial": [],
+                        "citation_id": [
+                            "10385692"
+                        ],
+                        "has_chemical": true,
+                        "source": {
+                            "country": "United States",
+                            "asjc_code": [
+                                "3004",
+                                "1313"
+                            ],
+                            "issn": [
+                                "15210111",
+                                "0026895x"
+                            ],
+                            "publisher": "American Society for Pharmacology and Experimental Therapeutics",
+                            "nlmid": [
+                                "0035623"
+                            ],
+                            "title": "Molecular pharmacology",
+                            "type": "Journal",
+                            "ssid": [
+                                "19963"
+                            ],
+                            "asjc_subject": [
+                                "Molecular Medicine",
+                                "Pharmacology"
+                            ]
+                        },
+                        "title": "Inhibition of cyclic GMP-binding cyclic GMP-specific phosphodiesterase (Type 5) by sildenafil and related compounds.",
+                        "has_mesh_term": true,
+                        "referenced_by_patent_count": 25,
+                        "has_clinical_trial": false,
+                        "has_affiliation": true,
+                        "date_published": "1999-07-01",
+                        "crossref_reference_count": 0,
+                        "has_abstract": true,
+                        "id": "10385692",
+                        "keyword": [],
+                        "year_published": 1999,
+                        "crossref_referenced_by_count": 0,
+                        "funding": [
+                            {
+                                "country": "United States",
+                                "funding_id": "GM41269",
+                                "organisation": "NIGMS NIH HHS"
+                            }
+                        ],
+                        "issue": "1",
+                        "end_page": 130,
+                        "author": [
+                            {
+                                "affiliation": [
+                                    "Department of Molecular Physiology and Biophysics, Vanderbilt University School of Medicine, Nashville, Tennessee, USA."
+                                ],
+                                "initials": "IV",
+                                "normalised_name": "Turko IV",
+                                "last_name": "Turko",
+                                "first_name": "I V"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "SA",
+                                "normalised_name": "Ballard SA",
+                                "last_name": "Ballard",
+                                "first_name": "S A"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "SH",
+                                "normalised_name": "Francis SH",
+                                "last_name": "Francis",
+                                "first_name": "S H"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "JD",
+                                "normalised_name": "Corbin JD",
+                                "last_name": "Corbin",
+                                "first_name": "J D"
+                            }
+                        ],
+                        "citation_id_type": [
+                            "pmid"
+                        ],
+                        "abstract": "The cGMP-binding cGMP-specific phosphodiesterase (PDE5) degrades cGMP and regulates the intracellular level of cGMP in many tissues, including the smooth muscle of the corpus cavernosum of the penis. Sildenafil (Viagra), a specific PDE5 inhibitor, promotes penile erection by blocking the activity of PDE5, which causes cGMP to accumulate in the corpus cavernosum. In the present study, sildenafil, like other PDE5 inhibitors, stimulates cGMP binding to the allosteric sites of PDE5 by interacting at the catalytic site of this enzyme, but the drug does not compete with cGMP for binding at the allosteric sites. Both sildenafil and zaprinast are competitive inhibitors of PDE5, and double-inhibition analysis shows that these two inhibitors added together interact with the catalytic site of PDE5 in a mutually exclusive manner. After site-directed mutagenesis of each of 23 conserved amino acid residues in the catalytic domain of PDE5, the pattern of changes in the IC50 values for sildenafil or UK-122764 is similar to that found for zaprinast. However, among the three inhibitors, sildenafil exhibits the most similar pattern of changes in the IC50 to that found for the affinity of cGMP, implying similar interactions with the catalytic domain. This may explain in part the stronger inhibitory potency of sildenafil for wild-type PDE5 compared with the other inhibitors [sildenafil (Ki = 1 nM) > UK-122764 (Ki = 5 nM) > zaprinast (Ki = 130 nM)]. The affinity of each of these inhibitors for PDE5 is much higher than that of cGMP itself (Km = 2000 nM). It is concluded that residues such as Tyr602, His607, His643, and Asp754 may form important interactions for sildenafil in PDE5, but because these amino acids are conserved in all mammalian PDEs, the selectivity and potency of sildenafil is likely to be provided by a nonconserved residue or residues in the PDE5 catalytic domain.",
+                        "volume": "56",
+                        "mesh_term": [
+                            {
+                                "mesh_ui": "D054706",
+                                "mesh_heading": "Cyclic Nucleotide Phosphodiesterases, Type 5"
+                            },
+                            {
+                                "mesh_ui": "D000595",
+                                "mesh_heading": "Amino Acid Sequence"
+                            },
+                            {
+                                "mesh_ui": "D001665",
+                                "mesh_heading": "Binding Sites"
+                            },
+                            {
+                                "mesh_ui": "D002417",
+                                "mesh_heading": "Cattle"
+                            },
+                            {
+                                "mesh_ui": "D000494",
+                                "mesh_heading": "Allosteric Regulation"
+                            },
+                            {
+                                "mesh_ui": "D008969",
+                                "mesh_heading": "Molecular Sequence Data"
+                            },
+                            {
+                                "mesh_ui": "D000068677",
+                                "mesh_heading": "Sildenafil Citrate"
+                            },
+                            {
+                                "mesh_ui": "D000818",
+                                "mesh_heading": "Animals"
+                            },
+                            {
+                                "mesh_ui": "D015106",
+                                "mesh_heading": "3',5'-Cyclic-GMP Phosphodiesterases"
+                            },
+                            {
+                                "mesh_ui": "D019943",
+                                "mesh_heading": "Amino Acid Substitution"
+                            },
+                            {
+                                "mesh_ui": "D016297",
+                                "mesh_heading": "Mutagenesis, Site-Directed"
+                            },
+                            {
+                                "mesh_ui": "D010726",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Phosphodiesterase Inhibitors"
+                            },
+                            {
+                                "mesh_ui": "D010727",
+                                "qualifier_ui": "Q000235",
+                                "qualifier_name": "genetics",
+                                "mesh_heading": "Phosphoric Diester Hydrolases"
+                            },
+                            {
+                                "mesh_ui": "D013450",
+                                "mesh_heading": "Sulfones"
+                            },
+                            {
+                                "mesh_ui": "D020128",
+                                "mesh_heading": "Inhibitory Concentration 50"
+                            },
+                            {
+                                "mesh_ui": "D006152",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "Cyclic GMP"
+                            },
+                            {
+                                "mesh_ui": "D015870",
+                                "mesh_heading": "Gene Expression"
+                            },
+                            {
+                                "mesh_ui": "D011687",
+                                "mesh_heading": "Purines"
+                            },
+                            {
+                                "mesh_ui": "D010879",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Piperazines"
+                            }
+                        ],
+                        "has_funding": true,
+                        "start_page": 124,
+                        "chemical": [
+                            {
+                                "substance_name": "Phosphodiesterase Inhibitors",
+                                "mesh_ui": "D010726",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Phosphoric Diester Hydrolases",
+                                "mesh_ui": "D010727",
+                                "registry_number": "EC 3.1.4.-"
+                            },
+                            {
+                                "substance_name": "Piperazines",
+                                "mesh_ui": "D010879",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Cyclic Nucleotide Phosphodiesterases, Type 5",
+                                "mesh_ui": "D054706",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Cyclic GMP",
+                                "mesh_ui": "D006152",
+                                "registry_number": "H2D2X058MU"
+                            },
+                            {
+                                "substance_name": "Purines",
+                                "mesh_ui": "D011687",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Sildenafil Citrate",
+                                "mesh_ui": "D000068677",
+                                "registry_number": "BW9B0ZE037"
+                            },
+                            {
+                                "substance_name": "3',5'-Cyclic-GMP Phosphodiesterases",
+                                "mesh_ui": "D015106",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Sulfones",
+                                "mesh_ui": "D013450",
+                                "registry_number": "0"
+                            }
+                        ],
+                        "is_referenced_by_patent": true,
+                        "has_keyword": false,
+                        "reference_count": 0
+                    },
+                    "sort": [
+                        25
+                    ]
+                },
+                {
+                    "_index": "works",
+                    "_type": "work",
+                    "_id": "9731184",
+                    "_score": null,
+                    "_source": {
+                        "has_conflicting_metadata": false,
+                        "clinical_trial": [],
+                        "citation_id": [
+                            "10.1006/bbrc.1998.9206",
+                            "9731184"
+                        ],
+                        "has_chemical": true,
+                        "source": {
+                            "country": "United States",
+                            "asjc_code": [
+                                "1307",
+                                "1304",
+                                "1303",
+                                "1312"
+                            ],
+                            "issn": [
+                                "0006291x",
+                                "10902104"
+                            ],
+                            "publisher": "Academic Press Inc.",
+                            "nlmid": [
+                                "0372516"
+                            ],
+                            "title": "Biochemical and biophysical research communications",
+                            "type": "Journal",
+                            "ssid": [
+                                "16845"
+                            ],
+                            "asjc_subject": [
+                                "Biochemistry",
+                                "Molecular Biology",
+                                "Cell Biology",
+                                "Biophysics"
+                            ]
+                        },
+                        "title": "Sildenafil inhibits phosphodiesterase type 5 in human clitoral corpus cavernosum smooth muscle.",
+                        "has_mesh_term": true,
+                        "referenced_by_patent_count": 18,
+                        "has_clinical_trial": false,
+                        "has_affiliation": true,
+                        "date_published": "1998-08-28",
+                        "crossref_reference_count": 20,
+                        "has_abstract": true,
+                        "id": "9731184",
+                        "keyword": [],
+                        "year_published": 1998,
+                        "crossref_referenced_by_count": 84,
+                        "funding": [
+                            {
+                                "country": "United States",
+                                "funding_id": "DK 39080",
+                                "organisation": "NIDDK NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "DK 40025",
+                                "organisation": "NIDDK NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "DK 40487",
+                                "organisation": "NIDDK NIH HHS"
+                            }
+                        ],
+                        "issue": "3",
+                        "end_page": 617,
+                        "author": [
+                            {
+                                "affiliation": [
+                                    "Department of Urology, Boston University School of Medicine, Massachusetts 02118, USA."
+                                ],
+                                "initials": "K",
+                                "normalised_name": "Park K",
+                                "last_name": "Park",
+                                "first_name": "K"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "RB",
+                                "normalised_name": "Moreland RB",
+                                "last_name": "Moreland",
+                                "first_name": "R B"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "I",
+                                "normalised_name": "Goldstein I",
+                                "last_name": "Goldstein",
+                                "first_name": "I"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "A",
+                                "normalised_name": "Atala A",
+                                "last_name": "Atala",
+                                "first_name": "A"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "A",
+                                "normalised_name": "Traish A",
+                                "last_name": "Traish",
+                                "first_name": "A"
+                            }
+                        ],
+                        "citation_id_type": [
+                            "pmid",
+                            "doi"
+                        ],
+                        "abstract": "Phosphodiesterases play an important physiological role by regulating the intracellular levels of cyclic nucleotides. In this study, we investigated the kinetic parameters of inhibition of phosphodiesterase (PDE) type 5 (EC 3.1.4.35, 3', 5'-cyclic GMP phosphodiesterase) by a novel, high-affinity, selective PDE type 5 inhibitor, sildenafil, in intact cells and in soluble extracts of human clitoral corpus cavernosum smooth muscle cells. Sildenafil inhibited cGMP hydrolysis in the crude extract (Ki = 7.2 +/- 2.7) and in partially purified preparations (Ki = 9 nM) in a competitive manner, as determined by Dixon plots. Sildenafil was a more effective PDE type 5 inhibitor than zaprinast (Ki = 400.0 +/- 76.4 nM, crude extracts; 250 nM, partially purified). Stimulation of intracellular cGMP synthesis by the nitric oxide donor sodium nitroprusside resulted in a 3.3- and 2.9-fold increase in cGMP concentration in the presence of sildenafil or zaprinast, respectively, compared to sodium nitroprusside treatment alone in intact cells at physiological temperatures. These observations suggest that human clitoral corpus cavernosum smooth muscle tone may be regulated by the synthesis and release of nitric oxide and that this pathway is dependent on PDE type 5 activity.",
+                        "volume": "249",
+                        "mesh_term": [
+                            {
+                                "mesh_ui": "D007700",
+                                "mesh_heading": "Kinetics"
+                            },
+                            {
+                                "mesh_ui": "D005576",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Colforsin"
+                            },
+                            {
+                                "mesh_ui": "D054706",
+                                "mesh_heading": "Cyclic Nucleotide Phosphodiesterases, Type 5"
+                            },
+                            {
+                                "mesh_ui": "D000068677",
+                                "mesh_heading": "Sildenafil Citrate"
+                            },
+                            {
+                                "mesh_ui": "D011688",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Purinones"
+                            },
+                            {
+                                "mesh_ui": "D002478",
+                                "mesh_heading": "Cells, Cultured"
+                            },
+                            {
+                                "mesh_ui": "D009131",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Muscle, Smooth, Vascular"
+                            },
+                            {
+                                "mesh_ui": "D015106",
+                                "qualifier_ui": "Q000037",
+                                "qualifier_name": "antagonists & inhibitors",
+                                "mesh_heading": "3',5'-Cyclic-GMP Phosphodiesterases"
+                            },
+                            {
+                                "mesh_ui": "D013450",
+                                "mesh_heading": "Sulfones"
+                            },
+                            {
+                                "mesh_ui": "D009126",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Muscle Relaxation"
+                            },
+                            {
+                                "mesh_ui": "D005260",
+                                "mesh_heading": "Female"
+                            },
+                            {
+                                "mesh_ui": "D010726",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Phosphodiesterase Inhibitors"
+                            },
+                            {
+                                "mesh_ui": "D010727",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "Phosphoric Diester Hydrolases"
+                            },
+                            {
+                                "mesh_ui": "D006868",
+                                "mesh_heading": "Hydrolysis"
+                            },
+                            {
+                                "mesh_ui": "D009569",
+                                "qualifier_ui": "Q000502",
+                                "qualifier_name": "physiology",
+                                "mesh_heading": "Nitric Oxide"
+                            },
+                            {
+                                "mesh_ui": "D006152",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "Cyclic GMP"
+                            },
+                            {
+                                "mesh_ui": "D006801",
+                                "mesh_heading": "Humans"
+                            },
+                            {
+                                "mesh_ui": "D000242",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "Cyclic AMP"
+                            },
+                            {
+                                "mesh_ui": "D002987",
+                                "qualifier_ui": "Q000098",
+                                "qualifier_name": "blood supply",
+                                "mesh_heading": "Clitoris"
+                            },
+                            {
+                                "mesh_ui": "D011687",
+                                "mesh_heading": "Purines"
+                            },
+                            {
+                                "mesh_ui": "D010879",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Piperazines"
+                            }
+                        ],
+                        "has_funding": true,
+                        "start_page": 612,
+                        "chemical": [
+                            {
+                                "substance_name": "Sildenafil Citrate",
+                                "mesh_ui": "D000068677",
+                                "registry_number": "BW9B0ZE037"
+                            },
+                            {
+                                "substance_name": "zaprinast",
+                                "mesh_ui": "C011145",
+                                "registry_number": "GXT25D5DS0"
+                            },
+                            {
+                                "substance_name": "Nitric Oxide",
+                                "mesh_ui": "D009569",
+                                "registry_number": "31C4KY9ESH"
+                            },
+                            {
+                                "substance_name": "3',5'-Cyclic-GMP Phosphodiesterases",
+                                "mesh_ui": "D015106",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Sulfones",
+                                "mesh_ui": "D013450",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Phosphodiesterase Inhibitors",
+                                "mesh_ui": "D010726",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Phosphoric Diester Hydrolases",
+                                "mesh_ui": "D010727",
+                                "registry_number": "EC 3.1.4.-"
+                            },
+                            {
+                                "substance_name": "Cyclic Nucleotide Phosphodiesterases, Type 5",
+                                "mesh_ui": "D054706",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Cyclic GMP",
+                                "mesh_ui": "D006152",
+                                "registry_number": "H2D2X058MU"
+                            },
+                            {
+                                "substance_name": "Purinones",
+                                "mesh_ui": "D011688",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Cyclic AMP",
+                                "mesh_ui": "D000242",
+                                "registry_number": "E0399OZS9N"
+                            },
+                            {
+                                "substance_name": "Colforsin",
+                                "mesh_ui": "D005576",
+                                "registry_number": "1F7A44V6OU"
+                            },
+                            {
+                                "substance_name": "Purines",
+                                "mesh_ui": "D011687",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Piperazines",
+                                "mesh_ui": "D010879",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "PDE5A protein, human",
+                                "mesh_ui": "C517381",
+                                "registry_number": "EC 3.1.4.35"
+                            }
+                        ],
+                        "is_referenced_by_patent": true,
+                        "has_keyword": false,
+                        "reference_count": 0
+                    },
+                    "sort": [
+                        18
+                    ]
+                },
+                {
+                    "_index": "works",
+                    "_type": "work",
+                    "_id": "12637371",
+                    "_score": null,
+                    "_source": {
+                        "has_conflicting_metadata": false,
+                        "clinical_trial": [],
+                        "citation_id": [
+                            "12637371",
+                            "10.1161/01.res.0000066853.09821.98"
+                        ],
+                        "has_chemical": true,
+                        "source": {
+                            "country": "United States",
+                            "asjc_code": [
+                                "1314",
+                                "2705"
+                            ],
+                            "issn": [
+                                "15244571",
+                                "00097330"
+                            ],
+                            "publisher": "Lippincott Williams and Wilkins",
+                            "nlmid": [
+                                "0047103"
+                            ],
+                            "title": "Circulation research",
+                            "type": "Journal",
+                            "ssid": [
+                                "23063"
+                            ],
+                            "asjc_subject": [
+                                "Physiology",
+                                "Cardiology and Cardiovascular Medicine"
+                            ]
+                        },
+                        "title": "Sildenafil induces delayed preconditioning through inducible nitric oxide synthase-dependent pathway in mouse heart.",
+                        "has_mesh_term": true,
+                        "referenced_by_patent_count": 15,
+                        "has_clinical_trial": false,
+                        "has_affiliation": true,
+                        "date_published": "2003-04-04",
+                        "crossref_reference_count": 0,
+                        "has_abstract": true,
+                        "id": "12637371",
+                        "keyword": [],
+                        "year_published": 2003,
+                        "crossref_referenced_by_count": 115,
+                        "funding": [
+                            {
+                                "country": "United States",
+                                "funding_id": "HL-07537",
+                                "organisation": "NHLBI NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "HL-51045",
+                                "organisation": "NHLBI NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "HL-59469",
+                                "organisation": "NHLBI NIH HHS"
+                            }
+                        ],
+                        "issue": "6",
+                        "end_page": 597,
+                        "author": [
+                            {
+                                "affiliation": [
+                                    "Division of Cardiology, Box 980281, Virginia Commonwealth University, Richmond, VA 23298, USA."
+                                ],
+                                "initials": "F",
+                                "normalised_name": "Salloum F",
+                                "last_name": "Salloum",
+                                "first_name": "Fadi"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "C",
+                                "normalised_name": "Yin C",
+                                "last_name": "Yin",
+                                "first_name": "Chang"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "L",
+                                "normalised_name": "Xi L",
+                                "last_name": "Xi",
+                                "first_name": "Lei"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "RC",
+                                "normalised_name": "Kukreja RC",
+                                "last_name": "Kukreja",
+                                "first_name": "Rakesh C"
+                            }
+                        ],
+                        "citation_id_type": [
+                            "pmid",
+                            "doi"
+                        ],
+                        "abstract": "Sildenafil citrate (Viagra) is the most widely used drug for treating erectile dysfunction in men. We recently demonstrated that it induces potent protective effects against ischemia-reperfusion (I-R) injury in rabbit hearts through the opening of mitochondrial ATP-dependent K+ channels. In the present study, we investigated the role of the NO-dependent signaling pathway in delayed cardioprotection by sildenafil. Adult male ICR mice were treated with saline or sildenafil (0.7 mg/kg IP) 24 hours before global I-R in the Langendorff mode. Infarct size was reduced from 27.6+/-3.3% in saline-treated control mice to 6.9+/-1.2% in sildenafil-treated mice (mean+/-SEM, P<0.05) without compromising cardiac function. Reverse transcription-polymerase chain reaction revealed a transient increase in endothelial and inducible NO synthase (eNOS and iNOS, respectively) mRNA in sildenafil-treated mice, peaking at 45 minutes (eNOS) and 2 hours (iNOS) after sildenafil injection. The magnitude of mRNA increase was more pronounced for iNOS than for eNOS. In addition, a significant increase in both iNOS and eNOS protein was detected 24 hours after sildenafil treatment. A selective inhibitor of iNOS, 1400W (10 mg/kg IP given 30 minutes before I-R), abolished sildenafil-induced protection (23.7+/-2.8%, P<0.05 versus sildenafil). These data suggest that the induction of NO synthase isoforms is an essential component of the signaling mechanism for sildenafil-induced delayed preconditioning. However, iNOS appears to be the primary isoform that mediates the robust cardioprotection.",
+                        "volume": "92",
+                        "mesh_term": [
+                            {
+                                "mesh_ui": "D007700",
+                                "mesh_heading": "Kinetics"
+                            },
+                            {
+                                "mesh_ui": "D052247",
+                                "mesh_heading": "Nitric Oxide Synthase Type II"
+                            },
+                            {
+                                "mesh_ui": "D000068677",
+                                "mesh_heading": "Sildenafil Citrate"
+                            },
+                            {
+                                "mesh_ui": "D000818",
+                                "mesh_heading": "Animals"
+                            },
+                            {
+                                "mesh_ui": "D008297",
+                                "mesh_heading": "Male"
+                            },
+                            {
+                                "mesh_ui": "D009203",
+                                "qualifier_ui": "Q000473",
+                                "qualifier_name": "pathology",
+                                "mesh_heading": "Myocardial Infarction"
+                            },
+                            {
+                                "mesh_ui": "D009206",
+                                "qualifier_ui": "Q000201",
+                                "qualifier_name": "enzymology",
+                                "mesh_heading": "Myocardium"
+                            },
+                            {
+                                "mesh_ui": "D013450",
+                                "mesh_heading": "Sulfones"
+                            },
+                            {
+                                "mesh_ui": "D015428",
+                                "qualifier_ui": "Q000201",
+                                "qualifier_name": "enzymology",
+                                "mesh_heading": "Myocardial Reperfusion Injury"
+                            },
+                            {
+                                "mesh_ui": "D012333",
+                                "qualifier_ui": "Q000096",
+                                "qualifier_name": "biosynthesis",
+                                "mesh_heading": "RNA, Messenger"
+                            },
+                            {
+                                "mesh_ui": "D019157",
+                                "mesh_heading": "Ischemic Preconditioning, Myocardial"
+                            },
+                            {
+                                "mesh_ui": "D051379",
+                                "mesh_heading": "Mice"
+                            },
+                            {
+                                "mesh_ui": "D002316",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Cardiotonic Agents"
+                            },
+                            {
+                                "mesh_ui": "D019001",
+                                "qualifier_ui": "Q000096",
+                                "qualifier_name": "biosynthesis",
+                                "mesh_heading": "Nitric Oxide Synthase"
+                            },
+                            {
+                                "mesh_ui": "D008813",
+                                "mesh_heading": "Mice, Inbred ICR"
+                            },
+                            {
+                                "mesh_ui": "D011687",
+                                "mesh_heading": "Purines"
+                            },
+                            {
+                                "mesh_ui": "D010879",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Piperazines"
+                            },
+                            {
+                                "mesh_ui": "D052250",
+                                "mesh_heading": "Nitric Oxide Synthase Type III"
+                            }
+                        ],
+                        "has_funding": true,
+                        "start_page": 595,
+                        "chemical": [
+                            {
+                                "substance_name": "Nitric Oxide Synthase Type II",
+                                "mesh_ui": "D052247",
+                                "registry_number": "EC 1.14.13.39"
+                            },
+                            {
+                                "substance_name": "Nos2 protein, mouse",
+                                "mesh_ui": "C496317",
+                                "registry_number": "EC 1.14.13.39"
+                            },
+                            {
+                                "substance_name": "Cardiotonic Agents",
+                                "mesh_ui": "D002316",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Piperazines",
+                                "mesh_ui": "D010879",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Sildenafil Citrate",
+                                "mesh_ui": "D000068677",
+                                "registry_number": "BW9B0ZE037"
+                            },
+                            {
+                                "substance_name": "RNA, Messenger",
+                                "mesh_ui": "D012333",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Nitric Oxide Synthase",
+                                "mesh_ui": "D019001",
+                                "registry_number": "EC 1.14.13.39"
+                            },
+                            {
+                                "substance_name": "Nos3 protein, mouse",
+                                "mesh_ui": "C496315",
+                                "registry_number": "EC 1.14.13.39"
+                            },
+                            {
+                                "substance_name": "Purines",
+                                "mesh_ui": "D011687",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Sulfones",
+                                "mesh_ui": "D013450",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Nitric Oxide Synthase Type III",
+                                "mesh_ui": "D052250",
+                                "registry_number": "EC 1.14.13.39"
+                            }
+                        ],
+                        "is_referenced_by_patent": true,
+                        "has_keyword": false,
+                        "reference_count": 0
+                    },
+                    "sort": [
+                        15
+                    ]
+                },
+                {
+                    "_index": "works",
+                    "_type": "work",
+                    "_id": "9600334",
+                    "_score": null,
+                    "_source": {
+                        "has_conflicting_metadata": true,
+                        "clinical_trial": [],
+                        "citation_id": [
+                            "9600334"
+                        ],
+                        "has_chemical": true,
+                        "source": {
+                            "country": "Netherlands",
+                            "asjc_code": [
+                                "2700",
+                                "3000",
+                                "1300"
+                            ],
+                            "issn": [
+                                "00243205"
+                            ],
+                            "publisher": "Elsevier Inc.",
+                            "nlmid": [
+                                "0375521"
+                            ],
+                            "title": "Life sciences",
+                            "type": "Journal",
+                            "ssid": [
+                                "20473"
+                            ],
+                            "asjc_subject": [
+                                "General Biochemistry, Genetics and Molecular Biology",
+                                "General Pharmacology, Toxicology and Pharmaceutics",
+                                "General Medicine"
+                            ]
+                        },
+                        "title": "Sildenafil, a novel inhibitor of phosphodiesterase type 5 in human corpus cavernosum smooth muscle cells.",
+                        "has_mesh_term": true,
+                        "referenced_by_patent_count": 14,
+                        "has_clinical_trial": false,
+                        "has_affiliation": true,
+                        "date_published": "1998-01-01",
+                        "crossref_reference_count": 0,
+                        "has_abstract": true,
+                        "id": "9600334",
+                        "keyword": [],
+                        "year_published": 1998,
+                        "crossref_referenced_by_count": 0,
+                        "funding": [
+                            {
+                                "country": "United States",
+                                "funding_id": "DK 39080",
+                                "organisation": "NIDDK NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "DK 40025",
+                                "organisation": "NIDDK NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "DK 40487",
+                                "organisation": "NIDDK NIH HHS"
+                            }
+                        ],
+                        "issue": "20",
+                        "end_page": 18,
+                        "author": [
+                            {
+                                "affiliation": [
+                                    "Department of Urology, Boston University School of Medicine, MA 02118, USA."
+                                ],
+                                "initials": "RB",
+                                "normalised_name": "Moreland RB",
+                                "last_name": "Moreland",
+                                "first_name": "R B"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "I",
+                                "normalised_name": "Goldstein I",
+                                "last_name": "Goldstein",
+                                "first_name": "I"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "A",
+                                "normalised_name": "Traish A",
+                                "last_name": "Traish",
+                                "first_name": "A"
+                            }
+                        ],
+                        "citation_id_type": [
+                            "pmid"
+                        ],
+                        "abstract": "In human corpus cavernosum, release of nitric oxide from the non-adrenergic, non-cholinergic nerves and/or the endothelium activates guanylyl cyclase and increases intracellular cGMP levels. The increase in intracellular cGMP modulates intracellular calcium and in turn regulates smooth muscle contractility and erectile function. Phosphodiesterases play an important physiological role by regulating the intracellular levels of cyclic nucleotides. In this study, we investigated the kinetic parameters of inhibition of phosphodiesterase (PDE) type 5 (E.C. 3.1.4.35 3', 5'-cyclic GMP phosphodiesterase) by a novel, high affinity, selective PDE type 5 inhibitor, sildenafil, in soluble extracts of human corpus cavernosum smooth muscle cells. Sildenafil inhibited PDE type 5 cGMP-hydrolytic activity, in the crude extract (Ki=4-6 nM) and in partially purified preparations (Ki=2 nM) in a competitive manner, as determined by Dixon plots. Sildenafil (Ki=2-4 nM) was a more effective PDE type 5 inhibitor than zaprinast (Ki=250 nM). Stimulation of intracellular cGMP synthesis by the nitric oxide donor, sodium nitroprusside, resulted in less than a 5% increase in cGMP levels in the absence of sildenafil and a 35% increase in cGMP levels in the presence of sildenafil, in intact cells at physiological temperatures. These results are in accord with the clinical observations that sildenafil, taken orally, promotes penile erection through increased intracellular cGMP in response to sexual stimulation, potentiating smooth muscle relaxation.",
+                        "volume": "62",
+                        "mesh_term": [
+                            {
+                                "mesh_ui": "D007700",
+                                "mesh_heading": "Kinetics"
+                            },
+                            {
+                                "mesh_ui": "D010879",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Piperazines"
+                            },
+                            {
+                                "mesh_ui": "D006801",
+                                "mesh_heading": "Humans"
+                            },
+                            {
+                                "mesh_ui": "D000068677",
+                                "mesh_heading": "Sildenafil Citrate"
+                            },
+                            {
+                                "mesh_ui": "D011687",
+                                "mesh_heading": "Purines"
+                            },
+                            {
+                                "mesh_ui": "D006152",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "Cyclic GMP"
+                            },
+                            {
+                                "mesh_ui": "D003600",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Cytosol"
+                            },
+                            {
+                                "mesh_ui": "D009130",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Muscle, Smooth"
+                            },
+                            {
+                                "mesh_ui": "D013450",
+                                "mesh_heading": "Sulfones"
+                            },
+                            {
+                                "mesh_ui": "D010413",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Penis"
+                            },
+                            {
+                                "mesh_ui": "D009599",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Nitroprusside"
+                            },
+                            {
+                                "mesh_ui": "D011688",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Purinones"
+                            },
+                            {
+                                "mesh_ui": "D006868",
+                                "mesh_heading": "Hydrolysis"
+                            },
+                            {
+                                "mesh_ui": "D008297",
+                                "mesh_heading": "Male"
+                            },
+                            {
+                                "mesh_ui": "D015106",
+                                "qualifier_ui": "Q000037",
+                                "qualifier_name": "antagonists & inhibitors",
+                                "mesh_heading": "3',5'-Cyclic-GMP Phosphodiesterases"
+                            },
+                            {
+                                "mesh_ui": "D002478",
+                                "mesh_heading": "Cells, Cultured"
+                            },
+                            {
+                                "mesh_ui": "D004791",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Enzyme Inhibitors"
+                            },
+                            {
+                                "mesh_ui": "D002458",
+                                "mesh_heading": "Cell Fractionation"
+                            }
+                        ],
+                        "has_funding": true,
+                        "start_page": 0,
+                        "chemical": [
+                            {
+                                "substance_name": "Nitroprusside",
+                                "mesh_ui": "D009599",
+                                "registry_number": "169D1260KM"
+                            },
+                            {
+                                "substance_name": "Piperazines",
+                                "mesh_ui": "D010879",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Purinones",
+                                "mesh_ui": "D011688",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Enzyme Inhibitors",
+                                "mesh_ui": "D004791",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Cyclic GMP",
+                                "mesh_ui": "D006152",
+                                "registry_number": "H2D2X058MU"
+                            },
+                            {
+                                "substance_name": "Purines",
+                                "mesh_ui": "D011687",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "zaprinast",
+                                "mesh_ui": "C011145",
+                                "registry_number": "GXT25D5DS0"
+                            },
+                            {
+                                "substance_name": "Sildenafil Citrate",
+                                "mesh_ui": "D000068677",
+                                "registry_number": "BW9B0ZE037"
+                            },
+                            {
+                                "substance_name": "3',5'-Cyclic-GMP Phosphodiesterases",
+                                "mesh_ui": "D015106",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Sulfones",
+                                "mesh_ui": "D013450",
+                                "registry_number": "0"
+                            }
+                        ],
+                        "is_referenced_by_patent": true,
+                        "has_keyword": false,
+                        "reference_count": 0
+                    },
+                    "sort": [
+                        14
+                    ]
+                },
+                {
+                    "_index": "works",
+                    "_type": "work",
+                    "_id": "12595343",
+                    "_score": null,
+                    "_source": {
+                        "has_conflicting_metadata": false,
+                        "clinical_trial": [],
+                        "citation_id": [
+                            "10.1161/01.res.0000056757.93432.8c",
+                            "12595343"
+                        ],
+                        "has_chemical": true,
+                        "source": {
+                            "country": "United States",
+                            "asjc_code": [
+                                "1314",
+                                "2705"
+                            ],
+                            "issn": [
+                                "15244571",
+                                "00097330"
+                            ],
+                            "publisher": "Lippincott Williams and Wilkins",
+                            "nlmid": [
+                                "0047103"
+                            ],
+                            "title": "Circulation research",
+                            "type": "Journal",
+                            "ssid": [
+                                "23063"
+                            ],
+                            "asjc_subject": [
+                                "Physiology",
+                                "Cardiology and Cardiovascular Medicine"
+                            ]
+                        },
+                        "title": "Nitric oxide enhances angiogenesis via the synthesis of vascular endothelial growth factor and cGMP after stroke in the rat.",
+                        "has_mesh_term": true,
+                        "referenced_by_patent_count": 13,
+                        "has_clinical_trial": false,
+                        "has_affiliation": true,
+                        "date_published": "2003-02-21",
+                        "crossref_reference_count": 0,
+                        "has_abstract": true,
+                        "id": "12595343",
+                        "keyword": [],
+                        "year_published": 2003,
+                        "crossref_referenced_by_count": 163,
+                        "funding": [
+                            {
+                                "country": "United States",
+                                "funding_id": "NS43324",
+                                "organisation": "NINDS NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "P01 NS23393",
+                                "organisation": "NINDS NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "R01 NS35504",
+                                "organisation": "NINDS NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "R01HL64766",
+                                "organisation": "NHLBI NIH HHS"
+                            }
+                        ],
+                        "issue": "3",
+                        "end_page": 313,
+                        "author": [
+                            {
+                                "affiliation": [
+                                    "Department of Neurology, Henry Ford Health Sciences Center, Detroit, Mich, USA."
+                                ],
+                                "initials": "R",
+                                "normalised_name": "Zhang R",
+                                "last_name": "Zhang",
+                                "first_name": "Ruilan"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "L",
+                                "normalised_name": "Wang L",
+                                "last_name": "Wang",
+                                "first_name": "Lei"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "L",
+                                "normalised_name": "Zhang L",
+                                "last_name": "Zhang",
+                                "first_name": "Li"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "J",
+                                "normalised_name": "Chen J",
+                                "last_name": "Chen",
+                                "first_name": "Jieli"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "Z",
+                                "normalised_name": "Zhu Z",
+                                "last_name": "Zhu",
+                                "first_name": "Zhenping"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "Z",
+                                "normalised_name": "Zhang Z",
+                                "last_name": "Zhang",
+                                "first_name": "Zhenggang"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "M",
+                                "normalised_name": "Chopp M",
+                                "last_name": "Chopp",
+                                "first_name": "Michael"
+                            }
+                        ],
+                        "citation_id_type": [
+                            "pmid",
+                            "doi"
+                        ],
+                        "abstract": "We investigated the effects of NO on angiogenesis and the synthesis of vascular endothelial growth factor (VEGF) in a model of focal embolic cerebral ischemia in the rat. Compared with control rats, systemic administration of an NO donor, DETANONOate, to rats 24 hours after stroke significantly enlarged vascular perimeters and increased the number of proliferated cerebral endothelial cells and the numbers of newly generated vessels in the ischemic boundary regions, as evaluated by 3-dimensional laser scanning confocal microscopy. Treatment with DETANONOate significantly increased VEGF levels in the ischemic boundary regions as measured by ELISA. A capillary-like tube formation assay was used to investigate whether DETANONOate increases angiogenesis in ischemic brain via activation of soluble guanylate cyclase. DETANONOate-induced capillary-like tube formation was completely inhibited by a soluble guanylate cyclase inhibitor, 1H-[ 1, 2, 4 ]oxadiazolo[ 4, 3-a ]quinoxaline-1-one (ODQ). Blocking VEGF activity by a neutralized antibody against VEGF receptor 2 significantly attenuated DETANONOate-induced capillary-like tube formation. Moreover, systemic administration of a phosphodiesterase type 5 inhibitor (Sildenafil) to rats 24 hours after stroke significantly increased angiogenesis in the ischemic boundary regions. Sildenafil and an analog of cyclic guanosine monophosphate (cGMP) also induced capillary-like tube formation. These findings suggest that exogenous NO enhances angiogenesis in ischemic brain, which is mediated by the NO/cGMP pathway. Furthermore, our data suggest that NO, in part via VEGF, may enhance angiogenesis in ischemic brain.",
+                        "volume": "92",
+                        "mesh_term": [
+                            {
+                                "mesh_ui": "D004195",
+                                "mesh_heading": "Disease Models, Animal"
+                            },
+                            {
+                                "mesh_ui": "D020521",
+                                "qualifier_ui": "Q000188",
+                                "qualifier_name": "drug therapy",
+                                "mesh_heading": "Stroke"
+                            },
+                            {
+                                "mesh_ui": "D000068677",
+                                "mesh_heading": "Sildenafil Citrate"
+                            },
+                            {
+                                "mesh_ui": "D000818",
+                                "mesh_heading": "Animals"
+                            },
+                            {
+                                "mesh_ui": "D008297",
+                                "mesh_heading": "Male"
+                            },
+                            {
+                                "mesh_ui": "D020030",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Nitric Oxide Donors"
+                            },
+                            {
+                                "mesh_ui": "D013450",
+                                "mesh_heading": "Sulfones"
+                            },
+                            {
+                                "mesh_ui": "D042461",
+                                "mesh_heading": "Vascular Endothelial Growth Factor A"
+                            },
+                            {
+                                "mesh_ui": "D009603",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Nitroso Compounds"
+                            },
+                            {
+                                "mesh_ui": "D054706",
+                                "mesh_heading": "Cyclic Nucleotide Phosphodiesterases, Type 5"
+                            },
+                            {
+                                "mesh_ui": "D009569",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "Nitric Oxide"
+                            },
+                            {
+                                "mesh_ui": "D042442",
+                                "mesh_heading": "Vascular Endothelial Growth Factors"
+                            },
+                            {
+                                "mesh_ui": "D017208",
+                                "mesh_heading": "Rats, Wistar"
+                            },
+                            {
+                                "mesh_ui": "D036341",
+                                "qualifier_ui": "Q000096",
+                                "qualifier_name": "biosynthesis",
+                                "mesh_heading": "Intercellular Signaling Peptides and Proteins"
+                            },
+                            {
+                                "mesh_ui": "D001973",
+                                "mesh_heading": "Bromodeoxyuridine"
+                            },
+                            {
+                                "mesh_ui": "D004730",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Endothelium, Vascular"
+                            },
+                            {
+                                "mesh_ui": "D051381",
+                                "mesh_heading": "Rats"
+                            },
+                            {
+                                "mesh_ui": "D004791",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Enzyme Inhibitors"
+                            },
+                            {
+                                "mesh_ui": "D001921",
+                                "qualifier_ui": "Q000098",
+                                "qualifier_name": "blood supply",
+                                "mesh_heading": "Brain"
+                            },
+                            {
+                                "mesh_ui": "D000071756",
+                                "mesh_heading": "Soluble Guanylyl Cyclase"
+                            },
+                            {
+                                "mesh_ui": "D002455",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Cell Division"
+                            },
+                            {
+                                "mesh_ui": "D018160",
+                                "qualifier_ui": "Q000037",
+                                "qualifier_name": "antagonists & inhibitors",
+                                "mesh_heading": "Receptors, Cytoplasmic and Nuclear"
+                            },
+                            {
+                                "mesh_ui": "D008222",
+                                "qualifier_ui": "Q000096",
+                                "qualifier_name": "biosynthesis",
+                                "mesh_heading": "Lymphokines"
+                            },
+                            {
+                                "mesh_ui": "D040301",
+                                "qualifier_ui": "Q000037",
+                                "qualifier_name": "antagonists & inhibitors",
+                                "mesh_heading": "Vascular Endothelial Growth Factor Receptor-2"
+                            },
+                            {
+                                "mesh_ui": "D015106",
+                                "qualifier_ui": "Q000037",
+                                "qualifier_name": "antagonists & inhibitors",
+                                "mesh_heading": "3',5'-Cyclic-GMP Phosphodiesterases"
+                            },
+                            {
+                                "mesh_ui": "D016228",
+                                "qualifier_ui": "Q000096",
+                                "qualifier_name": "biosynthesis",
+                                "mesh_heading": "Endothelial Growth Factors"
+                            },
+                            {
+                                "mesh_ui": "D018919",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Neovascularization, Physiologic"
+                            },
+                            {
+                                "mesh_ui": "D006152",
+                                "qualifier_ui": "Q000096",
+                                "qualifier_name": "biosynthesis",
+                                "mesh_heading": "Cyclic GMP"
+                            },
+                            {
+                                "mesh_ui": "D006162",
+                                "mesh_heading": "Guanylate Cyclase"
+                            },
+                            {
+                                "mesh_ui": "D011687",
+                                "mesh_heading": "Purines"
+                            },
+                            {
+                                "mesh_ui": "D010879",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Piperazines"
+                            }
+                        ],
+                        "has_funding": true,
+                        "start_page": 308,
+                        "chemical": [
+                            {
+                                "substance_name": "Vascular Endothelial Growth Factor Receptor-2",
+                                "mesh_ui": "D040301",
+                                "registry_number": "EC 2.7.10.1"
+                            },
+                            {
+                                "substance_name": "Pde5a protein, rat",
+                                "mesh_ui": "C517384",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Sulfones",
+                                "mesh_ui": "D013450",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Vascular Endothelial Growth Factor A",
+                                "mesh_ui": "D042461",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "2,2'-(hydroxynitrosohydrazono)bis-ethanamine",
+                                "mesh_ui": "C094210",
+                                "registry_number": "146724-94-9"
+                            },
+                            {
+                                "substance_name": "Nitroso Compounds",
+                                "mesh_ui": "D009603",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Cyclic Nucleotide Phosphodiesterases, Type 5",
+                                "mesh_ui": "D054706",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Nitric Oxide",
+                                "mesh_ui": "D009569",
+                                "registry_number": "31C4KY9ESH"
+                            },
+                            {
+                                "substance_name": "Vascular Endothelial Growth Factors",
+                                "mesh_ui": "D042442",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Intercellular Signaling Peptides and Proteins",
+                                "mesh_ui": "D036341",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Bromodeoxyuridine",
+                                "mesh_ui": "D001973",
+                                "registry_number": "G34N38R2N1"
+                            },
+                            {
+                                "substance_name": "Soluble Guanylyl Cyclase",
+                                "mesh_ui": "D000071756",
+                                "registry_number": "EC 4.6.1.2"
+                            },
+                            {
+                                "substance_name": "Receptors, Cytoplasmic and Nuclear",
+                                "mesh_ui": "D018160",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Lymphokines",
+                                "mesh_ui": "D008222",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Sildenafil Citrate",
+                                "mesh_ui": "D000068677",
+                                "registry_number": "BW9B0ZE037"
+                            },
+                            {
+                                "substance_name": "3',5'-Cyclic-GMP Phosphodiesterases",
+                                "mesh_ui": "D015106",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Endothelial Growth Factors",
+                                "mesh_ui": "D016228",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Enzyme Inhibitors",
+                                "mesh_ui": "D004791",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Cyclic GMP",
+                                "mesh_ui": "D006152",
+                                "registry_number": "H2D2X058MU"
+                            },
+                            {
+                                "substance_name": "Guanylate Cyclase",
+                                "mesh_ui": "D006162",
+                                "registry_number": "EC 4.6.1.2"
+                            },
+                            {
+                                "substance_name": "Purines",
+                                "mesh_ui": "D011687",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Nitric Oxide Donors",
+                                "mesh_ui": "D020030",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Piperazines",
+                                "mesh_ui": "D010879",
+                                "registry_number": "0"
+                            }
+                        ],
+                        "is_referenced_by_patent": true,
+                        "has_keyword": false,
+                        "reference_count": 0
+                    },
+                    "sort": [
+                        13
+                    ]
+                },
+                {
+                    "_index": "works",
+                    "_type": "work",
+                    "_id": "10987609",
+                    "_score": null,
+                    "_source": {
+                        "has_conflicting_metadata": false,
+                        "clinical_trial": [],
+                        "citation_id": [
+                            "10987609",
+                            "10.1016/s0735-1097(00)00790-7"
+                        ],
+                        "has_chemical": true,
+                        "source": {
+                            "country": "Netherlands",
+                            "asjc_code": [
+                                "2705"
+                            ],
+                            "issn": [
+                                "07351097"
+                            ],
+                            "publisher": "Elsevier USA",
+                            "nlmid": [
+                                "8301365"
+                            ],
+                            "title": "Journal of the American College of Cardiology",
+                            "type": "Journal",
+                            "ssid": [
+                                "22401"
+                            ],
+                            "asjc_subject": [
+                                "Cardiology and Cardiovascular Medicine"
+                            ]
+                        },
+                        "title": "Acute type 5 phosphodiesterase inhibition with sildenafil enhances flow-mediated vasodilation in patients with chronic heart failure.",
+                        "has_mesh_term": true,
+                        "referenced_by_patent_count": 12,
+                        "has_clinical_trial": false,
+                        "has_affiliation": true,
+                        "date_published": "2000-09-01",
+                        "crossref_reference_count": 38,
+                        "has_abstract": true,
+                        "id": "10987609",
+                        "keyword": [],
+                        "year_published": 2000,
+                        "crossref_referenced_by_count": 153,
+                        "funding": [
+                            {
+                                "country": "United States",
+                                "funding_id": "K24 HL04024",
+                                "organisation": "NHLBI NIH HHS"
+                            }
+                        ],
+                        "issue": "3",
+                        "end_page": 851,
+                        "author": [
+                            {
+                                "affiliation": [
+                                    "Division of Circulatory Physiology, Columbia Presbyterian Medical Center, New York, New York 10032, USA. sdk8@columbia.edu"
+                                ],
+                                "initials": "SD",
+                                "normalised_name": "Katz SD",
+                                "last_name": "Katz",
+                                "first_name": "S D"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "K",
+                                "normalised_name": "Balidemaj K",
+                                "last_name": "Balidemaj",
+                                "first_name": "K"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "S",
+                                "normalised_name": "Homma S",
+                                "last_name": "Homma",
+                                "first_name": "S"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "H",
+                                "normalised_name": "Wu H",
+                                "last_name": "Wu",
+                                "first_name": "H"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "J",
+                                "normalised_name": "Wang J",
+                                "last_name": "Wang",
+                                "first_name": "J"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "S",
+                                "normalised_name": "Maybaum S",
+                                "last_name": "Maybaum",
+                                "first_name": "S"
+                            }
+                        ],
+                        "citation_id_type": [
+                            "pmid",
+                            "doi"
+                        ],
+                        "abstract": "<AbstractText Label=\"OBJECTIVES\" NlmCategory=\"OBJECTIVE\">To determine the acute effects of type 5 phosphodiesterase inhibition with sildenafil on flow-mediated vasodilation in the brachial artery of patients with chronic heart failure.</AbstractText>\n          <AbstractText Label=\"BACKGROUND\" NlmCategory=\"BACKGROUND\">Impaired endothelium-dependent, flow-mediated vasodilation in patients with heart failure is partly attributable to hyporesponsiveness of cyclic guanosine monophosphate (cGMP) mediated vasorelaxation effector mechanisms in vascular smooth muscle. The effect of inhibition of cGMP degradation with sildenafil, a specific type 5 cGMP phosphodiesterase inhibitor, on flow-mediated dilation in heart failure is unknown.</AbstractText>\n          <AbstractText Label=\"METHODS\" NlmCategory=\"METHODS\">Flow-mediated vasodilation after release of 1, 3 and 5 min of transient arterial occlusion was measured in the brachial artery with high resolution two-dimensional ultrasound imaging in 48 patients with chronic heart failure before and 1 h after randomized, double-blind assignment to a single oral dose of sildenafil 12.5, 25 or 50 mg or matching placebo.</AbstractText>\n          <AbstractText Label=\"RESULTS\" NlmCategory=\"RESULTS\">In response to oral administration of a single dose of study drug, the change in flow-mediated vasodilation after release of 1, 3 and 5 min of arterial occlusion was significantly greater in patients receiving sildenafil 25 mg (3.3 +/- 1.9, 3.8 +/- 1.8 and 4.0 +/- 1.8%, respectively, p &lt; 0.05) and patients receiving sildenafil 50 mg (3.7 +/- 1.3, 4.1 +/- 1.1, 3.9 +/- 1.3%, respectively, p &lt; 0.05) than that of patients receiving placebo (0.7 +/- 1.1, 0.2 +/- 1.2, 0.6 +/- 0.8%, respectively).</AbstractText>\n          <AbstractText Label=\"CONCLUSIONS\" NlmCategory=\"CONCLUSIONS\">Acute type 5 phosphodiesterase inhibition with sildenafil 25 and 50 mg increases endothelium-dependent, flow-mediated vasodilation in patients with chronic heart failure when compared with placebo.</AbstractText>",
+                        "volume": "36",
+                        "mesh_term": [
+                            {
+                                "mesh_ui": "D001775",
+                                "mesh_heading": "Blood Circulation"
+                            },
+                            {
+                                "mesh_ui": "D014664",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Vasodilation"
+                            },
+                            {
+                                "mesh_ui": "D012016",
+                                "mesh_heading": "Reference Values"
+                            },
+                            {
+                                "mesh_ui": "D004311",
+                                "mesh_heading": "Double-Blind Method"
+                            },
+                            {
+                                "mesh_ui": "D002908",
+                                "mesh_heading": "Chronic Disease"
+                            },
+                            {
+                                "mesh_ui": "D000068677",
+                                "mesh_heading": "Sildenafil Citrate"
+                            },
+                            {
+                                "mesh_ui": "D008297",
+                                "mesh_heading": "Male"
+                            },
+                            {
+                                "mesh_ui": "D008875",
+                                "mesh_heading": "Middle Aged"
+                            },
+                            {
+                                "mesh_ui": "D001783",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Blood Flow Velocity"
+                            },
+                            {
+                                "mesh_ui": "D013450",
+                                "mesh_heading": "Sulfones"
+                            },
+                            {
+                                "mesh_ui": "D005260",
+                                "mesh_heading": "Female"
+                            },
+                            {
+                                "mesh_ui": "D010726",
+                                "qualifier_ui": "Q000009",
+                                "qualifier_name": "adverse effects",
+                                "mesh_heading": "Phosphodiesterase Inhibitors"
+                            },
+                            {
+                                "mesh_ui": "D010727",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "Phosphoric Diester Hydrolases"
+                            },
+                            {
+                                "mesh_ui": "D006801",
+                                "mesh_heading": "Humans"
+                            },
+                            {
+                                "mesh_ui": "D011687",
+                                "mesh_heading": "Purines"
+                            },
+                            {
+                                "mesh_ui": "D002303",
+                                "qualifier_ui": "Q000188",
+                                "qualifier_name": "drug therapy",
+                                "mesh_heading": "Cardiac Output, Low"
+                            },
+                            {
+                                "mesh_ui": "D010879",
+                                "qualifier_ui": "Q000009",
+                                "qualifier_name": "adverse effects",
+                                "mesh_heading": "Piperazines"
+                            },
+                            {
+                                "mesh_ui": "D007527",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "Isoenzymes"
+                            }
+                        ],
+                        "has_funding": true,
+                        "start_page": 845,
+                        "chemical": [
+                            {
+                                "substance_name": "Piperazines",
+                                "mesh_ui": "D010879",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Phosphodiesterase Inhibitors",
+                                "mesh_ui": "D010726",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Phosphoric Diester Hydrolases",
+                                "mesh_ui": "D010727",
+                                "registry_number": "EC 3.1.4.-"
+                            },
+                            {
+                                "substance_name": "Isoenzymes",
+                                "mesh_ui": "D007527",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Sildenafil Citrate",
+                                "mesh_ui": "D000068677",
+                                "registry_number": "BW9B0ZE037"
+                            },
+                            {
+                                "substance_name": "Purines",
+                                "mesh_ui": "D011687",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Sulfones",
+                                "mesh_ui": "D013450",
+                                "registry_number": "0"
+                            }
+                        ],
+                        "is_referenced_by_patent": true,
+                        "has_keyword": false,
+                        "reference_count": 0
+                    },
+                    "sort": [
+                        12
+                    ]
+                },
+                {
+                    "_index": "works",
+                    "_type": "work",
+                    "_id": "12411660",
+                    "_score": null,
+                    "_source": {
+                        "has_conflicting_metadata": false,
+                        "clinical_trial": [],
+                        "citation_id": [
+                            "12411660",
+                            "10.1161/01.str.0000034399.95249.59"
+                        ],
+                        "has_chemical": true,
+                        "source": {
+                            "country": "United States",
+                            "asjc_code": [
+                                "2728",
+                                "2902",
+                                "2705"
+                            ],
+                            "issn": [
+                                "00392499",
+                                "15244628"
+                            ],
+                            "publisher": "Lippincott Williams and Wilkins",
+                            "nlmid": [
+                                "0235266"
+                            ],
+                            "title": "Stroke",
+                            "type": "Journal",
+                            "ssid": [
+                                "20618"
+                            ],
+                            "asjc_subject": [
+                                "Advanced and Specialised Nursing",
+                                "Clinical Neurology",
+                                "Cardiology and Cardiovascular Medicine"
+                            ]
+                        },
+                        "title": "Sildenafil (Viagra) induces neurogenesis and promotes functional recovery after stroke in rats.",
+                        "has_mesh_term": true,
+                        "referenced_by_patent_count": 10,
+                        "has_clinical_trial": false,
+                        "has_affiliation": true,
+                        "date_published": "2002-11-01",
+                        "crossref_reference_count": 0,
+                        "has_abstract": true,
+                        "id": "12411660",
+                        "keyword": [],
+                        "year_published": 2002,
+                        "crossref_referenced_by_count": 211,
+                        "funding": [
+                            {
+                                "country": "United States",
+                                "funding_id": "P01 NS23393",
+                                "organisation": "NINDS NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "R01 NS33627",
+                                "organisation": "NINDS NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "R01HL 64766",
+                                "organisation": "NHLBI NIH HHS"
+                            }
+                        ],
+                        "issue": "11",
+                        "end_page": 2680,
+                        "author": [
+                            {
+                                "affiliation": [
+                                    "Department of Neurology, Henry Ford Health Sciences Center, Detroit, Mich, USA."
+                                ],
+                                "initials": "R",
+                                "normalised_name": "Zhang R",
+                                "last_name": "Zhang",
+                                "first_name": "Ruilan"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "Y",
+                                "normalised_name": "Wang Y",
+                                "last_name": "Wang",
+                                "first_name": "Ying"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "L",
+                                "normalised_name": "Zhang L",
+                                "last_name": "Zhang",
+                                "first_name": "Li"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "Z",
+                                "normalised_name": "Zhang Z",
+                                "last_name": "Zhang",
+                                "first_name": "Zhenggang"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "W",
+                                "normalised_name": "Tsang W",
+                                "last_name": "Tsang",
+                                "first_name": "Wayne"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "M",
+                                "normalised_name": "Lu M",
+                                "last_name": "Lu",
+                                "first_name": "Mei"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "L",
+                                "normalised_name": "Zhang L",
+                                "last_name": "Zhang",
+                                "first_name": "Lijie"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "M",
+                                "normalised_name": "Chopp M",
+                                "last_name": "Chopp",
+                                "first_name": "Michael"
+                            }
+                        ],
+                        "citation_id_type": [
+                            "pmid",
+                            "doi"
+                        ],
+                        "abstract": "<AbstractText Label=\"BACKGROUND AND PURPOSE\" NlmCategory=\"OBJECTIVE\">We tested the hypothesis that sildenafil, a phosphodiesterase type 5 (PDE5) inhibitor, promotes functional recovery and neurogenesis after stroke.</AbstractText>\n          <AbstractText Label=\"METHODS\" NlmCategory=\"METHODS\">Male Wistar rats were subjected to embolic middle cerebral artery occlusion. Sildenafil (Viagra) was administered orally for 7 consecutive days starting 2 or 24 hours after stroke onset at doses of 2 or 5 mg/kg per day. Ischemic rats administered the same volume of tap water were used as a control group. Functional outcome tests (foot-fault, adhesive removal) were performed. Rats were killed 28 days after stroke for analysis of infarct volume and newly generated cells within the subventricular zone and the dentate gyrus. Brain cGMP levels, expression of PDE5, and localized cerebral blood flow were measured in additional rats.</AbstractText>\n          <AbstractText Label=\"RESULTS\" NlmCategory=\"RESULTS\">Treatment with sildenafil significantly (P&lt;0.05) enhanced neurological recovery in all tests performed. There was no significant difference of infarct volume among the experimental groups. Treatment with sildenafil significantly (P&lt;0.05) increased numbers of bromodeoxyuridine-immunoreactive cells in the subventricular zone and the dentate gyrus and numbers of immature neurons, as indicated by betaIII-tubulin (TuJ1) immunoreactivity in the ipsilateral subventricular zone and striatum. The cortical levels of cGMP significantly increased after administration of sildenafil, and PDE5 mRNA was present in both nonischemic and ischemic brain.</AbstractText>\n          <AbstractText Label=\"CONCLUSIONS\" NlmCategory=\"CONCLUSIONS\">Sildenafil increases brain levels of cGMP, evokes neurogenesis, and reduces neurological deficits when given to rats 2 or 24 hours after stroke. These data suggest that this drug that is presently in the clinic for sexual dysfunction may have a role in promoting recovery from stroke.</AbstractText>",
+                        "volume": "33",
+                        "mesh_term": [
+                            {
+                                "mesh_ui": "D004195",
+                                "mesh_heading": "Disease Models, Animal"
+                            },
+                            {
+                                "mesh_ui": "D054706",
+                                "mesh_heading": "Cyclic Nucleotide Phosphodiesterases, Type 5"
+                            },
+                            {
+                                "mesh_ui": "D018891",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Dentate Gyrus"
+                            },
+                            {
+                                "mesh_ui": "D000068677",
+                                "mesh_heading": "Sildenafil Citrate"
+                            },
+                            {
+                                "mesh_ui": "D000818",
+                                "mesh_heading": "Animals"
+                            },
+                            {
+                                "mesh_ui": "D008297",
+                                "mesh_heading": "Male"
+                            },
+                            {
+                                "mesh_ui": "D013450",
+                                "mesh_heading": "Sulfones"
+                            },
+                            {
+                                "mesh_ui": "D010726",
+                                "qualifier_ui": "Q000627",
+                                "qualifier_name": "therapeutic use",
+                                "mesh_heading": "Phosphodiesterase Inhibitors"
+                            },
+                            {
+                                "mesh_ui": "D001522",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Behavior, Animal"
+                            },
+                            {
+                                "mesh_ui": "D016896",
+                                "mesh_heading": "Treatment Outcome"
+                            },
+                            {
+                                "mesh_ui": "D020547",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Lateral Ventricles"
+                            },
+                            {
+                                "mesh_ui": "D009474",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Neurons"
+                            },
+                            {
+                                "mesh_ui": "D017208",
+                                "mesh_heading": "Rats, Wistar"
+                            },
+                            {
+                                "mesh_ui": "D002560",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Cerebrovascular Circulation"
+                            },
+                            {
+                                "mesh_ui": "D001973",
+                                "mesh_heading": "Bromodeoxyuridine"
+                            },
+                            {
+                                "mesh_ui": "D002455",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Cell Division"
+                            },
+                            {
+                                "mesh_ui": "D003342",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Corpus Striatum"
+                            },
+                            {
+                                "mesh_ui": "D051381",
+                                "mesh_heading": "Rats"
+                            },
+                            {
+                                "mesh_ui": "D001921",
+                                "qualifier_ui": "Q000098",
+                                "qualifier_name": "blood supply",
+                                "mesh_heading": "Brain"
+                            },
+                            {
+                                "mesh_ui": "D020521",
+                                "qualifier_ui": "Q000188",
+                                "qualifier_name": "drug therapy",
+                                "mesh_heading": "Stroke"
+                            },
+                            {
+                                "mesh_ui": "D009416",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Nerve Regeneration"
+                            },
+                            {
+                                "mesh_ui": "D015106",
+                                "qualifier_ui": "Q000037",
+                                "qualifier_name": "antagonists & inhibitors",
+                                "mesh_heading": "3',5'-Cyclic-GMP Phosphodiesterases"
+                            },
+                            {
+                                "mesh_ui": "D012333",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "RNA, Messenger"
+                            },
+                            {
+                                "mesh_ui": "D020127",
+                                "qualifier_ui": "Q000187",
+                                "qualifier_name": "drug effects",
+                                "mesh_heading": "Recovery of Function"
+                            },
+                            {
+                                "mesh_ui": "D006152",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "Cyclic GMP"
+                            },
+                            {
+                                "mesh_ui": "D011687",
+                                "mesh_heading": "Purines"
+                            },
+                            {
+                                "mesh_ui": "D010879",
+                                "qualifier_ui": "Q000627",
+                                "qualifier_name": "therapeutic use",
+                                "mesh_heading": "Piperazines"
+                            },
+                            {
+                                "mesh_ui": "D002452",
+                                "mesh_heading": "Cell Count"
+                            }
+                        ],
+                        "has_funding": true,
+                        "start_page": 2675,
+                        "chemical": [
+                            {
+                                "substance_name": "Piperazines",
+                                "mesh_ui": "D010879",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Phosphodiesterase Inhibitors",
+                                "mesh_ui": "D010726",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Sulfones",
+                                "mesh_ui": "D013450",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Cyclic Nucleotide Phosphodiesterases, Type 5",
+                                "mesh_ui": "D054706",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Cyclic GMP",
+                                "mesh_ui": "D006152",
+                                "registry_number": "H2D2X058MU"
+                            },
+                            {
+                                "substance_name": "Purines",
+                                "mesh_ui": "D011687",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Pde5a protein, rat",
+                                "mesh_ui": "C517384",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Sildenafil Citrate",
+                                "mesh_ui": "D000068677",
+                                "registry_number": "BW9B0ZE037"
+                            },
+                            {
+                                "substance_name": "3',5'-Cyclic-GMP Phosphodiesterases",
+                                "mesh_ui": "D015106",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Bromodeoxyuridine",
+                                "mesh_ui": "D001973",
+                                "registry_number": "G34N38R2N1"
+                            },
+                            {
+                                "substance_name": "RNA, Messenger",
+                                "mesh_ui": "D012333",
+                                "registry_number": "0"
+                            }
+                        ],
+                        "is_referenced_by_patent": true,
+                        "has_keyword": false,
+                        "reference_count": 0
+                    },
+                    "sort": [
+                        10
+                    ]
+                },
+                {
+                    "_index": "works",
+                    "_type": "work",
+                    "_id": "10318772",
+                    "_score": null,
+                    "_source": {
+                        "has_conflicting_metadata": false,
+                        "clinical_trial": [],
+                        "citation_id": [
+                            "10318772",
+                            "10.1074/jbc.274.20.13729"
+                        ],
+                        "has_chemical": true,
+                        "source": {
+                            "country": "United States",
+                            "asjc_code": [
+                                "1307",
+                                "1303",
+                                "1312"
+                            ],
+                            "issn": [
+                                "00219258",
+                                "1083351x"
+                            ],
+                            "publisher": "American Society for Biochemistry and Molecular Biology Inc.",
+                            "nlmid": [
+                                "2985121R"
+                            ],
+                            "title": "The Journal of biological chemistry",
+                            "type": "Journal",
+                            "ssid": [
+                                "17592"
+                            ],
+                            "asjc_subject": [
+                                "Biochemistry",
+                                "Molecular Biology",
+                                "Cell Biology"
+                            ]
+                        },
+                        "title": "Cyclic GMP phosphodiesterase-5: target of sildenafil.",
+                        "has_mesh_term": true,
+                        "referenced_by_patent_count": 8,
+                        "has_clinical_trial": false,
+                        "has_affiliation": true,
+                        "date_published": "1999-05-14",
+                        "crossref_reference_count": 70,
+                        "has_abstract": false,
+                        "id": "10318772",
+                        "keyword": [],
+                        "year_published": 1999,
+                        "crossref_referenced_by_count": 260,
+                        "funding": [
+                            {
+                                "country": "United States",
+                                "funding_id": "DK40029",
+                                "organisation": "NIDDK NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "GM41269",
+                                "organisation": "NIGMS NIH HHS"
+                            }
+                        ],
+                        "issue": "20",
+                        "end_page": 13732,
+                        "author": [
+                            {
+                                "affiliation": [
+                                    "Department of Molecular Physiology and Biophysics, Vanderbilt University School of Medicine, Nashville, Tennessee 37232-0615, USA. jackie.corbin@mcmail.vanderbilt.edu"
+                                ],
+                                "initials": "JD",
+                                "normalised_name": "Corbin JD",
+                                "last_name": "Corbin",
+                                "first_name": "J D"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "SH",
+                                "normalised_name": "Francis SH",
+                                "last_name": "Francis",
+                                "first_name": "S H"
+                            }
+                        ],
+                        "citation_id_type": [
+                            "pmid",
+                            "doi"
+                        ],
+                        "volume": "274",
+                        "mesh_term": [
+                            {
+                                "mesh_ui": "D002110",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "Caffeine"
+                            },
+                            {
+                                "mesh_ui": "D000068677",
+                                "mesh_heading": "Sildenafil Citrate"
+                            },
+                            {
+                                "mesh_ui": "D000818",
+                                "mesh_heading": "Animals"
+                            },
+                            {
+                                "mesh_ui": "D008297",
+                                "mesh_heading": "Male"
+                            },
+                            {
+                                "mesh_ui": "D015106",
+                                "qualifier_ui": "Q000037",
+                                "qualifier_name": "antagonists & inhibitors",
+                                "mesh_heading": "3',5'-Cyclic-GMP Phosphodiesterases"
+                            },
+                            {
+                                "mesh_ui": "D013450",
+                                "mesh_heading": "Sulfones"
+                            },
+                            {
+                                "mesh_ui": "D010413",
+                                "qualifier_ui": "Q000098",
+                                "qualifier_name": "blood supply",
+                                "mesh_heading": "Penis"
+                            },
+                            {
+                                "mesh_ui": "D006439",
+                                "mesh_heading": "Hemodynamics"
+                            },
+                            {
+                                "mesh_ui": "D008956",
+                                "mesh_heading": "Models, Chemical"
+                            },
+                            {
+                                "mesh_ui": "D010726",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Phosphodiesterase Inhibitors"
+                            },
+                            {
+                                "mesh_ui": "D054706",
+                                "mesh_heading": "Cyclic Nucleotide Phosphodiesterases, Type 5"
+                            },
+                            {
+                                "mesh_ui": "D006152",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "Cyclic GMP"
+                            },
+                            {
+                                "mesh_ui": "D006801",
+                                "mesh_heading": "Humans"
+                            },
+                            {
+                                "mesh_ui": "D011687",
+                                "mesh_heading": "Purines"
+                            },
+                            {
+                                "mesh_ui": "D010879",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Piperazines"
+                            }
+                        ],
+                        "has_funding": true,
+                        "start_page": 13729,
+                        "chemical": [
+                            {
+                                "substance_name": "Phosphodiesterase Inhibitors",
+                                "mesh_ui": "D010726",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Caffeine",
+                                "mesh_ui": "D002110",
+                                "registry_number": "3G6A5W338E"
+                            },
+                            {
+                                "substance_name": "Piperazines",
+                                "mesh_ui": "D010879",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Cyclic Nucleotide Phosphodiesterases, Type 5",
+                                "mesh_ui": "D054706",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Cyclic GMP",
+                                "mesh_ui": "D006152",
+                                "registry_number": "H2D2X058MU"
+                            },
+                            {
+                                "substance_name": "Purines",
+                                "mesh_ui": "D011687",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Sildenafil Citrate",
+                                "mesh_ui": "D000068677",
+                                "registry_number": "BW9B0ZE037"
+                            },
+                            {
+                                "substance_name": "3',5'-Cyclic-GMP Phosphodiesterases",
+                                "mesh_ui": "D015106",
+                                "registry_number": "EC 3.1.4.35"
+                            },
+                            {
+                                "substance_name": "Sulfones",
+                                "mesh_ui": "D013450",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "PDE5A protein, human",
+                                "mesh_ui": "C517381",
+                                "registry_number": "EC 3.1.4.35"
+                            }
+                        ],
+                        "is_referenced_by_patent": true,
+                        "has_keyword": false,
+                        "reference_count": 70
+                    },
+                    "sort": [
+                        8
+                    ]
+                },
+                {
+                    "_index": "works",
+                    "_type": "work",
+                    "_id": "12574694",
+                    "_score": null,
+                    "_source": {
+                        "has_conflicting_metadata": false,
+                        "clinical_trial": [],
+                        "citation_id": [
+                            "12574694",
+                            "10.1097/00063198-200303000-00008"
+                        ],
+                        "has_chemical": true,
+                        "source": {
+                            "country": "United States",
+                            "asjc_code": [
+                                "2740"
+                            ],
+                            "issn": [
+                                "15316971",
+                                "10705287"
+                            ],
+                            "publisher": "Lippincott Williams and Wilkins",
+                            "nlmid": [
+                                "9503765"
+                            ],
+                            "title": "Current opinion in pulmonary medicine",
+                            "type": "Journal",
+                            "ssid": [
+                                "18449"
+                            ],
+                            "asjc_subject": [
+                                "Pulmonary and Respiratory Medicine"
+                            ]
+                        },
+                        "title": "Advances in the treatment of secondary pulmonary hypertension.",
+                        "has_mesh_term": true,
+                        "referenced_by_patent_count": 8,
+                        "has_clinical_trial": false,
+                        "has_affiliation": true,
+                        "date_published": "2003-03-01",
+                        "crossref_reference_count": 17,
+                        "has_abstract": true,
+                        "id": "12574694",
+                        "keyword": [],
+                        "year_published": 2003,
+                        "crossref_referenced_by_count": 20,
+                        "funding": [
+                            {
+                                "country": "United States",
+                                "funding_id": "K08 HL 03545",
+                                "organisation": "NHLBI NIH HHS"
+                            }
+                        ],
+                        "issue": "2",
+                        "end_page": 143,
+                        "author": [
+                            {
+                                "affiliation": [
+                                    "Division of Pulmonary and Critical Medicine and the Cardiovascular Research Center, Medical College of Wisconsin, Madison, 53226, USA. jmaloney@mcw.edu"
+                                ],
+                                "initials": "JP",
+                                "normalised_name": "Maloney JP",
+                                "last_name": "Maloney",
+                                "first_name": "James P"
+                            }
+                        ],
+                        "citation_id_type": [
+                            "pmid",
+                            "doi"
+                        ],
+                        "abstract": "Pulmonary hypertension (PH) occurs frequently in parenchymal lung disease and is usually correlated with increased mortality. Thus, the treatment of PH in patients with lung disease has been an active area of interest. Secondary pulmonary hypertension (SPH), whether from parenchymal lung disease or other etiologies, is more common than primary pulmonary hypertension (PPH). In 2002, two new medications, oral bosentan and subcutaneous treprostinil, were released for the treatment of pulmonary arterial hypertension (PAH). These new agents are not restricted to use in PPH, as they are approved for use in PAH in general. It is reasonable to consider the use of these medications in select patients with SPH caused by parenchymal lung disease, although these groups have not yet been studied in clinical trials. The initial hemodynamic evaluation of SPH patients, the potential use of these new medications in the context of standard care, and the assessment of response to therapy are discussed in this update. A relevant case report is used to illustrate use of these new agents in SPH, and ongoing clinical trials are reviewed. The available treatment options for patients with SPH are rapidly improving.",
+                        "volume": "9",
+                        "mesh_term": [
+                            {
+                                "mesh_ui": "D000959",
+                                "qualifier_ui": "Q000627",
+                                "qualifier_name": "therapeutic use",
+                                "mesh_heading": "Antihypertensive Agents"
+                            },
+                            {
+                                "mesh_ui": "D014665",
+                                "qualifier_ui": "Q000627",
+                                "qualifier_name": "therapeutic use",
+                                "mesh_heading": "Vasodilator Agents"
+                            },
+                            {
+                                "mesh_ui": "D011464",
+                                "qualifier_ui": "Q000031",
+                                "qualifier_name": "analogs & derivatives",
+                                "mesh_heading": "Epoprostenol"
+                            },
+                            {
+                                "mesh_ui": "D000068677",
+                                "mesh_heading": "Sildenafil Citrate"
+                            },
+                            {
+                                "mesh_ui": "D002986",
+                                "mesh_heading": "Clinical Trials as Topic"
+                            },
+                            {
+                                "mesh_ui": "D013449",
+                                "qualifier_ui": "Q000627",
+                                "qualifier_name": "therapeutic use",
+                                "mesh_heading": "Sulfonamides"
+                            },
+                            {
+                                "mesh_ui": "D006976",
+                                "qualifier_ui": "Q000188",
+                                "qualifier_name": "drug therapy",
+                                "mesh_heading": "Hypertension, Pulmonary"
+                            },
+                            {
+                                "mesh_ui": "D008875",
+                                "mesh_heading": "Middle Aged"
+                            },
+                            {
+                                "mesh_ui": "D013450",
+                                "mesh_heading": "Sulfones"
+                            },
+                            {
+                                "mesh_ui": "D005260",
+                                "mesh_heading": "Female"
+                            },
+                            {
+                                "mesh_ui": "D004452",
+                                "mesh_heading": "Echocardiography"
+                            },
+                            {
+                                "mesh_ui": "D006328",
+                                "mesh_heading": "Cardiac Catheterization"
+                            },
+                            {
+                                "mesh_ui": "D010879",
+                                "qualifier_ui": "Q000627",
+                                "qualifier_name": "therapeutic use",
+                                "mesh_heading": "Piperazines"
+                            },
+                            {
+                                "mesh_ui": "D006801",
+                                "mesh_heading": "Humans"
+                            },
+                            {
+                                "mesh_ui": "D011687",
+                                "mesh_heading": "Purines"
+                            },
+                            {
+                                "mesh_ui": "D029424",
+                                "qualifier_ui": "Q000150",
+                                "qualifier_name": "complications",
+                                "mesh_heading": "Pulmonary Disease, Chronic Obstructive"
+                            }
+                        ],
+                        "has_funding": true,
+                        "start_page": 139,
+                        "chemical": [
+                            {
+                                "substance_name": "Antihypertensive Agents",
+                                "mesh_ui": "D000959",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Vasodilator Agents",
+                                "mesh_ui": "D014665",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Piperazines",
+                                "mesh_ui": "D010879",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Epoprostenol",
+                                "mesh_ui": "D011464",
+                                "registry_number": "DCR9Z582X0"
+                            },
+                            {
+                                "substance_name": "bosentan",
+                                "mesh_ui": "C086232",
+                                "registry_number": "Q326023R30"
+                            },
+                            {
+                                "substance_name": "Sulfonamides",
+                                "mesh_ui": "D013449",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Sildenafil Citrate",
+                                "mesh_ui": "D000068677",
+                                "registry_number": "BW9B0ZE037"
+                            },
+                            {
+                                "substance_name": "Purines",
+                                "mesh_ui": "D011687",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Sulfones",
+                                "mesh_ui": "D013450",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "treprostinil",
+                                "mesh_ui": "C427248",
+                                "registry_number": "0"
+                            }
+                        ],
+                        "is_referenced_by_patent": true,
+                        "has_keyword": false,
+                        "reference_count": 0
+                    },
+                    "sort": [
+                        8
+                    ]
+                },
+                {
+                    "_index": "works",
+                    "_type": "work",
+                    "_id": "12181158",
+                    "_score": null,
+                    "_source": {
+                        "has_conflicting_metadata": false,
+                        "clinical_trial": [],
+                        "citation_id": [
+                            "10.1152/ajpheart.00324.2002",
+                            "12181158"
+                        ],
+                        "has_chemical": true,
+                        "source": {
+                            "country": "United States",
+                            "asjc_code": [
+                                "1314",
+                                "2737",
+                                "2705"
+                            ],
+                            "issn": [
+                                "03636135",
+                                "15221539"
+                            ],
+                            "publisher": "American Physiological Society",
+                            "nlmid": [
+                                "100901228"
+                            ],
+                            "title": "American journal of physiology. Heart and circulatory physiology",
+                            "type": "Journal",
+                            "ssid": [
+                                "23311"
+                            ],
+                            "asjc_subject": [
+                                "Physiology (medical)",
+                                "Physiology",
+                                "Cardiology and Cardiovascular Medicine"
+                            ]
+                        },
+                        "title": "Sildenafil (Viagra) induces powerful cardioprotective effect via opening of mitochondrial K(ATP) channels in rabbits.",
+                        "has_mesh_term": true,
+                        "referenced_by_patent_count": 8,
+                        "has_clinical_trial": false,
+                        "has_affiliation": true,
+                        "date_published": "2002-09-01",
+                        "crossref_reference_count": 0,
+                        "has_abstract": true,
+                        "id": "12181158",
+                        "keyword": [],
+                        "year_published": 2002,
+                        "crossref_referenced_by_count": 110,
+                        "funding": [
+                            {
+                                "country": "United States",
+                                "funding_id": "HL-51045",
+                                "organisation": "NHLBI NIH HHS"
+                            },
+                            {
+                                "country": "United States",
+                                "funding_id": "HL-59469",
+                                "organisation": "NHLBI NIH HHS"
+                            }
+                        ],
+                        "issue": "3",
+                        "end_page": 9,
+                        "author": [
+                            {
+                                "affiliation": [
+                                    "Division of Cardiology, Department of Medicine, Medical College of Virginia, Virginia Commonwealth University, Richmond, Virginia 23298, USA."
+                                ],
+                                "initials": "R",
+                                "normalised_name": "Ockaili R",
+                                "last_name": "Ockaili",
+                                "first_name": "Ramzi"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "F",
+                                "normalised_name": "Salloum F",
+                                "last_name": "Salloum",
+                                "first_name": "Fadi"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "J",
+                                "normalised_name": "Hawkins J",
+                                "last_name": "Hawkins",
+                                "first_name": "John"
+                            },
+                            {
+                                "affiliation": [],
+                                "initials": "RC",
+                                "normalised_name": "Kukreja RC",
+                                "last_name": "Kukreja",
+                                "first_name": "Rakesh C"
+                            }
+                        ],
+                        "citation_id_type": [
+                            "pmid",
+                            "doi"
+                        ],
+                        "abstract": "Sildenafil citrate (Viagra) is the pharmacological agent used to treat erectile dysfunction in men. Because this drug has a vasodilatory effect, we hypothesized that such an action may induce a preconditioning-like cardioprotective effect via opening of mitochondrial ATP-sensitive K (K(ATP)) channels. Rabbits were treated with sildenafil citrate (0.7 mg/kg iv) either 30 min (acute phase) or 24 h (delayed phase) before 30 min of ischemia and 3 h of reperfusion. Mitochondrial K(ATP) channel blocker 5-hydroxydecanoate (5-HD, 5 mg/kg iv) was given 10 min before ischemia-reperfusion. Infarct size was measured by tetrazolium staining. Sildenafil caused reduction in arterial blood pressure within 2 min of treatment, which returned to nearly baseline levels 3 min later. The infarct size (% risk area, means +/- SE) reduced from 33.8 +/- 1.7 in control rabbits to 10.8 +/- 0.9 during the acute phase (68% reduction, P < 0.05) and 19.9 +/- 2.0 during the delayed phase (41% reduction, P < 0.05). 5-HD abolished protection with an increase in infarct size to 35.6 +/- 0.4% and 36.8 +/- 1.6% during the acute and delayed phase, respectively (P < 0.05). Similar acute and delayed cardioprotective effects were observed when sildenafil was administered orally. Systemic hemodynamics also decreased after oral administration of the drug. However, these changes were mild and occurred slowly. For the first time, we demonstrate that sildenafil induces acute and delayed protective effects against ischemia-reperfusion injury, which are mediated by opening of mitochondrial K(ATP) channels.",
+                        "volume": "283",
+                        "mesh_term": [
+                            {
+                                "mesh_ui": "D014665",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Vasodilator Agents"
+                            },
+                            {
+                                "mesh_ui": "D000068677",
+                                "mesh_heading": "Sildenafil Citrate"
+                            },
+                            {
+                                "mesh_ui": "D000818",
+                                "mesh_heading": "Animals"
+                            },
+                            {
+                                "mesh_ui": "D008297",
+                                "mesh_heading": "Male"
+                            },
+                            {
+                                "mesh_ui": "D009203",
+                                "qualifier_ui": "Q000188",
+                                "qualifier_name": "drug therapy",
+                                "mesh_heading": "Myocardial Infarction"
+                            },
+                            {
+                                "mesh_ui": "D011817",
+                                "mesh_heading": "Rabbits"
+                            },
+                            {
+                                "mesh_ui": "D008565",
+                                "qualifier_ui": "Q000378",
+                                "qualifier_name": "metabolism",
+                                "mesh_heading": "Membrane Proteins"
+                            },
+                            {
+                                "mesh_ui": "D015428",
+                                "qualifier_ui": "Q000188",
+                                "qualifier_name": "drug therapy",
+                                "mesh_heading": "Myocardial Reperfusion Injury"
+                            },
+                            {
+                                "mesh_ui": "D015221",
+                                "mesh_heading": "Potassium Channels"
+                            },
+                            {
+                                "mesh_ui": "D007275",
+                                "mesh_heading": "Injections, Intravenous"
+                            },
+                            {
+                                "mesh_ui": "D000284",
+                                "mesh_heading": "Administration, Oral"
+                            },
+                            {
+                                "mesh_ui": "D002316",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Cardiotonic Agents"
+                            },
+                            {
+                                "mesh_ui": "D013450",
+                                "mesh_heading": "Sulfones"
+                            },
+                            {
+                                "mesh_ui": "D011687",
+                                "mesh_heading": "Purines"
+                            },
+                            {
+                                "mesh_ui": "D010879",
+                                "qualifier_ui": "Q000494",
+                                "qualifier_name": "pharmacology",
+                                "mesh_heading": "Piperazines"
+                            }
+                        ],
+                        "has_funding": true,
+                        "start_page": 0,
+                        "chemical": [
+                            {
+                                "substance_name": "Vasodilator Agents",
+                                "mesh_ui": "D014665",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Membrane Proteins",
+                                "mesh_ui": "D008565",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Cardiotonic Agents",
+                                "mesh_ui": "D002316",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Sulfones",
+                                "mesh_ui": "D013450",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Sildenafil Citrate",
+                                "mesh_ui": "D000068677",
+                                "registry_number": "BW9B0ZE037"
+                            },
+                            {
+                                "substance_name": "Potassium Channels",
+                                "mesh_ui": "D015221",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "mitochondrial K(ATP) channel",
+                                "mesh_ui": "C117780",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Purines",
+                                "mesh_ui": "D011687",
+                                "registry_number": "0"
+                            },
+                            {
+                                "substance_name": "Piperazines",
+                                "mesh_ui": "D010879",
+                                "registry_number": "0"
+                            }
+                        ],
+                        "is_referenced_by_patent": true,
+                        "has_keyword": false,
+                        "reference_count": 0
+                    },
+                    "sort": [
+                        8
+                    ]
+                }
+            ]
+        }
+    },
+    "view": "SCHOLAR",
+    "joiner_limit": 50000,
+    "queries": {
+        "SCHOLAR": {
+            "searchType": "SCHOLAR",
+            "unjoinedResultSize": 0,
+            "joinOptimisedResultSize": 0,
+            "joinResultSize": 0,
+            "searchId": "geQrgzw5vNB8HdZJwX8TFXJBSjGobhLrBoAWpYdXCvvR8BLhk2YApDO9P1Jwtrrm",
+            "joined": false,
+            "capped": false
+        }
+    },
+    "search_stats": {
+        "created": 1518577833.684000000,
+        "completed": 1518577835.299000000,
+        "status": "COMPLETE",
+        "timings": {
+            "received": 0,
+            "resolving": 0,
+            "joining": 7,
+            "searching": 7,
+            "complete": 1615
+        },
+        "took": 1615
+    }
+}

@@ -1,0 +1,568 @@
+{
+    "query_result": {
+        "took": 0,
+        "timed_out": false,
+        "_shards": {
+            "total": 1,
+            "successful": 1,
+            "failed": 0
+        },
+        "hits": {
+            "total": 561,
+            "max_score": 0.0,
+            "hits": []
+        },
+        "aggregations": {
+            "funding.organisation.keyword": {
+                "doc_count_error_upper_bound": 0,
+                "sum_other_doc_count": 371,
+                "buckets": [
+                    {
+                        "key": "NHLBI NIH HHS",
+                        "doc_count": 196
+                    },
+                    {
+                        "key": "NIDDK NIH HHS",
+                        "doc_count": 96
+                    },
+                    {
+                        "key": "NCRR NIH HHS",
+                        "doc_count": 47
+                    },
+                    {
+                        "key": "NCI NIH HHS",
+                        "doc_count": 38
+                    },
+                    {
+                        "key": "NINDS NIH HHS",
+                        "doc_count": 29
+                    },
+                    {
+                        "key": "NIGMS NIH HHS",
+                        "doc_count": 28
+                    },
+                    {
+                        "key": "NICHD NIH HHS",
+                        "doc_count": 25
+                    },
+                    {
+                        "key": "NCATS NIH HHS",
+                        "doc_count": 22
+                    },
+                    {
+                        "key": "NIA NIH HHS",
+                        "doc_count": 19
+                    },
+                    {
+                        "key": "British Heart Foundation",
+                        "doc_count": 17
+                    }
+                ]
+            },
+            "sum_referenced_by_patent_count": {
+                "value": 317.0
+            },
+            "source.asjc_subject": {
+                "doc_count_error_upper_bound": 0,
+                "sum_other_doc_count": 680,
+                "buckets": [
+                    {
+                        "key": "Cardiology and Cardiovascular Medicine",
+                        "doc_count": 109
+                    },
+                    {
+                        "key": "General Medicine",
+                        "doc_count": 90
+                    },
+                    {
+                        "key": "Pharmacology",
+                        "doc_count": 67
+                    },
+                    {
+                        "key": "Physiology",
+                        "doc_count": 56
+                    },
+                    {
+                        "key": "Physiology (medical)",
+                        "doc_count": 52
+                    },
+                    {
+                        "key": "Molecular Biology",
+                        "doc_count": 49
+                    },
+                    {
+                        "key": "Pulmonary and Respiratory Medicine",
+                        "doc_count": 48
+                    },
+                    {
+                        "key": "Cell Biology",
+                        "doc_count": 46
+                    },
+                    {
+                        "key": "Urology",
+                        "doc_count": 42
+                    },
+                    {
+                        "key": "Biochemistry",
+                        "doc_count": 38
+                    }
+                ]
+            },
+            "author.full_name": {
+                "doc_count_error_upper_bound": 0,
+                "sum_other_doc_count": 3604,
+                "buckets": [
+                    {
+                        "key": "Kass DA",
+                        "doc_count": 22
+                    },
+                    {
+                        "key": "Kukreja RC",
+                        "doc_count": 22
+                    },
+                    {
+                        "key": "Francis SH",
+                        "doc_count": 20
+                    },
+                    {
+                        "key": "Corbin JD",
+                        "doc_count": 19
+                    },
+                    {
+                        "key": "Chopp M",
+                        "doc_count": 16
+                    },
+                    {
+                        "key": "Semigran MJ",
+                        "doc_count": 14
+                    },
+                    {
+                        "key": "Takimoto E",
+                        "doc_count": 14
+                    },
+                    {
+                        "key": "Champion HC",
+                        "doc_count": 13
+                    },
+                    {
+                        "key": "Lewis GD",
+                        "doc_count": 12
+                    },
+                    {
+                        "key": "Das A",
+                        "doc_count": 11
+                    }
+                ]
+            },
+            "chemical.name": {
+                "doc_count_error_upper_bound": 0,
+                "sum_other_doc_count": 2292,
+                "buckets": [
+                    {
+                        "key": "Sildenafil Citrate",
+                        "doc_count": 561
+                    },
+                    {
+                        "key": "Piperazines",
+                        "doc_count": 458
+                    },
+                    {
+                        "key": "Purines",
+                        "doc_count": 456
+                    },
+                    {
+                        "key": "Sulfones",
+                        "doc_count": 432
+                    },
+                    {
+                        "key": "Phosphodiesterase 5 Inhibitors",
+                        "doc_count": 210
+                    },
+                    {
+                        "key": "Phosphodiesterase Inhibitors",
+                        "doc_count": 154
+                    },
+                    {
+                        "key": "Vasodilator Agents",
+                        "doc_count": 141
+                    },
+                    {
+                        "key": "Cyclic GMP",
+                        "doc_count": 118
+                    },
+                    {
+                        "key": "Cyclic Nucleotide Phosphodiesterases, Type 5",
+                        "doc_count": 112
+                    },
+                    {
+                        "key": "Nitric Oxide",
+                        "doc_count": 94
+                    }
+                ]
+            },
+            "source.title": {
+                "doc_count_error_upper_bound": 0,
+                "sum_other_doc_count": 456,
+                "buckets": [
+                    {
+                        "key": "PloS one",
+                        "doc_count": 17
+                    },
+                    {
+                        "key": "Circulation",
+                        "doc_count": 16
+                    },
+                    {
+                        "key": "American journal of physiology. Heart and circulatory physiology",
+                        "doc_count": 15
+                    },
+                    {
+                        "key": "Hypertension (Dallas, Tex. : 1979)",
+                        "doc_count": 9
+                    },
+                    {
+                        "key": "International journal of impotence research",
+                        "doc_count": 9
+                    },
+                    {
+                        "key": "The journal of sexual medicine",
+                        "doc_count": 9
+                    },
+                    {
+                        "key": "Journal of molecular and cellular cardiology",
+                        "doc_count": 8
+                    },
+                    {
+                        "key": "The Journal of urology",
+                        "doc_count": 8
+                    },
+                    {
+                        "key": "Chest",
+                        "doc_count": 7
+                    },
+                    {
+                        "key": "Circulation. Heart failure",
+                        "doc_count": 7
+                    }
+                ]
+            },
+            "dates": {
+                "buckets": [
+                    {
+                        "key_as_string": "1998",
+                        "key": 883612800000,
+                        "doc_count": 3
+                    },
+                    {
+                        "key_as_string": "1999",
+                        "key": 915148800000,
+                        "doc_count": 8
+                    },
+                    {
+                        "key_as_string": "2000",
+                        "key": 946684800000,
+                        "doc_count": 9
+                    },
+                    {
+                        "key_as_string": "2001",
+                        "key": 978307200000,
+                        "doc_count": 12
+                    },
+                    {
+                        "key_as_string": "2002",
+                        "key": 1009843200000,
+                        "doc_count": 11
+                    },
+                    {
+                        "key_as_string": "2003",
+                        "key": 1041379200000,
+                        "doc_count": 17
+                    },
+                    {
+                        "key_as_string": "2004",
+                        "key": 1072915200000,
+                        "doc_count": 16
+                    },
+                    {
+                        "key_as_string": "2005",
+                        "key": 1104537600000,
+                        "doc_count": 30
+                    },
+                    {
+                        "key_as_string": "2006",
+                        "key": 1136073600000,
+                        "doc_count": 23
+                    },
+                    {
+                        "key_as_string": "2007",
+                        "key": 1167609600000,
+                        "doc_count": 32
+                    },
+                    {
+                        "key_as_string": "2008",
+                        "key": 1199145600000,
+                        "doc_count": 30
+                    },
+                    {
+                        "key_as_string": "2009",
+                        "key": 1230768000000,
+                        "doc_count": 36
+                    },
+                    {
+                        "key_as_string": "2010",
+                        "key": 1262304000000,
+                        "doc_count": 27
+                    },
+                    {
+                        "key_as_string": "2011",
+                        "key": 1293840000000,
+                        "doc_count": 35
+                    },
+                    {
+                        "key_as_string": "2012",
+                        "key": 1325376000000,
+                        "doc_count": 49
+                    },
+                    {
+                        "key_as_string": "2013",
+                        "key": 1356998400000,
+                        "doc_count": 49
+                    },
+                    {
+                        "key_as_string": "2014",
+                        "key": 1388534400000,
+                        "doc_count": 53
+                    },
+                    {
+                        "key_as_string": "2015",
+                        "key": 1420070400000,
+                        "doc_count": 54
+                    },
+                    {
+                        "key_as_string": "2016",
+                        "key": 1451606400000,
+                        "doc_count": 40
+                    },
+                    {
+                        "key_as_string": "2017",
+                        "key": 1483228800000,
+                        "doc_count": 26
+                    },
+                    {
+                        "key_as_string": "2018",
+                        "key": 1514764800000,
+                        "doc_count": 1
+                    }
+                ]
+            },
+            "citation_id_type": {
+                "doc_count_error_upper_bound": 0,
+                "sum_other_doc_count": 0,
+                "buckets": [
+                    {
+                        "key": "pmid",
+                        "doc_count": 561
+                    },
+                    {
+                        "key": "doi",
+                        "doc_count": 537
+                    },
+                    {
+                        "key": "pmcid",
+                        "doc_count": 253
+                    }
+                ]
+            },
+            "mesh_term.mesh_heading": {
+                "doc_count_error_upper_bound": 0,
+                "sum_other_doc_count": 7347,
+                "buckets": [
+                    {
+                        "key": "Sildenafil Citrate",
+                        "doc_count": 561
+                    },
+                    {
+                        "key": "Piperazines",
+                        "doc_count": 458
+                    },
+                    {
+                        "key": "Purines",
+                        "doc_count": 456
+                    },
+                    {
+                        "key": "Sulfones",
+                        "doc_count": 432
+                    },
+                    {
+                        "key": "Male",
+                        "doc_count": 343
+                    },
+                    {
+                        "key": "Humans",
+                        "doc_count": 317
+                    },
+                    {
+                        "key": "Animals",
+                        "doc_count": 307
+                    },
+                    {
+                        "key": "Phosphodiesterase 5 Inhibitors",
+                        "doc_count": 210
+                    },
+                    {
+                        "key": "Female",
+                        "doc_count": 176
+                    },
+                    {
+                        "key": "Phosphodiesterase Inhibitors",
+                        "doc_count": 154
+                    }
+                ]
+            },
+            "keyword": {
+                "doc_count_error_upper_bound": 0,
+                "sum_other_doc_count": 613,
+                "buckets": [
+                    {
+                        "key": "Sildenafil",
+                        "doc_count": 30
+                    },
+                    {
+                        "key": "sildenafil",
+                        "doc_count": 29
+                    },
+                    {
+                        "key": "cGMP",
+                        "doc_count": 8
+                    },
+                    {
+                        "key": "nitric oxide",
+                        "doc_count": 7
+                    },
+                    {
+                        "key": "pulmonary hypertension",
+                        "doc_count": 6
+                    },
+                    {
+                        "key": "Nitric oxide",
+                        "doc_count": 5
+                    },
+                    {
+                        "key": "PDE5",
+                        "doc_count": 5
+                    },
+                    {
+                        "key": "Pulmonary hypertension",
+                        "doc_count": 5
+                    },
+                    {
+                        "key": "erectile dysfunction",
+                        "doc_count": 5
+                    },
+                    {
+                        "key": "heart failure",
+                        "doc_count": 5
+                    }
+                ]
+            },
+            "source.country": {
+                "doc_count_error_upper_bound": 0,
+                "sum_other_doc_count": 0,
+                "buckets": [
+                    {
+                        "key": "United States",
+                        "doc_count": 335
+                    },
+                    {
+                        "key": "Netherlands",
+                        "doc_count": 104
+                    },
+                    {
+                        "key": "United Kingdom",
+                        "doc_count": 84
+                    },
+                    {
+                        "key": "Germany",
+                        "doc_count": 20
+                    },
+                    {
+                        "key": "Switzerland",
+                        "doc_count": 5
+                    },
+                    {
+                        "key": "Egypt",
+                        "doc_count": 4
+                    },
+                    {
+                        "key": "Taiwan",
+                        "doc_count": 2
+                    },
+                    {
+                        "key": "China",
+                        "doc_count": 1
+                    },
+                    {
+                        "key": "France",
+                        "doc_count": 1
+                    },
+                    {
+                        "key": "Italy",
+                        "doc_count": 1
+                    },
+                    {
+                        "key": "Japan",
+                        "doc_count": 1
+                    },
+                    {
+                        "key": "South Korea",
+                        "doc_count": 1
+                    },
+                    {
+                        "key": "Spain",
+                        "doc_count": 1
+                    },
+                    {
+                        "key": "United Arab Emirates",
+                        "doc_count": 1
+                    }
+                ]
+            },
+            "source.type": {
+                "doc_count_error_upper_bound": 0,
+                "sum_other_doc_count": 0,
+                "buckets": [
+                    {
+                        "key": "Journal",
+                        "doc_count": 561
+                    }
+                ]
+            }
+        }
+    },
+    "view": "SCHOLAR",
+    "joiner_limit": 50000,
+    "queries": {
+        "SCHOLAR": {
+            "searchType": "SCHOLAR",
+            "unjoinedResultSize": 0,
+            "joinOptimisedResultSize": 0,
+            "joinResultSize": 0,
+            "searchId": "ooGTjNK8rZ1TBacCpViBQR35GjMWLrG5cPE6UfD8eCWjQC1TMoBRGIkIdd53kWpt",
+            "joined": false,
+            "capped": false
+        }
+    },
+    "search_stats": {
+        "created": 1518577833.786000000,
+        "completed": 1518577834.894000000,
+        "status": "COMPLETE",
+        "timings": {
+            "received": 0,
+            "resolving": 0,
+            "joining": 9,
+            "searching": 9,
+            "complete": 1108
+        },
+        "took": 1108
+    }
+}

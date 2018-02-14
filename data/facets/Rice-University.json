@@ -1,0 +1,575 @@
+{
+  "facets": {
+    "owner": {
+      "INTERNATIONAL BUSINESS MACHINES CORPORATION": {
+        "displayName": "International Business Machines Corporation",
+        "count": 206
+      },
+      "NANTERO INC": {
+        "displayName": "Nantero Inc",
+        "count": 87
+      },
+      "PRESIDENT AND FELLOWS OF HARVARD COLLEGE": {
+        "displayName": "President And Fellows Of Harvard College",
+        "count": 75
+      },
+      "MICROSOFT TECHNOLOGY LICENSING LLC": {
+        "displayName": "Microsoft Technology Licensing Llc",
+        "count": 99
+      },
+      "WILLIAM MARSH RICE UNIVERSITY": {
+        "displayName": "William Marsh Rice University",
+        "count": 241
+      },
+      "THE REGENTS OF THE UNIVERSITY OF CALIFORNIA": {
+        "displayName": "The Regents Of The University Of California",
+        "count": 77
+      },
+      "MICROSOFT CORPORATION": {
+        "displayName": "Microsoft Corporation",
+        "count": 77
+      },
+      "SAMSUNG ELECTRONICS CO. LTD": {
+        "displayName": "Samsung Electronics Co. Ltd",
+        "count": 72
+      },
+      "BOARD OF REGENTS THE UNIVERSITY OF TEXAS SYSTEM": {
+        "displayName": "Board Of Regents The University Of Texas System",
+        "count": 54
+      },
+      "MASSACHUSETTS INSTITUTE OF TECHNOLOGY": {
+        "displayName": "Massachusetts Institute Of Technology",
+        "count": 128
+      }
+    },
+    "sequence_organism_taxid": {
+      "1488": {
+        "displayName": "Clostridium acetobutylicum",
+        "count": 72
+      },
+      "3702": {
+        "displayName": "Arabidopsis thaliana",
+        "count": 126
+      },
+      "3847": {
+        "displayName": "Glycine max",
+        "count": 45
+      },
+      "4530": {
+        "displayName": "Oryza sativa",
+        "count": 76
+      },
+      "4577": {
+        "displayName": "Zea mays",
+        "count": 97
+      },
+      "4932": {
+        "displayName": "Saccharomyces cerevisiae",
+        "count": 63
+      },
+      "9606": {
+        "displayName": "Homo sapiens",
+        "count": 486
+      },
+      "10090": {
+        "displayName": "Mus musculus",
+        "count": 95
+      },
+      "10116": {
+        "displayName": "Rattus norvegicus",
+        "count": 57
+      }
+    },
+    "author": {
+      "Smalley RE": {
+        "count": 1529
+      },
+      "Colbert DT": {
+        "count": 924
+      },
+      "Rinzler AG": {
+        "count": 918
+      },
+      "Tour JM": {
+        "count": 921
+      },
+      "Liu J": {
+        "count": 946
+      },
+      "Mikos AG": {
+        "count": 825
+      },
+      "Chen J": {
+        "count": 905
+      },
+      "Zhang Y": {
+        "count": 769
+      },
+      "Wang Y": {
+        "count": 886
+      },
+      "Dai H": {
+        "count": 1081
+      }
+    },
+    "classification_nat": {
+      "435/325": {
+        "count": 135
+      },
+      "435/252.3": {
+        "count": 201
+      },
+      "536/23.2": {
+        "count": 130
+      },
+      "536/23.1": {
+        "count": 209
+      },
+      "435/69.1": {
+        "count": 162
+      },
+      "977/742": {
+        "count": 212
+      },
+      "423/447.1": {
+        "count": 198
+      },
+      "435/6": {
+        "count": 146
+      },
+      "530/350": {
+        "count": 148
+      },
+      "435/320.1": {
+        "count": 260
+      }
+    },
+    "jurisdiction": {
+      "DE": {
+        "count": 113
+      },
+      "TW": {
+        "count": 2
+      },
+      "RU": {
+        "count": 1
+      },
+      "BE": {
+        "count": 1
+      },
+      "JP": {
+        "count": 69
+      },
+      "KR": {
+        "count": 36
+      },
+      "EP": {
+        "count": 761
+      },
+      "CN": {
+        "count": 205
+      },
+      "IT": {
+        "count": 3
+      },
+      "FR": {
+        "count": 49
+      },
+      "ES": {
+        "count": 9
+      },
+      "AP": {
+        "count": 1
+      },
+      "AT": {
+        "count": 1
+      },
+      "AU": {
+        "count": 39
+      },
+      "SG": {
+        "count": 1
+      },
+      "CZ": {
+        "count": 1
+      },
+      "WO": {
+        "count": 1679
+      },
+      "GB": {
+        "count": 31
+      },
+      "EA": {
+        "count": 5
+      },
+      "US": {
+        "count": 7879
+      }
+    },
+    "has_full_text": {
+      "true": {
+        "count": 9539
+      },
+      "false": {
+        "count": 1347
+      }
+    },
+    "classification_ipcr": {
+      "C12Q1/68": {
+        "count": 512
+      },
+      "C12N1/21": {
+        "count": 313
+      },
+      "A61K47/48": {
+        "count": 245
+      },
+      "C12N15/82": {
+        "count": 255
+      },
+      "C12N15/09": {
+        "count": 323
+      },
+      "B82Y40/00": {
+        "count": 244
+      },
+      "B82Y30/00": {
+        "count": 283
+      },
+      "C07H21/04": {
+        "count": 338
+      },
+      "C01B31/02": {
+        "count": 602
+      },
+      "A61K38/00": {
+        "count": 352
+      }
+    },
+    "pmid": {
+      "2231712": {
+        "displayName": "Altschul SF et al. (1990) \"Basic local alignme… \" J. Mol. Biol. 215:3:403-10",
+        "count": 163
+      },
+      "8662534": {
+        "displayName": "Thess A et al. (1996) \"Crystalline Ropes o… \" Science 273:5274:483-7",
+        "count": 369
+      },
+      "8939858": {
+        "displayName": "Li WZ et al. (1996) \"Large-Scale Synthes… \" Science 274:5293:1701-3",
+        "count": 145
+      },
+      "9254694": {
+        "displayName": "Altschul SF et al. (1997) \"Gapped BLAST and PS… \" Nucleic Acids Res. 25:17:3389-402",
+        "count": 142
+      },
+      "9486653": {
+        "displayName": "Fire A et al. (1998) \"Potent and specific… \" Nature 391:6669:806-11",
+        "count": 139
+      },
+      "9596576": {
+        "displayName": "Liu J et al. (1998) \"Fullerene pipes \" Science 280:5367:1253-6",
+        "count": 198
+      },
+      "10649989": {
+        "displayName": "Kong J et al. (2000) \"Nanotube molecular … \" Science 287:5453:622-5",
+        "count": 154
+      },
+      "10884232": {
+        "displayName": "Rueckes T et al. (2000) \"Carbon nanotube-bas… \" Science 289:5476:94-7",
+        "count": 129
+      },
+      "12101121": {
+        "displayName": "Reinhart BJ et al. (2002) \"MicroRNAs in plants… \" Genes Dev. 16:13:1616-26",
+        "count": 157
+      },
+      "14744438": {
+        "displayName": "Bartel DP. (2004) \"MicroRNAs: genomics… \" Cell 116:2:281-97",
+        "count": 126
+      }
+    },
+    "type": {
+      "Statutory Invention Registration": {
+        "count": 1
+      },
+      "Patent Application": {
+        "count": 3242
+      },
+      "Limited Patent": {
+        "count": 2
+      },
+      "Granted Patent": {
+        "count": 7446
+      },
+      "Amended Patent": {
+        "count": 20
+      },
+      "Search report": {
+        "count": 66
+      },
+      "unknown": {
+        "count": 109
+      }
+    },
+    "applicant": {
+      "UNIV RICE WILLIAM M": {
+        "displayName": "Univ Rice William M",
+        "count": 364
+      },
+      "NANTERO INC": {
+        "displayName": "Nantero Inc",
+        "count": 113
+      },
+      "HARVARD COLLEGE": {
+        "displayName": "Harvard College",
+        "count": 95
+      },
+      "SAMSUNG ELECTRONICS CO LTD": {
+        "displayName": "Samsung Electronics Co Ltd",
+        "count": 78
+      },
+      "IBM": {
+        "displayName": "Ibm",
+        "count": 252
+      },
+      "MASSACHUSETTS INST TECHNOLOGY": {
+        "displayName": "Massachusetts Inst Technology",
+        "count": 186
+      },
+      "UNIV CALIFORNIA": {
+        "displayName": "Univ California",
+        "count": 182
+      },
+      "DU PONT": {
+        "displayName": "Du Pont",
+        "count": 143
+      },
+      "UNIV TEXAS": {
+        "displayName": "Univ Texas",
+        "count": 103
+      },
+      "MICROSOFT CORP": {
+        "displayName": "Microsoft Corp",
+        "count": 95
+      }
+    },
+    "classification_cpc": {
+      "B82Y10/00": {
+        "count": 709
+      },
+      "B82Y40/00": {
+        "count": 1000
+      },
+      "Y10S977/742": {
+        "count": 306
+      },
+      "B82Y15/00": {
+        "count": 276
+      },
+      "B82Y30/00": {
+        "count": 1528
+      },
+      "C01B31/0233": {
+        "count": 251
+      },
+      "B82Y5/00": {
+        "count": 274
+      },
+      "C01B2202/02": {
+        "count": 358
+      },
+      "A61K38/00": {
+        "count": 305
+      },
+      "C01B31/0273": {
+        "count": 254
+      }
+    },
+    "pub_year": {
+      "1983": {
+        "count": 2
+      },
+      "1985": {
+        "count": 3
+      },
+      "1986": {
+        "count": 2
+      },
+      "1987": {
+        "count": 7
+      },
+      "1988": {
+        "count": 5
+      },
+      "1989": {
+        "count": 10
+      },
+      "1990": {
+        "count": 9
+      },
+      "1991": {
+        "count": 17
+      },
+      "1992": {
+        "count": 26
+      },
+      "1993": {
+        "count": 44
+      },
+      "1994": {
+        "count": 50
+      },
+      "1995": {
+        "count": 34
+      },
+      "1996": {
+        "count": 49
+      },
+      "1997": {
+        "count": 54
+      },
+      "1998": {
+        "count": 94
+      },
+      "1999": {
+        "count": 85
+      },
+      "2000": {
+        "count": 119
+      },
+      "2001": {
+        "count": 141
+      },
+      "2002": {
+        "count": 139
+      },
+      "2003": {
+        "count": 189
+      },
+      "2004": {
+        "count": 241
+      },
+      "2005": {
+        "count": 281
+      },
+      "2006": {
+        "count": 411
+      },
+      "2007": {
+        "count": 408
+      },
+      "2008": {
+        "count": 446
+      },
+      "2009": {
+        "count": 573
+      },
+      "2010": {
+        "count": 876
+      },
+      "2011": {
+        "count": 1009
+      },
+      "2012": {
+        "count": 1111
+      },
+      "2013": {
+        "count": 1225
+      },
+      "2014": {
+        "count": 1168
+      },
+      "2015": {
+        "count": 1119
+      },
+      "2016": {
+        "count": 939
+      }
+    },
+    "inventor": {
+      "BURGARD ANTHONY P": {
+        "displayName": "Burgard Anthony P",
+        "count": 66
+      },
+      "STEINES DANIEL": {
+        "displayName": "Steines Daniel",
+        "count": 51
+      },
+      "RUECKES THOMAS": {
+        "displayName": "Rueckes Thomas",
+        "count": 107
+      },
+      "SMALLEY RICHARD E": {
+        "displayName": "Smalley Richard E",
+        "count": 89
+      },
+      "SEGAL BRENT M": {
+        "displayName": "Segal Brent M",
+        "count": 80
+      },
+      "DAI HONGJIE": {
+        "displayName": "Dai Hongjie",
+        "count": 50
+      },
+      "BURK MARK J": {
+        "displayName": "Burk Mark J",
+        "count": 48
+      },
+      "LANG PHILIPP": {
+        "displayName": "Lang Philipp",
+        "count": 53
+      },
+      "COLBERT DANIEL T": {
+        "displayName": "Colbert Daniel T",
+        "count": 61
+      },
+      "TOUR JAMES M": {
+        "displayName": "Tour James M",
+        "count": 68
+      }
+    },
+    "doi": {
+      "10.1126/SCIENCE.273.5274.483": {
+        "displayName": "Thess A. et al. (1996) \"Crystalline Ropes o… \" Science 273:483-487",
+        "count": 391
+      },
+      "10.1126/SCIENCE.280.5367.1253": {
+        "displayName": "Liu J. (1998) \"Fullerene Pipes \" Science 280:1253-1256",
+        "count": 277
+      },
+      "10.1038/363603A0": {
+        "displayName": "Iijima Sumio, Ichih… (1993) \"Single-shell carbon… \" Nature 363:603-605",
+        "count": 163
+      },
+      "10.1038/354056A0": {
+        "displayName": "Iijima Sumio (1991) \"Helical microtubule… \" Nature 354:56-58",
+        "count": 233
+      },
+      "10.1126/SCIENCE.287.5453.622": {
+        "displayName": "Kong J. (2000) \"Nanotube Molecular … \" Science 287:622-625",
+        "count": 160
+      },
+      "10.1016/S0009-2614(98)01024-0": {
+        "displayName": "Hafner Jason H. et … (1998) \"Catalytic growth of… \" Chemical Physics Le… 296:195-202",
+        "count": 154
+      },
+      "10.1101/GAD.1004402": {
+        "displayName": "Reinhart B. J. (2002) \"MicroRNAs in plants \" Genes & Development 16:1616-1626",
+        "count": 154
+      },
+      "10.1126/SCIENCE.274.5293.1701": {
+        "displayName": "Li W. Z. et al. (1996) \"Large-Scale Synthes… \" Science 274:1701-1703",
+        "count": 145
+      },
+      "10.1016/S0009-2614(98)00745-3": {
+        "displayName": "Kong Jing et al. (1998) \"Chemical vapor depo… \" Chemical Physics Le… 292:567-574",
+        "count": 154
+      },
+      "10.1021/JP990957S": {
+        "displayName": "Cassell Alan M. et … (1999) \"Large Scale CVD Syn… \" J. Phys. Chem. B 103:6484-6492",
+        "count": 171
+      }
+    }
+  },
+  "url": "http://lens.org/lens/search/collection/22865"
+}

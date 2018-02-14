@@ -1,0 +1,794 @@
+{
+    "metadata": {
+        "pages_start": "222",
+        "chemicals": [
+            {
+                "registry_number": "0",
+                "substance_name": "Reactive Oxygen Species",
+                "mesh_ui": "D017382"
+            }
+        ],
+        "has_keywords": false,
+        "title": "Hypoxia induces heart regeneration in adult mice.",
+        "references": [
+            {
+                "cit_string": "Mutat Res. 1991 Sep;258(2):161-88",
+                "cit_id": {
+                    "value": "1881403",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "J Exp Biol. 2001 Sep;204(Pt 18):3161-70",
+                "cit_id": {
+                    "value": "11581330",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Nature. 2010 Mar 25;464(7288):606-9",
+                "cit_id": {
+                    "value": "20336145",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Cell Stem Cell. 2011 Jan 7;8(1):59-71",
+                "cit_id": {
+                    "value": "21211782",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Cell Rep. 2014 Jun 12;7(5):1679-1690",
+                "cit_id": {
+                    "value": "24857658",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Biochem Pharmacol. 1992 May 28;43(10):2281-7",
+                "cit_id": {
+                    "value": "1599514",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Chromosoma. 1985;92(3):218-24",
+                "cit_id": {
+                    "value": "4017746",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Nature. 2013 Jan 17;493(7432):433-6",
+                "cit_id": {
+                    "value": "23222518",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Bull Exp Biol Med. 2014 May;157(1):167-71",
+                "cit_id": {
+                    "value": "24913584",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Cell. 2015 Jun 18;161(7):1566-75",
+                "cit_id": {
+                    "value": "26073943",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Proc Natl Acad Sci U S A. 2011 Dec 6;108(49):19611-6",
+                "cit_id": {
+                    "value": "22106302",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Antioxid Redox Signal. 2014 Oct 10;21(11):1648-59",
+                "cit_id": {
+                    "value": "24949895",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "EMBO Mol Med. 2013 Feb;5(2):191-209",
+                "cit_id": {
+                    "value": "23255322",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "PLoS One. 2013 May 31;8(5):e65035",
+                "cit_id": {
+                    "value": "23741447",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Nat Cell Biol. 2006 Nov;8(11):1291-7",
+                "cit_id": {
+                    "value": "17028578",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Biol Neonate. 1990;57(2):119-25",
+                "cit_id": {
+                    "value": "2310789",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Am J Physiol Heart Circ Physiol. 2005 Mar;288(3):H1209-17",
+                "cit_id": {
+                    "value": "15528223",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Science. 2002 Dec 13;298(5601):2188-90",
+                "cit_id": {
+                    "value": "12481136",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Nature. 2015 Jul 9;523(7559):226-30",
+                "cit_id": {
+                    "value": "26098368",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Indian J Pharmacol. 2013 Jan-Feb;45(1):103-4",
+                "cit_id": {
+                    "value": "23543943",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "J Exp Med. 1960 Sep 1;112:509-31",
+                "cit_id": {
+                    "value": "13723177",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Nature. 2010 Mar 25;464(7288):601-5",
+                "cit_id": {
+                    "value": "20336144",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Cell. 2014 Apr 24;157(3):565-79",
+                "cit_id": {
+                    "value": "24766806",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "J Mol Cell Cardiol. 2015 Feb;79:54-68",
+                "cit_id": {
+                    "value": "25450615",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Science. 2011 Feb 25;331(6020):1078-80",
+                "cit_id": {
+                    "value": "21350179",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Trends Pharmacol Sci. 2006 Dec;27(12):639-45",
+                "cit_id": {
+                    "value": "17056127",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Nucleic Acids Symp Ser. 1983;(12):165-7",
+                "cit_id": {
+                    "value": "6664853",
+                    "type": "pmid"
+                }
+            },
+            {
+                "cit_string": "Nature. 2013 May 9;497(7448):249-253",
+                "cit_id": {
+                    "value": "23594737",
+                    "type": "pmid"
+                }
+            }
+        ],
+        "journal": {
+            "asjc_subjects": [
+                "Multidisciplinary"
+            ],
+            "country": "United Kingdom",
+            "type": "Journal",
+            "title_full": "Nature",
+            "ids": [
+                {
+                    "value": "21206",
+                    "type": "ssid"
+                },
+                {
+                    "value": "14764687",
+                    "type": "issn"
+                },
+                {
+                    "value": "0410462",
+                    "type": "nlmid"
+                },
+                {
+                    "value": "00280836",
+                    "type": "issn"
+                }
+            ],
+            "languages": [
+                "ENG"
+            ],
+            "title_abbreviations": [
+                "Nature"
+            ],
+            "issn": [
+                {
+                    "value": "14764687",
+                    "type": "electronic"
+                },
+                {
+                    "value": "00280836",
+                    "type": "print"
+                }
+            ],
+            "publisher": "Nature Publishing Group",
+            "asjc_codes": [
+                "1000"
+            ],
+            "is_active": true
+        },
+        "contains_multiple_works": false,
+        "has_chemicals": true,
+        "reference_count": 28,
+        "volume": "541",
+        "has_abstract": true,
+        "year_published": 2017,
+        "abstract": "The adult mammalian heart is incapable of regeneration following cardiomyocyte loss, which underpins the lasting and severe effects of cardiomyopathy. Recently, it has become clear that the mammalian heart is not a post-mitotic organ. For example, the neonatal heart is capable of regenerating lost myocardium, and the adult heart is capable of modest self-renewal. In both of these scenarios, cardiomyocyte renewal occurs via the proliferation of pre-existing cardiomyocytes, and is regulated by aerobic-respiration-mediated oxidative DNA damage. Therefore, we reasoned that inhibiting aerobic respiration by inducing systemic hypoxaemia would alleviate oxidative DNA damage, thereby inducing cardiomyocyte proliferation in adult mammals. Here we report that, in mice, gradual exposure to severe systemic hypoxaemia, in which inspired oxygen is gradually decreased by 1% and maintained at 7% for 2 weeks, results in inhibition of oxidative metabolism, decreased reactive oxygen species production and oxidative DNA damage, and reactivation of cardiomyocyte mitosis. Notably, we find that exposure to hypoxaemia 1 week after induction of myocardial infarction induces a robust regenerative response with decreased myocardial fibrosis and improvement of left ventricular systolic function. Genetic fate-mapping analysis confirms that the newly formed myocardium is derived from pre-existing cardiomyocytes. These results demonstrate that the endogenous regenerative properties of the adult mammalian heart can be reactivated by exposure to gradual systemic hypoxaemia, and highlight the potential therapeutic role of hypoxia in regenerative medicine.",
+        "mesh_terms": [
+            {
+                "mesh_ui": "D009206",
+                "qualifier_ui": "Q000166",
+                "mesh_heading": "Myocardium",
+                "qualifier_name": "cytology",
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D012038",
+                "qualifier_ui": null,
+                "mesh_heading": "Regeneration",
+                "qualifier_name": null,
+                "major_topic": true
+            },
+            {
+                "mesh_ui": "D008928",
+                "qualifier_ui": "Q000378",
+                "mesh_heading": "Mitochondria",
+                "qualifier_name": "metabolism",
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D009203",
+                "qualifier_ui": "Q000378",
+                "mesh_heading": "Myocardial Infarction",
+                "qualifier_name": "metabolism",
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D000818",
+                "qualifier_ui": null,
+                "mesh_heading": "Animals",
+                "qualifier_name": null,
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D008297",
+                "qualifier_ui": null,
+                "mesh_heading": "Male",
+                "qualifier_name": null,
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D019069",
+                "qualifier_ui": null,
+                "mesh_heading": "Cell Respiration",
+                "qualifier_name": null,
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D051379",
+                "qualifier_ui": null,
+                "mesh_heading": "Mice",
+                "qualifier_name": null,
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D000860",
+                "qualifier_ui": "Q000378",
+                "mesh_heading": "Hypoxia",
+                "qualifier_name": "metabolism",
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D032383",
+                "qualifier_ui": "Q000166",
+                "mesh_heading": "Myocytes, Cardiac",
+                "qualifier_name": "cytology",
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D017382",
+                "qualifier_ui": "Q000378",
+                "mesh_heading": "Reactive Oxygen Species",
+                "qualifier_name": "metabolism",
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D016277",
+                "qualifier_ui": null,
+                "mesh_heading": "Ventricular Function, Left",
+                "qualifier_name": null,
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D008938",
+                "qualifier_ui": null,
+                "mesh_heading": "Mitosis",
+                "qualifier_name": null,
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D008810",
+                "qualifier_ui": null,
+                "mesh_heading": "Mice, Inbred C57BL",
+                "qualifier_name": null,
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D044968",
+                "qualifier_ui": "Q000379",
+                "mesh_heading": "Regenerative Medicine",
+                "qualifier_name": "methods",
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D009202",
+                "qualifier_ui": "Q000378",
+                "mesh_heading": "Cardiomyopathies",
+                "qualifier_name": "metabolism",
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D049109",
+                "qualifier_ui": null,
+                "mesh_heading": "Cell Proliferation",
+                "qualifier_name": null,
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D006321",
+                "qualifier_ui": "Q000254",
+                "mesh_heading": "Heart",
+                "qualifier_name": "growth & development",
+                "major_topic": false
+            },
+            {
+                "mesh_ui": "D004249",
+                "qualifier_ui": null,
+                "mesh_heading": "DNA Damage",
+                "qualifier_name": null,
+                "major_topic": false
+            }
+        ],
+        "has_mesh_terms": true,
+        "referenced_by": [],
+        "pages_end": null,
+        "crossref_reference_count": 28,
+        "publication_type": [
+            "research support, n.i.h., extramural",
+            "journal article",
+            "research support, non-u.s. gov't"
+        ],
+        "date_published": "2017-01-12T00:00:00+00:00",
+        "keywords": [],
+        "issue": "7636",
+        "crossref_referenced_by_count": 27,
+        "has_clinical_trials": false,
+        "clinical_trials": [],
+        "has_funding": true,
+        "referenced_by_count": 0,
+        "has_affiliations": true,
+        "ids": [
+            {
+                "value": "nature20173",
+                "type": "pii"
+            },
+            {
+                "value": "10.1038/nature20173",
+                "type": "doi"
+            },
+            {
+                "value": "27798600",
+                "type": "pmid"
+            }
+        ],
+        "funding": [
+            {
+                "org": "British Heart Foundation",
+                "funding_id": "RG/13/11/30384",
+                "funding_name": null,
+                "org_id": null,
+                "country": "United Kingdom"
+            },
+            {
+                "org": "NIH HHS",
+                "funding_id": "1R01HL115275-01",
+                "funding_name": null,
+                "org_id": null,
+                "country": "United States"
+            },
+            {
+                "org": "NCATS NIH HHS",
+                "funding_id": "UL1 TR001105",
+                "funding_name": null,
+                "org_id": null,
+                "country": "United States"
+            }
+        ],
+        "num_authors": 21,
+        "authors": [
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Yuji",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 1,
+                "last_name": "Nakada",
+                "initials": "Y"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Diana C",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 2,
+                "last_name": "Canseco",
+                "initials": "DC"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "SuWannee",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 3,
+                "last_name": "Thet",
+                "initials": "S"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Radiation Oncology, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Salim",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 4,
+                "last_name": "Abdisalaam",
+                "initials": "S"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Radiation Oncology, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Aroumougame",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 5,
+                "last_name": "Asaithamby",
+                "initials": "A"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Cardiovascular Division, King's College London BHF Centre of Research Excellence, Faculty of Medicine, James Black Centre, London SE5 9NU, UK.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Celio X",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 6,
+                "last_name": "Santos",
+                "initials": "CX"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Cardiovascular Division, King's College London BHF Centre of Research Excellence, Faculty of Medicine, James Black Centre, London SE5 9NU, UK.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Ajay M",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 7,
+                "last_name": "Shah",
+                "initials": "AM"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Cell Biology and Physiology, McAllister Heart Institute, the University of North Carolina, Chapel Hill, North Carolina 27599-7545, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Hua",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 8,
+                "last_name": "Zhang",
+                "initials": "H"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Cell Biology and Physiology, McAllister Heart Institute, the University of North Carolina, Chapel Hill, North Carolina 27599-7545, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "James E",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 9,
+                "last_name": "Faber",
+                "initials": "JE"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Free Radical Biology and Aging Research Program, Oklahoma Medical Research Foundation, Oklahoma City, Oklahoma 73104, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Michael T",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 10,
+                "last_name": "Kinter",
+                "initials": "MT"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Free Radical Biology and Aging Research Program, Oklahoma Medical Research Foundation, Oklahoma City, Oklahoma 73104, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Luke I",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 11,
+                "last_name": "Szweda",
+                "initials": "LI"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "McDermott Center for Human Growth and Development, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Chao",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 12,
+                "last_name": "Xing",
+                "initials": "C"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Children's Medical Center Research Institute at UT Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Zeping",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 13,
+                "last_name": "Hu",
+                "initials": "Z"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Children's Medical Center Research Institute at UT Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Ralph J",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 14,
+                "last_name": "Deberardinis",
+                "initials": "RJ"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Gabriele",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 15,
+                "last_name": "Schiattarella",
+                "initials": "G"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Joseph A",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 16,
+                "last_name": "Hill",
+                "initials": "JA"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Radiology, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Orhan",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 17,
+                "last_name": "Oz",
+                "initials": "O"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Physiology and Developmental Biology, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Zhigang",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 18,
+                "last_name": "Lu",
+                "initials": "Z"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Physiology and Developmental Biology, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Cheng Cheng",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 19,
+                "last_name": "Zhang",
+                "initials": "CC"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    },
+                    {
+                        "name": "Life Science Center, Tsukuba Advanced Research Alliance, University of Tsukuba, 1-1-1 Tennoudai, Tsukuba, Ibaraki 305-8577, Japan.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Wataru",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 20,
+                "last_name": "Kimura",
+                "initials": "W"
+            },
+            {
+                "affiliations": [
+                    {
+                        "name": "Department of Internal Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    },
+                    {
+                        "name": "Center for Regenerative Science and Medicine, University of Texas Southwestern Medical Center, Dallas, Texas 75390, USA.",
+                        "ids": []
+                    }
+                ],
+                "first_name": "Hesham A",
+                "is_personal": true,
+                "ids": [],
+                "collective_name": null,
+                "seq": 21,
+                "last_name": "Sadek",
+                "initials": "HA"
+            }
+        ]
+    },
+    "referenced_by_patent_count": 0,
+    "citation_ids": [
+        {
+            "value": "10.1038/nature20173",
+            "type": "doi"
+        },
+        {
+            "value": "27798600",
+            "type": "pmid"
+        }
+    ],
+    "is_referenced_by_patent": false
+}
