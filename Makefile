@@ -5,6 +5,7 @@ install:
 	npm install
 
 dev:
+	npm run proxy &
 	npm run dev
 
 proxy:
