@@ -43,8 +43,6 @@ export class ClientComponent extends Vue {
     // src = AllFields
 
     loading: any = {}
-    scholarFacets: any = {}
-    patentFacets: any = {}
 
     placeholder: string = DEFAULT_PLACEHOLDER
 
@@ -63,6 +61,12 @@ export class ClientComponent extends Vue {
 
     patents: Patent[] = []
     articles: Article[] = []
+
+    patentFacets: any = {}
+    hasPatentFacets = false
+
+    scholarFacets: any = {}
+    hasScholarFacets = false
 
     interval: any
 
@@ -199,10 +203,12 @@ export class ClientComponent extends Vue {
 
     searchScholarFacets() {
         this.loading.articleFacets = true
+        this.hasScholarFacets = false
         const facetsQuery = articleFacetsQuery(this.q)
         articleService.facets(facetsQuery).then(facets => {
             this.scholarFacets = facets
             this.loading.articleFacets = false
+            this.hasScholarFacets = true
         }).catch(err => {
             console.warn(err)
             this.loading.articleFacets = false
@@ -223,9 +229,11 @@ export class ClientComponent extends Vue {
 
     searchPatentFacets() {
         this.loading.patentFacets = true
+        this.hasPatentFacets = false
         this.patents = []
         patentService.facets(this.q).then(facets => {
             this.patentFacets = facets
+            this.hasPatentFacets = true
             this.loading.patentFacets = false
         }).catch(err => {
             console.warn(err)

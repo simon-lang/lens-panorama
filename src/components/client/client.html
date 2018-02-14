@@ -71,7 +71,7 @@
 
             <div class="row">
                 <div v-if="articles.length" class="col">
-                    <h3>Top 10 Cited Articles:</h3>
+                    <h3>Most relevant Scholarly Works:</h3>
                     <ol>
                         <li v-for="article in articles">
                             {{article.title}}
@@ -92,12 +92,12 @@
                 </div>
             </div>
             <div class="row">
-                <div v-if="patentFacets" class="col">
+                <div v-if="hasPatentFacets" class="col">
                     <h3>Patent Facets</h3>
                     <pre>{{patentFacets}}</pre>
                 </div>
 
-                <div v-if="scholarFacets" class="col">
+                <div v-if="hasScholarFacets" class="col">
                     <h3>Scholar Facets</h3>
                     <pre>{{scholarFacets}}</pre>
                 </div>
