@@ -1,12 +1,12 @@
 import { expect } from 'chai'
-import { AppComponent } from './app'
+import { ClientComponent } from './client'
 import { ComponentTest } from '../../util/component-test'
 
 describe('Home component', () => {
   let directiveTest: ComponentTest
 
   beforeEach(() => {
-    directiveTest = new ComponentTest('<div><home></home></div>', { 'home': AppComponent })
+    directiveTest = new ComponentTest('<div><home></home></div>', { 'home': ClientComponent })
   })
 
   it('should render correct contents', async () => {

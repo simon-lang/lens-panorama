@@ -15,6 +15,8 @@ Re-writing all this legacy software would be costly, and not a productive use of
 
 However, with a recent focus on providing users with a "Federated Search" experience, it has become apparent that using the existing frontend infrastructure is not feasible. Or at least it will not result in a fantastic UX.
 
+This was showcased by the recent attempts at implementing scholarly-patent joins and improving the search bar integration. This work was far, far harder than it should have been, due to the many moving parts and poorly defined boundaries between systems.
+
 
 ## Goal
 
