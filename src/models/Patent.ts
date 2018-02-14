@@ -22,24 +22,24 @@ export class Patent {
     abstract: string = '' // not returned from service
     claims: string = '' // not returned from service
 
-    lensId: any // { value: 9949448164002 },
-    hasFullText: boolean
+    lensId: number = null // { value: 9949448164002 },
+    hasFullText: boolean = false
     familySize: number
     simpleFamilySize: number
     citedByCount: number
     publicationKey: string
-    publicationDate: Date // 1308182400000,
+    publicationDate: Date = null // 1308182400000,
     filingKey: string
     language: string // 'en'
     filingDate: Date // 1291852800000,
     title: string = ''
-    kindCode: string // 'A1',
+    kindCode: string = '' // 'A1',
     score: number // 0.8331177830696106,
     docType: string // 'Patent Application',
     displayKey: string = '' // 'WO 2011/072127 A1',
-    seqExists: boolean
+    seqExists: boolean = false
     seqCount: number
-    jurisdiction: Jurisdiction // 'WO',
+    jurisdiction: string = '' // Jurisdiction // 'WO',
     owners: Owner[] // [],
     applicants: Applicant[] // ['UNIV NORTH CAROLINA', ...],
     inventors: Inventor[]

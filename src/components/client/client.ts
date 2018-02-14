@@ -30,6 +30,11 @@ import './client.scss'
 
 const DEFAULT_PLACEHOLDER = 'Explore the world of patents, science, technology and innovation...'
 
+interface GoodTableColumn {
+    field: string
+    label: string
+}
+
 @Component({
     template: require('./client.html'),
     components: {
@@ -43,6 +48,17 @@ export class ClientComponent extends Vue {
     // src = AllFields
 
     loading: any = {}
+
+    columns: GoodTableColumn[] = [
+        {field: 'lensId', label: 'LensId'},
+        {field: 'hasFullText', label: 'HasFullText'},
+        {field: 'publicationDate', label: 'Publication Date'},
+        {field: 'title', label: 'Title'},
+        {field: 'kindCode', label: 'Kind Code'},
+        {field: 'displayKey', label: 'Display Key'},
+        {field: 'seqExists', label: 'Sequence Exists'},
+        {field: 'jurisdiction', label: 'Jurisdiction'},
+    ]
 
     placeholder: string = DEFAULT_PLACEHOLDER
 
