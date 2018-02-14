@@ -12,5 +12,9 @@ import './app.scss'
     }
 })
 export class AppComponent extends Vue {
+    clients = [{}]
 
+    compare() {
+        this.clients = this.clients.length === 1 ? [1, 1] : [1]
+    }
 }
