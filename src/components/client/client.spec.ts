@@ -13,8 +13,7 @@ describe('Home component', () => {
     directiveTest.createComponent()
     await directiveTest.execute((vm) => {
       const mode = process.env.ENV
-      expect(vm.$el.querySelector('.mode').textContent).to.equal(`${mode} mode`)
-      expect(vm.$el.querySelector('.package').textContent).to.equal('vue-webpack-typescript')
+        expect(vm.$el.querySelector('h2').textContent).to.equal(`What can I search for?`)
     })
   })
 })
