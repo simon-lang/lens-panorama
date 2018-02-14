@@ -3,7 +3,7 @@ const version = 1 // require('../../version.txt').trim()
 export default class LocalStorageService {
     prefix = ''
     store = {}
-    constructor(prefix, useVersion) {
+    constructor(prefix, useVersion = false) {
         if (useVersion) {
             prefix = version + ':' + prefix
         }

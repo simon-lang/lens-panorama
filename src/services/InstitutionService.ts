@@ -1,8 +1,8 @@
 // const datasets = require('../modules/Datasets')
 const datasets = {}
 
-const LocalStorageService = require('/main/modules/LocalStorageService')
-const storage = new LocalStorageService()
+import LocalStorageService from './LocalStorageService'
+const storage = new LocalStorageService('institutions')
 
 const url = path => '/public/' + path
 
@@ -30,7 +30,7 @@ const $q = {
 export default class InstitutionService {
     // console.log('InstitutionService init')
     clearStorage() {
-        storage.removeItem('institutions')
+        storage.remove('institutions')
     }
     get(slug, datasetKey) {
         const dataset = datasets[datasetKey] || _values(datasets)[0]
