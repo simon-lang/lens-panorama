@@ -1,10 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 import Icon from 'vue-awesome'
 
-// import VueTypeahead from 'vue-typeahead'
-// import D3Network from 'vue-d3-network'
-// import 'vue-d3-network/dist/vue-d3-network.css'
-
 import { looksLikeScholarlyId, looksLikeClassificationSymbol, extractFields } from '../../helpers'
 import { topCitedArticlesQuery, articleFacetsQuery } from '../../queries'
 
@@ -49,9 +45,6 @@ interface ParserError {
     }
 })
 export class ClientComponent extends Vue {
-    // extends = VueTypeahead
-    // src = AllFields
-
     loading: any = {}
 
     columns: GoodTableColumn[] = [
@@ -122,6 +115,13 @@ export class ClientComponent extends Vue {
         this.parseQuery()
     }
 
+    clearResults() {
+        this.articles = []
+        this.hasScholarFacets = false
+        this.patents = []
+        this.hasPatentFacets = false
+    }
+
     keyup(event: KeyboardEvent) {
         clearInterval(this.interval)
         this.placeholder = DEFAULT_PLACEHOLDER
@@ -147,6 +147,9 @@ export class ClientComponent extends Vue {
     }
 
     parseQuery(event: any = null) {
+        if (!this.q) {
+            this.clearResults()
+        }
         try {
             this.error = null
             this.looksLike = {}
@@ -205,6 +208,8 @@ export class ClientComponent extends Vue {
             return
         }
 
+        this.clearResults()
+
         const keywordQuery = this.q && !this.looksLike.scholarQuery && !this.looksLike.patentQuery
         if (this.looksLike.scholarQuery || keywordQuery) {
             this.searchScholar()
@@ -219,7 +224,6 @@ export class ClientComponent extends Vue {
     searchScholar() {
         this.loading.articles = true
         const query = topCitedArticlesQuery(this.q)
-        this.articles = []
         articleService.search(query).then(([articles, res]) => {
             this.articles = articles
             this.loading.articles = false
@@ -231,7 +235,6 @@ export class ClientComponent extends Vue {
 
     searchScholarFacets() {
         this.loading.articleFacets = true
-        this.hasScholarFacets = false
         const facetsQuery = articleFacetsQuery(this.q)
         articleService.facets(facetsQuery).then(facets => {
             this.scholarFacets = facets
@@ -245,7 +248,6 @@ export class ClientComponent extends Vue {
 
     searchPatents() {
         this.loading.patents = true
-        this.patents = []
         patentService.search(this.q).then(patents => {
             this.patents = patents
             this.loading.patents = false
@@ -257,8 +259,6 @@ export class ClientComponent extends Vue {
 
     searchPatentFacets() {
         this.loading.patentFacets = true
-        this.hasPatentFacets = false
-        this.patents = []
         patentService.facets(this.q).then(facets => {
             this.patentFacets = facets
             this.hasPatentFacets = true
@@ -268,6 +268,8 @@ export class ClientComponent extends Vue {
             this.loading.patentFacets = false
         })
     }
+
+    searchCollections() {}
 
     searchClassifications() {}
 
