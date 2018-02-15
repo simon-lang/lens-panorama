@@ -113,6 +113,12 @@ hot module reloading from day one
 
 shared templates with server side rendering (secondary priority)
 
+Localisation as first class feature from day 1
+
+Process shift: move to GitHub issues for issue tracking, even if just internally.
+
+COULD consider open-sourcing this. If we are happy enough with it. At least the purely frontend component.
+
 nginx rule so I can link to lens.org/app and it uses pushState from there. no more `/lens` namespace
 
 
