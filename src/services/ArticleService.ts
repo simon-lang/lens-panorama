@@ -1,9 +1,12 @@
 import { BASE_SCHOLARLY_API_URL } from '../constants'
-import { Article } from '../models/Article'
+import { Article } from '../models'
 
 import { SearchResponse } from '../interfaces'
 
-const buildMap = o => Object.keys(o).reduce((m, k) => m.set(k, o[k]), new Map())
+// Implemented on laptop but not pushed
+class Facet {
+    constructor(d: any) { }
+}
 
 export class ArticleService {
     query(query: object) {
@@ -19,9 +22,25 @@ export class ArticleService {
             return [articles, res]
         })
     }
-    facets(query: object): Promise<Article[]> {
+    facets(query: object): Promise<Facet[]> {
         return this.query(query).then((res: SearchResponse) => {
-            return res.query_result.aggregations
+            const { aggregations } = res.query_result
+            let facets: Facet[] = []
+            Object.keys(aggregations).forEach(key => {
+                const agg = aggregations[key]
+                const values = agg.buckets.map(d => ({
+                    label: key, // todo: who is responsible for labels?
+                    count: d.doc_count,
+                }))
+                const facet: Facet = new Facet({
+                    type: 'scholar',
+                    key,
+                    values,
+                    sumOtherDocCount: agg.sum_other_doc_count,
+                })
+                facets.push()
+            })
+            return facets
         })
     }
 }

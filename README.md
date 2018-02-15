@@ -37,7 +37,7 @@ Having an issue with an excess of technology, you'd think adding more diverse te
 
 ## Why the name?
 
-When you think of a "lens", you think of something that helps you see clearly, like glasses or magnify like a  in a microscope. But to view an entire landscape, you need a panorama. This project helps to provide that bigger picture overview of our data sets, and then select the appropriate lens to examine more closely.
+When you think of a "lens", you think of something that helps you see clearly, like glasses or a microscope. But to view an entire landscape, you need a panorama. This project helps to provide that bigger picture overview of our data sets, and then select the appropriate lens to examine more closely.
 
 
 
