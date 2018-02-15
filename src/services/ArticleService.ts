@@ -1,11 +1,30 @@
 import { BASE_SCHOLARLY_API_URL } from '../constants'
-import { Article } from '../models'
+import { Article, Facet, FacetValue } from '../models'
 
 import { SearchResponse } from '../interfaces'
 
-// Implemented on laptop but not pushed
-class Facet {
-    constructor(d: any) { }
+const createFacetsFromScholarlyAggs = aggregations => {
+    let facets: Facet[] = []
+    Object.keys(aggregations).forEach(key => {
+        const agg = aggregations[key]
+        if (!agg.buckets) {
+            console.warn('No buckets for agg', key)
+            return
+        }
+        const values = agg.buckets.map(d => new FacetValue({
+            key,
+            label: key,
+            value: d.doc_count,
+        }))
+        const facet: Facet = new Facet({
+            type: 'scholar',
+            key,
+            values,
+            sumOtherDocCount: agg.sum_other_doc_count,
+        })
+        facets.push(facet)
+    })
+    return facets
 }
 
 export class ArticleService {
@@ -25,22 +44,7 @@ export class ArticleService {
     facets(query: object): Promise<Facet[]> {
         return this.query(query).then((res: SearchResponse) => {
             const { aggregations } = res.query_result
-            let facets: Facet[] = []
-            Object.keys(aggregations).forEach(key => {
-                const agg = aggregations[key]
-                const values = agg.buckets.map(d => ({
-                    label: key, // todo: who is responsible for labels?
-                    count: d.doc_count,
-                }))
-                const facet: Facet = new Facet({
-                    type: 'scholar',
-                    key,
-                    values,
-                    sumOtherDocCount: agg.sum_other_doc_count,
-                })
-                facets.push()
-            })
-            return facets
+            return createFacetsFromScholarlyAggs(aggregations)
         })
     }
     get(ids: number | number[]) {
