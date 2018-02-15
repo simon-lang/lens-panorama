@@ -220,7 +220,7 @@ export class ClientComponent extends Vue {
         this.loading.articles = true
         const query = topCitedArticlesQuery(this.q)
         this.articles = []
-        articleService.list(query).then(([articles, res]) => {
+        articleService.search(query).then(([articles, res]) => {
             this.articles = articles
             this.loading.articles = false
         }).catch(err => {

@@ -9,14 +9,14 @@ class Facet {
 }
 
 export class ArticleService {
-    query(query: object) {
-        return fetch(`${BASE_SCHOLARLY_API_URL}/multi/search?request_cache=true`, {
+    query(query: object, endpoint: string = 'multi/search?request_cache=true') {
+        return fetch(`${BASE_SCHOLARLY_API_URL}/${endpoint}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(query),
         }).then(d => d.json())
     }
-    list(query: object): Promise<any[]> {
+    search(query: object): Promise<any[]> {
         return this.query(query).then((res: SearchResponse) => {
             const articles = res.query_result.hits.hits.map(d => new Article(d._source))
             return [articles, res]
@@ -42,6 +42,15 @@ export class ArticleService {
             })
             return facets
         })
+    }
+    get(ids: number | number[]) {
+        let query: any = {}
+        if (ids instanceof Array) {
+            query.ids = ids
+        } else {
+            query.ids = [ids]
+        }
+        return this.query(query, 'scholarly/store')
     }
 }
 
