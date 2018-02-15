@@ -19,14 +19,19 @@ const scholarSearchResponse = require(DATA_DIR + '/search-api/articles.json')
 const scholarAggsResponse = require(DATA_DIR + '/search-api/aggregations.json')
 const patentSearchResponse = require(DATA_DIR + '/patents/glucuronidase.json')
 const facetsResponse = require(DATA_DIR + '/facets/Rice-University.json')
+const scholarlyStoreResponse = require(DATA_DIR + '/store/27869821.json')
 
 app.post('/lens/api/multi/search', (req, res) => {
     const aggs = _get(req, 'body.scholarly_search.aggs')
     if (aggs) {
-        return res.send(scholarAggsResponse)
+        res.send(scholarAggsResponse)
     } else {
-        return res.send(scholarSearchResponse)
+        res.send(scholarSearchResponse)
     }
+})
+
+app.post('/lens/api/scholarly/store', (req, res) => {
+    res.send(scholarlyStoreResponse)
 })
 
 app.get('/lens/search', (req, res) => {
