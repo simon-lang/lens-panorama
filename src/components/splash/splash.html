@@ -12,5 +12,14 @@
             </div>
         </div>
     </div>
-    <div class="docs container" id="docs" v-html="docs"></div>
+    <div id="docs" class="docs container">
+        <nav class="docs-nav">
+            <a href="#" class="docs-nav-item">Home</a>
+            <a href="#goal" class="docs-nav-item">Goal</a>
+            <a href="#prior-work" class="docs-nav-item">Prior Work</a>
+            <a href="#workflow" class="docs-nav-item">Workflow</a>
+            <a href="#technical-goals" class="docs-nav-item">Technical Goals</a>
+        </nav>
+        <div v-html="docs"></div>
+    </div>
 </div>
