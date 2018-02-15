@@ -1,23 +1,23 @@
-const version = 1 // require('../../version.txt').trim()
+const version = require('../../version.txt').trim()
 
 export default class LocalStorageService {
-    prefix = ''
-    store = {}
-    constructor(prefix, useVersion = false) {
+    prefix: string = ''
+    store: any = {}
+    constructor(prefix: string, useVersion: boolean = false) {
         if (useVersion) {
             prefix = version + ':' + prefix
         }
         this.prefix = prefix
     }
 
-    withPrefix(key) {
+    withPrefix(k: string) {
         if (this.prefix) {
-            key = this.prefix + '.' + key
+            k = this.prefix + '.' + k
         }
-        return key
+        return k
     }
 
-    get(k) {
+    get(k: string) {
         k = this.withPrefix(k)
         try {
             return JSON.parse(window.localStorage.getItem(k))
@@ -26,7 +26,7 @@ export default class LocalStorageService {
         }
     }
 
-    set(k, v) {
+    set(k: string, v: any) {
         k = this.withPrefix(k)
         try {
             return window.localStorage.setItem(k, JSON.stringify(v))
@@ -35,7 +35,7 @@ export default class LocalStorageService {
         }
     }
 
-    remove(k) {
+    remove(k: string) {
         k = this.withPrefix(k)
         try {
             return window.localStorage.removeItem(k)
