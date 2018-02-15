@@ -11,10 +11,17 @@
                     spellcheck="false"
                     autofocus
                 >
+                <!-- <b-form-textarea v-model="q" size="lg" @keyup="keyup"></b-form-textarea> -->
                 <b-form-invalid-feedback v-if="error">
                     {{error.message}}
-                    :{{error.location.start.offset}}
+                    <span v-if="error.location">
+                        :{{error.location.start.offset}}
+                    </span>
                 </b-form-invalid-feedback>
+                <b-form-text v-if="looksLike.patentQuery && looksLike.scholarQuery">
+                    <strong>Warning: </strong>
+                    boolean query references both scholarly and patent fields, which may result in reduced results.
+                </b-form-text>
             </div>
             <div class="col-md-2">
                 <button class="btn btn-primary btn-lg" @click="submit">Search</button>
@@ -28,7 +35,7 @@
                 </div>
             </div>
 
-            <div class="query-display well pad" :class="{'show': q.length && !error}">
+            <div class="query-display well pad" :class="{'show': q.length}">
                 <!-- <small>Query:</small> -->
                 <query :message="q" :query="query" :depth="1"></query>
             </div>
@@ -49,21 +56,14 @@
                 <icon name="check"></icon>
                 scholarQuery
             </div>
+
+            <!--
             <div v-if="looksLike.patentQuery && looksLike.scholarQuery"  class="alert alert-danger">
                 <icon name="warning"></icon>
                 <strong>Warning: </strong>
                 boolean query references both scholarly and patent fields, which may result in reduced results.
             </div>
-
-            <div v-if="invalidFields.length" class="alert alert-danger">
-                <div>
-                    <icon name="warning"></icon>
-                    Invalid Fields
-                </div>
-                <ul>
-                    <li v-for="field in invalidFields">{{field}}</li>
-                </ul>
-            </div>
+            -->
 
             <div v-if="loading.articles || loading.patents">
                 Loading...

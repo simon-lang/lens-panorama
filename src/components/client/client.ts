@@ -35,6 +35,11 @@ interface GoodTableColumn {
     label: string
 }
 
+interface ParserError {
+    message: string
+    location?: any
+}
+
 @Component({
     template: require('./client.html'),
     components: {
@@ -69,9 +74,9 @@ export class ClientComponent extends Vue {
     suggestions: any[] = suggestions
     suggestIndex: number = 0
 
+    error?: ParserError = null
     looksLike: any = {}
     idType: string = ''
-    error: string = ''
     q: string = ''
     query: object = {}
 
@@ -193,6 +198,13 @@ export class ClientComponent extends Vue {
     }
 
     submit() {
+        if (this.invalidFields.length) {
+            this.error = {
+                message: 'Invalid Fields: ' + this.invalidFields.join(', '),
+            }
+            return
+        }
+
         const keywordQuery = this.q && !this.looksLike.scholarQuery && !this.looksLike.patentQuery
         if (this.looksLike.scholarQuery || keywordQuery) {
             this.searchScholar()
