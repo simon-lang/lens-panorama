@@ -1,24 +1,11 @@
-const example = {
-    'owner': {
-        'INTERNATIONAL BUSINESS MACHINES CORPORATION': {
-            'displayName': 'International Business Machines Corporation',
-                'count': 206
-        }
-    },
-    'sequence_organism_taxid': {
-        '1488': {
-            'displayName': 'Clostridium acetobutylicum',
-                'count': 72
-        }
-    }
-}
-
 export class FacetValue {
-    label: string = ''
-    value: number = 0
+    label: string = '' // patents are displayName and sometimes missing. articles are "key"
+    value: number = 0 // patents are count. articles are doc_count
 }
 
 export class Facet {
     key: string = ''
+    label: string = ''
     values: FacetValue[]
+    sumOtherDocCount?: number
 }
