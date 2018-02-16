@@ -1,0 +1,29 @@
+@keyframes animatedBars{
+    from { background-position: 0 0; }
+    to { background-position: 100% 0; }
+}
+
+.simple-bar-chart-bar {
+    text-align: right;
+    // background-image: url('img/stripe.png');
+    background-size: 64px 64px;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    animation: animatedBars 50s linear infinite;
+    margin-bottom: 0.2em;
+    opacity: 0.8;
+    min-width: 60px;
+    border-radius: 2px;
+    // transition(200ms);
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.simple-bar-chart-value {
+    color: white;
+    padding: 0 .5em;
+    font-size: .8rem;
+    line-height: 1.75;
+    text-shadow: 1px 1px 0px rgba(0,0,0,.25);
+}

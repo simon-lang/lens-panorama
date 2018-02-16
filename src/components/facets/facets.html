@@ -1,6 +1,11 @@
 <div class="facets">
     <div v-for="facet in facets">
         <p class="card-text">{{facet.key}}</p>
+        <!--
+        <div v-if="facet.values.length">
+            <simple-bar-chart :values="facet.values"></simple-bar-chart>
+        </div>
+        -->
         <ul v-if="facet.values.length">
             <li v-for="item in facet.values">
                 <span>{{item.label || item.key}}:</span>

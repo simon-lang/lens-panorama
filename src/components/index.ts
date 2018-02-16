@@ -5,4 +5,5 @@ export * from './client';
 export * from './navbar';
 export * from './facets';
 export * from './query';
+export * from './simple-bar-chart';
 export * from './splash';

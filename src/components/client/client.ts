@@ -18,7 +18,7 @@ const patentService = new PatentService()
 import { ArticleFieldsList, PatentFieldsList } from '../../enums'
 const AllFields = _uniq(ArticleFieldsList.concat(PatentFieldsList)).sort()
 
-import { QueryComponent, FacetsComponent } from '../'
+import { QueryComponent, FacetsComponent, SimpleBarChartComponent } from '../'
 
 import suggestions from './suggestions'
 
@@ -39,22 +39,21 @@ interface ParserError {
 @Component({
     template: require('./client.html'),
     components: {
-        Icon,
-        query: QueryComponent,
-        facets: FacetsComponent,
+        'icon': Icon,
+        'query': QueryComponent,
+        'facets': FacetsComponent,
+        'simple-bar-chart': SimpleBarChartComponent,
     }
 })
 export class ClientComponent extends Vue {
     loading: any = {}
 
     columns: GoodTableColumn[] = [
-        {field: 'displayKey', label: 'Display Key'},
-        {field: 'title', label: 'Title'},
-        {field: 'jurisdiction', label: 'Jurisdiction'},
-        {field: 'kindCode', label: 'Kind Code'},
-        {field: 'hasFullText', label: 'Full Text'},
-        // {field: 'publicationDate', label: 'Publication Date'},
-        // {field: 'seqExists', label: 'Sequence Exists'},
+        { field: 'displayKey', label: 'Display Key' },
+        { field: 'title', label: 'Title' },
+        { field: 'jurisdiction', label: 'Jurisdiction' },
+        { field: 'kindCode', label: 'Kind Code' },
+        { field: 'hasFullText', label: 'Full Text' },
     ]
 
     articleColumns: GoodTableColumn[] = [
@@ -283,9 +282,9 @@ export class ClientComponent extends Vue {
         })
     }
 
-    searchCollections() {}
+    searchCollections() { }
 
-    searchClassifications() {}
+    searchClassifications() { }
 
-    searchInstitutions() {}
+    searchInstitutions() { }
 }
