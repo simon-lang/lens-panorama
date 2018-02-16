@@ -1,4 +1,3 @@
-import { expect } from 'chai'
 import { ClientComponent } from './client'
 import { ComponentTest } from '../../util/component-test'
 

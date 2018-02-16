@@ -1,7 +1,6 @@
 {
   "globalDependencies": {},
   "globalDevDependencies": {
-    "axios": "registry:dt/axios#0.9.1+20161016142654",
-    "vue": "registry:dt/vue#1.0.21+20160929090511"
+    "jest": "registry:dt/jest#19.2.0+20170312200138"
   }
 }

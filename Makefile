@@ -14,4 +14,7 @@ proxy:
 test:
 	npm test
 
+watch-test:
+	npm run test:watch
+
 .PHONY: dev test
