@@ -25,24 +25,35 @@
                         boolean query references both scholarly and patent fields, which may result in reduced results.
                     </b-form-text>
 
-                    <div v-if="suggestFields.length" class="suggest-fields-container">
+                    <div v-if="suggestFields.length || suggestTerms.length" class="suggest-fields-container">
                         <div v-for="(field, i) in suggestFields" class="suggest-fields">
                             <div @click="selectField(field)" class="suggest-field" :class="{active: i === selectedFieldIndex}">
                                 {{field}}
                             </div>
                         </div>
+                        <div v-for="(field, i) in suggestTerms" class="suggest-fields">
+                            <div @click="selectTerm(field)" class="suggest-field" :class="{active: i === selectedFieldIndex}">
+                                {{field}}
+                            </div>
+                        </div>
+                        <!--
+                        final repeat here for classification suggest endpoint results or scholar store suggest endpoint
+                        if cors is a pain just do simple dictionary endpoint on node server
+                        -->
                     </div>
                 </div>
             </div>
             <div class="col-md-1">
                 <button class="btn btn-primary btn-lg" @click="submit">Search</button>
             </div>
+            <!--
             <div class="col col-md-2">
                 <b-form-group label="Data Sources:">
                     <b-form-checkbox-group id="checkboxes1" name="flavour1" v-model="show" :options="dataSourceOptions">
                     </b-form-checkbox-group>
                 </b-form-group>
             </div>
+            -->
         </div>
         <div v-if="q.length > 0">
 

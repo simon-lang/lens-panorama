@@ -74,6 +74,7 @@ export class ClientComponent extends Vue {
 
     invalidFields: any[] = []
     suggestFields: any[] = []
+    suggestTerms: any[] = []
     selectedFieldIndex: number = 0
 
     suggestions: any[] = suggestions
@@ -129,6 +130,16 @@ export class ClientComponent extends Vue {
         this.selectedFieldIndex = 0
     }
 
+    selectTerm(term) {
+        let terms = this.q.split(' ') // space wont work
+        terms.pop()
+        terms.push(`"${term}"`)
+        // terms.push(`(${term})`)
+        this.q = terms.join(' ')
+        this.suggestTerms = []
+        this.selectedFieldIndex = 0
+    }
+
     clear() {
         this.q = ''
         this.parseQuery()
@@ -181,6 +192,30 @@ export class ClientComponent extends Vue {
             //         // ctrl.setSelectionRange(pos, pos) // will need vue directive
             //     }
             // }
+
+            const lastField = this.q.split(' ').slice(-2).shift() // or split on `:`
+            const lastTerm = this.q.split(' ').pop()
+            console.log({lastTerm, lastField})
+            if (lastField && lastField.trim().slice(-1) === ':') {
+                // this is a field
+                const field = lastField.trim().slice(0, -1)
+                console.log({field})
+                if (_includes(AllFields, field)) {
+                    // Valid field
+                    console.log('Valid')
+                    this.patentFacets.forEach(facet => {
+                        if (facet.key === field) {
+                            console.log({facet})
+                            this.suggestTerms = facet.values.map(d => d.label).filter(label => {
+                                const term = lastTerm.toLowerCase()
+                                const match = label.toLowerCase().indexOf(term) >= 0
+                                console.log({match})
+                                return match
+                            })
+                        }
+                    })
+                }
+            }
 
             const keywords = ['and', 'or', 'not', 'to']
             keywords.forEach(keyword => {
