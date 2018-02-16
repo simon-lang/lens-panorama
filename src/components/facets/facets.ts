@@ -10,5 +10,5 @@ import './facets.scss'
     components: {}
 })
 export class FacetsComponent extends Vue {
-    @Prop() facets: any
+    @Prop() facets: Facet[]
 }

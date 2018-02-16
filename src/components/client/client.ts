@@ -57,6 +57,10 @@ export class ClientComponent extends Vue {
         // {field: 'seqExists', label: 'Sequence Exists'},
     ]
 
+    articleColumns: GoodTableColumn[] = [
+        { field: 'title', label: 'Title' },
+    ]
+
     placeholder: string = DEFAULT_PLACEHOLDER
 
     invalidFields: any[] = []
@@ -73,7 +77,7 @@ export class ClientComponent extends Vue {
     query: object = {}
 
     show: object = {
-        queryParserResult: true,
+        queryParserResult: false,
         table: true,
     }
 
