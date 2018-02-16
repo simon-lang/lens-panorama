@@ -1,7 +1,7 @@
 <div>
     <section class="client pad">
         <div class="form-row">
-            <div class="col-md-10">
+            <div class="col-md-9">
                 <div style="position: relative;">
                     <input class="form-control form-control-lg"
                         type="search"
@@ -34,8 +34,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <button class="btn btn-primary btn-lg" @click="submit">Search</button>
+            </div>
+            <div class="col col-md-2">
+                <b-form-group label="Data Sources:">
+                    <b-form-checkbox-group id="checkboxes1" name="flavour1" v-model="show" :options="dataSourceOptions">
+                    </b-form-checkbox-group>
+                </b-form-group>
             </div>
         </div>
         <div v-if="q.length > 0">
@@ -71,13 +77,25 @@
                     </b-card>
                 </div>
 
+                <div class="col col-md-4 reveal-result" v-if="q.length && classifications.length">
+                    <b-card header="Classification">
+                        <div v-for="item in classifications">
+                            <h4>{{item.symbol}}</h4>
+                            <small>{{item.classTitle}}</small>
+                            <hr>
+                            <!-- <pre>{{item}}</pre> -->
+                        </div>
+                        <!-- <a class="card-link" :href="'/lens/#/classification-viewer/CPC/' + q">View in Classification Viewer</a> -->
+                    </b-card>
+                </div>
+
                 <div class="col col-md-4 reveal-result" v-if="articles.length">
                     <b-card header="Most relevant Scholarly Works">
-                        <ol>
-                            <li v-for="article in articles">
-                                {{article.title}}
-                            </li>
-                        </ol>
+                        <div v-for="(article, i) in articles">
+                            <h4>{{i}}. doi ...</h4>
+                            <small>{{article.title}}</small>
+                            <hr>
+                        </div>
                         <a class="card-link" :href="'/lens/scholar/search?q=' + q">View all results in scholar search</a>
                     </b-card>
                 </div>

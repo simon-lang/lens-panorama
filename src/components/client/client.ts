@@ -9,9 +9,9 @@ import _uniq from 'lodash/uniq'
 
 import parser from 'lucene-query-parser'
 
-import { Article, Patent, Facet } from '../../models'
+import { Article, Patent, Facet, Classification } from '../../models'
 
-import { ArticleService, PatentService } from '../../services'
+import { ArticleService, PatentService, ClassificationService } from '../../services'
 const articleService = new ArticleService()
 const patentService = new PatentService()
 
@@ -60,6 +60,16 @@ export class ClientComponent extends Vue {
         { field: 'title', label: 'Title' },
     ]
 
+    dataSourceOptions: string[] = [
+        'Patents',
+        'Scholarly Works',
+        'Institutions',
+        'Biological Sequences',
+        'Classifications',
+        'Collections',
+    ]
+    selectedDataSources: string[] = [...this.dataSourceOptions]
+
     placeholder: string = DEFAULT_PLACEHOLDER
 
     invalidFields: any[] = []
@@ -82,6 +92,7 @@ export class ClientComponent extends Vue {
 
     patents: Patent[] = []
     articles: Article[] = []
+    classifications: Classification[] = []
 
     patentFacets: Facet[] = []
     hasPatentFacets = false
@@ -93,6 +104,7 @@ export class ClientComponent extends Vue {
 
     mounted() {
         this.interval = setInterval(this.updatePlaceholder, 3000)
+        this.searchClassifications()
     }
 
     beforeDestroy() {
@@ -284,7 +296,12 @@ export class ClientComponent extends Vue {
 
     searchCollections() { }
 
-    searchClassifications() { }
+    searchClassifications() {
+        const service = new ClassificationService({})
+        service.ancestorsAndSelf('CPC', 'C07K').then(classifications => {
+            this.classifications = classifications
+        })
+    }
 
     searchInstitutions() { }
 }

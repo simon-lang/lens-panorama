@@ -2,6 +2,7 @@ import IPCSymbolParser from './IPCSymbolParser'
 import LocalStorageService from './LocalStorageService'
 
 import { BASE_PLATCLASS_API_URL } from '../constants'
+import { Classification } from '../models';
 
 export class ClassificationService {
 
@@ -16,7 +17,7 @@ export class ClassificationService {
 
     constructor(opts) {
         opts = opts || {}
-        this.API_BASE_URL = opts.url // || window.UI_CONFIG.patclassApiBaseUrl
+        this.API_BASE_URL = opts.url || BASE_PLATCLASS_API_URL
         if (opts.cache === true) {
             if (!(opts.storage instanceof LocalStorageService)) {
                 throw new Error('To enable cache you must supply an instance of LocalStorageService')
@@ -50,8 +51,8 @@ export class ClassificationService {
         return fetch(url, {
             method: method,
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        })
+            // body: JSON.stringify(data)
+        }).then(d => d.json())
     }
 
     suggest(type, prefix) {
@@ -85,7 +86,7 @@ export class ClassificationService {
         return this._invoke(type, 'search', data)
     }
 
-    ancestorsAndSelf(type, symbol) {
+    ancestorsAndSelf(type, symbol): Promise<Classification[]> {
         if (type === 'IPC') {
             symbol = IPCSymbolParser(symbol)
         }
@@ -98,7 +99,7 @@ export class ClassificationService {
             'symbol': symbol,
         }).then((items) => {
             this._updateCache('search', type, symbol, items)
-            return items
+            return items.map(item => new Classification(item)).reverse()
         })
     }
 

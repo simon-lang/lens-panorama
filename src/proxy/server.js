@@ -20,6 +20,7 @@ const scholarAggsResponse = require(DATA_DIR + '/search-api/aggregations.json')
 const patentSearchResponse = require(DATA_DIR + '/patents/glucuronidase.json')
 const facetsResponse = require(DATA_DIR + '/facets/Rice-University.json')
 const scholarlyStoreResponse = require(DATA_DIR + '/store/27869821.json')
+const ancestorsAndSelf = require(DATA_DIR + '/classifications/ancestorsAndSelf.json')
 
 app.post('/lens/api/multi/search', (req, res) => {
     const aggs = _get(req, 'body.scholarly_search.aggs')
@@ -42,8 +43,8 @@ app.get('/lens/search/facetData', (req, res) => {
     res.send(facetsResponse)
 })
 
-app.get('/patclass', (req, res) => {
-    res.send('not implemented')
+app.get('/patclass/:type/ancestorsAndSelf', (req, res) => {
+    res.send(ancestorsAndSelf)
 })
 
 app.listen(9083)
