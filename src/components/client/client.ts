@@ -48,14 +48,13 @@ export class ClientComponent extends Vue {
     loading: any = {}
 
     columns: GoodTableColumn[] = [
-        {field: 'lensId', label: 'LensId'},
-        {field: 'hasFullText', label: 'HasFullText'},
-        {field: 'publicationDate', label: 'Publication Date'},
-        {field: 'title', label: 'Title'},
-        {field: 'kindCode', label: 'Kind Code'},
         {field: 'displayKey', label: 'Display Key'},
-        {field: 'seqExists', label: 'Sequence Exists'},
+        {field: 'title', label: 'Title'},
         {field: 'jurisdiction', label: 'Jurisdiction'},
+        {field: 'kindCode', label: 'Kind Code'},
+        {field: 'hasFullText', label: 'Full Text'},
+        // {field: 'publicationDate', label: 'Publication Date'},
+        // {field: 'seqExists', label: 'Sequence Exists'},
     ]
 
     placeholder: string = DEFAULT_PLACEHOLDER
@@ -73,7 +72,10 @@ export class ClientComponent extends Vue {
     q: string = ''
     query: object = {}
 
-    show: object = { }
+    show: object = {
+        queryParserResult: true,
+        table: true,
+    }
 
     patents: Patent[] = []
     articles: Article[] = []

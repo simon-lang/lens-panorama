@@ -1,5 +1,5 @@
 <div>
-    <section class="client">
+    <section class="client pad">
         <div class="form-row">
             <div class="col-md-10">
                 <div style="position: relative;">
@@ -45,89 +45,100 @@
                 <query :message="q" :query="query" :depth="1"></query>
             </div>
 
-            <div v-if="looksLike.scholarlyId">
-                <icon name="check"></icon>
-                scholarlyId {{idType}}
+            <div class="badges">
+                <b-badge variant="success" v-if="looksLike.scholarlyId">
+                    Scholarly ID: {{idType}}
+                </b-badge>
+                <b-badge variant="success" v-if="looksLike.classification">
+                    Classification
+                </b-badge>
+                <b-badge variant="success" v-if="looksLike.patentQuery && !looksLike.scholarly">
+                    Valid Patent Query
+                </b-badge>
+                <b-badge variant="success" v-if="looksLike.scholarQuery && !looksLike.patentQuery">
+                    Valid Scholar Query
+                </b-badge>
             </div>
-            <div v-if="looksLike.classification">
-                <icon name="check"></icon>
-                classification
-            </div>
-            <div v-if="looksLike.patentQuery && !looksLike.scholarly">
-                <icon name="check"></icon>
-                patentQuery
-            </div>
-            <div v-if="looksLike.scholarQuery && !looksLike.patentQuery">
-                <icon name="check"></icon>
-                scholarQuery
-            </div>
-
-            <!--
-            <div v-if="looksLike.patentQuery && looksLike.scholarQuery"  class="alert alert-danger">
-                <icon name="warning"></icon>
-                <strong>Warning: </strong>
-                boolean query references both scholarly and patent fields, which may result in reduced results.
-            </div>
-            -->
 
             <div v-if="loading.articles || loading.patents">
                 Loading...
             </div>
 
-            <b-card v-if="articles.length" header="Most relevant Scholarly Works">
-                <ol>
-                    <li v-for="article in articles">
-                        {{article.title}}
-                    </li>
-                </ol>
-                <a class="card-link" :href="'/lens/scholar/search?q=' + q">View all results in scholar search</a>
-            </b-card>
+            <div class="row">
 
-            <b-card v-if="patents.length" header="Most relevant Patents">
-                <ul v-if="!show.table">
-                    <li v-for="patent in patents">
-                        {{patent.displayKey}}:
-                        {{patent.title}}
-                    </li>
-                </ul>
-                <div v-if="show.table">
-                    <vue-good-table
-                        title="Most relevant patents"
-                        :columns="columns"
-                        :rows="patents"
-                        :paginate="true"
-                        :lineNumbers="true"
-                    />
+                <div class="col">
+                    <b-card v-if="q.length && show.queryParserResult" header="Parsed query">
+                        <pre>{{query}}</pre>
+                    </b-card>
                 </div>
-                <a class="card-link" :href="'/lens/search?q=' + q">View all results in patent search</a>
-            </b-card>
 
-            <b-card v-if="hasPatentFacets" header="Patent Facets">
-                <!-- <facets facets="patentFacets"></facets> -->
-                <div v-for="facet in scholarFacets">
-                    <p class="card-text">{{facet.key}}</p>
-                    <ul v-if="facet.values.length">
-                        <li v-for="item in facet.values">
-                            <span>{{item.label || item.key}}:</span>
-                            <strong>{{item.value}}</strong>
-                        </li>
-                    </ul>
+                <div class="col">
+                    <b-card v-if="articles.length" header="Most relevant Scholarly Works">
+                        <ol>
+                            <li v-for="article in articles">
+                                {{article.title}}
+                            </li>
+                        </ol>
+                        <a class="card-link" :href="'/lens/scholar/search?q=' + q">View all results in scholar search</a>
+                    </b-card>
                 </div>
-                <a class="card-link" :href="'/lens/search?v=analysis&q=' + q">View in patent analysis</a>
-            </b-card>
 
-            <b-card v-if="hasScholarFacets" header="Scholar Facets">
-                <div v-for="facet in scholarFacets">
-                    <p class="card-text">{{facet.key}}</p>
-                    <ul v-if="facet.values.length">
-                        <li v-for="item in facet.values">
-                            <span>{{item.label || item.key}}:</span>
-                            <strong>{{item.value}}</strong>
-                        </li>
-                    </ul>
+                <div class="col">
+                    <b-card v-if="patents.length" header="Most relevant Patents">
+                        <ul>
+                            <li v-for="patent in patents">
+                                {{patent.displayKey}}:
+                                {{patent.title}}
+                            </li>
+                        </ul>
+                        <a class="card-link" :href="'/lens/search?q=' + q">View all results in patent search</a>
+                    </b-card>
                 </div>
-                <a class="card-link" :href="'/lens/scholar/search/analysis?q=' + q">View in scholar analysis</a>
-            </b-card>
+
+                <div class="col col-md-12">
+                    <div v-if="patents.length && show.table">
+                        <vue-good-table
+                            :columns="columns"
+                            :rows="patents"
+                            :paginate="true"
+                            :lineNumbers="true"
+                        />
+                    </div>
+                </div>
+
+                <div class="col">
+                    <b-card v-if="hasPatentFacets" header="Patent Facets">
+                        <!-- <facets facets="patentFacets"></facets> -->
+                        <div v-for="facet in scholarFacets">
+                            <p class="card-text">{{facet.key}}</p>
+                            <ul v-if="facet.values.length">
+                                <li v-for="item in facet.values">
+                                    <span>{{item.label || item.key}}:</span>
+                                    <strong>{{item.value}}</strong>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="card-link" :href="'/lens/search?v=analysis&q=' + q">View in patent analysis</a>
+                    </b-card>
+                </div>
+
+                <div class="col">
+                    <b-card v-if="hasScholarFacets" header="Scholar Facets">
+                        <div v-for="facet in scholarFacets">
+                            <p class="card-text">{{facet.key}}</p>
+                            <ul v-if="facet.values.length">
+                                <li v-for="item in facet.values">
+                                    <span>{{item.label || item.key}}:</span>
+                                    <strong>{{item.value}}</strong>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="card-link" :href="'/lens/scholar/search/analysis?q=' + q">View in scholar analysis</a>
+                    </b-card>
+                </div>
+
+            </div>
+
         </div>
 
         <div v-if="!q.length" class="get-started">
