@@ -1,25 +1,6 @@
 import { BASE_URL } from '../constants'
 import { Patent, Facet, FacetValue } from '../models'
 
-const createFacetsFromPatentFacets = raw => {
-    let facets: Facet[] = []
-    Object.keys(raw).forEach(key => {
-        let data = raw[key]
-        let values: FacetValue[] = Object.keys(data).map(v => new FacetValue({
-            key: v,
-            label: data[v].displayName,
-            value: data[v].count,
-        }))
-        let facet = new Facet({
-            type: 'patent',
-            key,
-            values
-        })
-        facets.push(facet)
-    })
-    return facets
-}
-
 export class PatentService {
     query(endpoint) {
         return fetch(`${BASE_URL}/${endpoint}`).then(d => d.json())
@@ -31,8 +12,26 @@ export class PatentService {
     }
     facets(q: string): Promise<Facet[]> {
         return this.query(`search/facetData?q=${q}`).then(d => {
-            return createFacetsFromPatentFacets(d.facets)
+            return this.createFacetsFromRawData(d.facets)
         })
+    }
+    createFacetsFromRawData(raw) {
+        let facets: Facet[] = []
+        Object.keys(raw).forEach(key => {
+            let data = raw[key]
+            let values: FacetValue[] = Object.keys(data).map(v => new FacetValue({
+                key: v,
+                label: data[v].displayName,
+                value: data[v].count,
+            }))
+            let facet = new Facet({
+                type: 'patent',
+                key,
+                values
+            })
+            facets.push(facet)
+        })
+        return facets
     }
 }
 
