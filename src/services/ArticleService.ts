@@ -38,7 +38,11 @@ export class ArticleService {
         Object.keys(aggregations).forEach(key => {
             const agg = aggregations[key]
             if (!agg.buckets) {
-                console.warn('No buckets for agg', key, agg)
+                facets.push(new Facet({
+                    type: 'scholar',
+                    key,
+                    value: agg.value,
+                }))
                 return
             }
             const values = agg.buckets.map(d => new FacetValue({

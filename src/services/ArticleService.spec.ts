@@ -1,7 +1,6 @@
 import ArticleService from './ArticleService'
 const service: ArticleService = new ArticleService()
 
-// import sampleResponse from '../../data/search-api/aggregations.json'
 const sampleResponse = require('../../data/search-api/aggregations.json')
 
 describe('ArticleService', () => {
@@ -14,5 +13,9 @@ describe('ArticleService', () => {
         expect(facet.type).toEqual('scholar')
         expect(facet.values[0].key).toEqual('NHLBI NIH HHS')
         expect(facet.values[0].value).toEqual(196)
+
+        const singleValueFacet = facets[1]
+        expect(singleValueFacet.key).toEqual('sum_referenced_by_patent_count')
+        expect(singleValueFacet.value).toEqual(317)
     })
 })

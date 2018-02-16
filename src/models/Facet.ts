@@ -14,7 +14,8 @@ export class Facet {
     type: 'scholar' | 'patent'
     key: string = ''
     label: string = ''
-    values: FacetValue[]
+    value?: number
+    values: FacetValue[] = []
     sumOtherDocCount?: number
 
     constructor(init?: Partial<Facet>) {
