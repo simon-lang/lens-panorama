@@ -1,0 +1,11 @@
+<div class="facets">
+    <div v-for="facet in facets">
+        <p class="card-text">{{facet.key}}</p>
+        <ul v-if="facet.values.length">
+            <li v-for="item in facet.values">
+                <span>{{item.label || item.key}}:</span>
+                <strong>{{item.value}}</strong>
+            </li>
+        </ul>
+    </div>
+</div>
