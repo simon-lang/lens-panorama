@@ -9,7 +9,7 @@ import _uniq from 'lodash/uniq'
 
 import parser from 'lucene-query-parser'
 
-import { Article, Patent } from '../../models'
+import { Article, Patent, Facet } from '../../models'
 
 import { ArticleService, PatentService } from '../../services'
 const articleService = new ArticleService()
@@ -18,7 +18,7 @@ const patentService = new PatentService()
 import { ArticleFieldsList, PatentFieldsList } from '../../enums'
 const AllFields = _uniq(ArticleFieldsList.concat(PatentFieldsList)).sort()
 
-import { QueryComponent } from '../query'
+import { QueryComponent, FacetsComponent } from '../'
 
 import suggestions from './suggestions'
 
@@ -39,9 +39,9 @@ interface ParserError {
 @Component({
     template: require('./client.html'),
     components: {
-        // VueTypeahead,
         Icon,
-        'query': QueryComponent,
+        query: QueryComponent,
+        facets: FacetsComponent,
     }
 })
 export class ClientComponent extends Vue {
@@ -73,13 +73,15 @@ export class ClientComponent extends Vue {
     q: string = ''
     query: object = {}
 
+    show: object = { }
+
     patents: Patent[] = []
     articles: Article[] = []
 
-    patentFacets: any = {}
+    patentFacets: Facet[] = []
     hasPatentFacets = false
 
-    scholarFacets: any = {}
+    scholarFacets: Facet[] = []
     hasScholarFacets = false
 
     interval: any
@@ -106,7 +108,7 @@ export class ClientComponent extends Vue {
         terms.pop()
         terms.push(field + ': ')
         this.q = terms.join(' ')
-        this.suggestions = []
+        this.suggestFields = []
         this.selectedFieldIndex = 0
     }
 
