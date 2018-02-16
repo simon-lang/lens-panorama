@@ -1,3 +1,5 @@
+@import "../../sass/_variables";
+
 @keyframes revealContent {
   from {
     opacity: 0;
@@ -9,46 +11,34 @@
   }
 }
 
-@keyframes revealNav {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.app {
+.client {
     opacity: 0;
     animation: revealContent 200ms 400ms ease forwards;
 }
-
-.show-navbar {
-    opacity: 0;
-    animation: revealNav 200ms ease forwards;
+.get-started {
+    margin: 2rem;
+    opacity: 0.8;
 }
 
+// Typeahead. TODO: Component and BEM
 .suggest-fields-container {
-    // position: relative;
+    position: absolute;
+    right: 0;
+    padding-bottom: 0.5rem;
 }
 .suggest-fields {
-    // position: absolute;
-    padding-left: 1em;
+    padding-left: 1rem;
     width: 100%;
 }
 .suggest-field {
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.8);
     padding: 0.2em 0;
+    font-size: 1.5rem;
+    width: 100%;
     &.active {
         font-weight: bold;
         background: #f5f5f5;
+        color: $col-ter;
     }
-}
-
-.get-started {
-    margin: 2em;
-    opacity: 0.8;
 }

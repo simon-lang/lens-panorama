@@ -1,39 +1,44 @@
 <div>
-    <section class="app pad">
+    <section class="client">
         <div class="form-row">
             <div class="col-md-10">
-                <input class="form-control form-control-lg"
-                    type="search"
-                    v-model="q"
-                    @keyup="keyup"
-                    :placeholder="placeholder"
-                    :class="{'is-invalid': error}"
-                    spellcheck="false"
-                    autofocus
-                >
-                <!-- <b-form-textarea v-model="q" size="lg" keyup="keyup"></b-form-textarea> -->
-                <b-form-invalid-feedback v-if="error">
-                    {{error.message}}
-                    <span v-if="error.location">
-                        :{{error.location.start.offset}}
-                    </span>
-                </b-form-invalid-feedback>
-                <b-form-text v-if="looksLike.patentQuery && looksLike.scholarQuery">
-                    <strong>Warning: </strong>
-                    boolean query references both scholarly and patent fields, which may result in reduced results.
-                </b-form-text>
+                <div style="position: relative;">
+                    <input class="form-control form-control-lg"
+                        type="search"
+                        v-model="q"
+                        @keyup="keyup"
+                        :placeholder="placeholder"
+                        :class="{'is-invalid': error}"
+                        spellcheck="false"
+                        autofocus
+                    >
+
+                    <b-form-invalid-feedback v-if="error">
+                        {{error.message}}
+                        <span v-if="error.location">
+                            :{{error.location.start.offset}}
+                        </span>
+                    </b-form-invalid-feedback>
+
+                    <b-form-text v-if="looksLike.patentQuery && looksLike.scholarQuery">
+                        <strong>Warning: </strong>
+                        boolean query references both scholarly and patent fields, which may result in reduced results.
+                    </b-form-text>
+
+                    <div v-if="suggestFields.length" class="suggest-fields-container">
+                        <div v-for="(field, i) in suggestFields" class="suggest-fields">
+                            <div @click="selectField(field)" class="suggest-field" :class="{active: i === selectedFieldIndex}">
+                                {{field}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-2">
                 <button class="btn btn-primary btn-lg" @click="submit">Search</button>
             </div>
         </div>
         <div v-if="q.length > 0">
-
-            <div v-if="suggestFields.length" class="suggest-fields-container">
-                <div v-for="(field, i) in suggestFields" class="suggest-fields">
-                    <span @click="selectField(field)" class="suggest-field" :class="{active: i === selectedFieldIndex}">{{field}}</span>
-                </div>
-            </div>
 
             <div class="query-display well pad" :class="{'show': q.length}">
                 <!-- <small>Query:</small> -->
