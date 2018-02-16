@@ -163,9 +163,15 @@ export class ClientComponent extends Vue {
             //     }
             // }
 
-            if (this.q.slice(-5) === ' and ') {
-                this.q = this.q.slice(0, -5) + ' AND '
-            }
+            const keywords = ['and', 'or', 'not', 'to']
+            keywords.forEach(keyword => {
+                const trigger = ` ${keyword} `
+                const index = -1 * trigger.length
+                if (this.q.slice(index) === trigger) {
+                    this.q = this.q.slice(0, index) + trigger.toUpperCase()
+                }
+            })
+
             if (this.q.slice(-4) === ' or ') {
                 this.q = this.q.slice(0, -4) + ' OR '
             }
