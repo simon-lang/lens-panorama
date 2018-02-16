@@ -4,6 +4,7 @@
 // $body-color: #111;
 // $enable-rounded: false;
 // $enable-gradients: true;
+$border-radius: 2px;
 $border-radius-lg: 2px;
 
 $theme-colors: (
@@ -19,6 +20,10 @@ $theme-colors: (
 body {
   font-size: 1em;
   font-family: "Source Sans Pro";
+}
+
+.btn-primary, .btn-secondary {
+    color: white !important;
 }
 
 .pad {

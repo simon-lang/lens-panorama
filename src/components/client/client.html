@@ -82,13 +82,13 @@
 
             <div class="row">
 
-                <div class="col col-md-4 reveal-result" v-if="q.length && show.queryParserResult">
+                <div class="col col-md-6 reveal-result" v-if="q.length && show.queryParserResult">
                     <b-card header="Parsed query">
                         <pre>{{query}}</pre>
                     </b-card>
                 </div>
 
-                <div class="col col-md-4 reveal-result" v-if="q.length && classifications.length">
+                <div class="col col-md-6 reveal-result" v-if="q.length && classifications.length">
                     <b-card header="Classification">
                         <div v-for="item in classifications">
                             <h4>{{item.symbol}}</h4>
@@ -100,7 +100,7 @@
                     </b-card>
                 </div>
 
-                <div class="col col-md-4 reveal-result" v-if="articles.length">
+                <div class="col col-md-6 reveal-result" v-if="articles.length">
                     <b-card header="Most relevant Scholarly Works">
                         <div v-for="(article, i) in articles">
                             <h4>{{i}}. doi ...</h4>
@@ -111,7 +111,7 @@
                     </b-card>
                 </div>
 
-                <div class="col col-md-4 reveal-result" v-if="patents.length">
+                <div class="col col-md-6 reveal-result" v-if="patents.length">
                     <b-card header="Most relevant Patents">
                         <ul>
                             <li v-for="patent in patents">
@@ -123,14 +123,14 @@
                     </b-card>
                 </div>
 
-                <div class="col col-md-4 reveal-result" v-if="hasPatentFacets">
+                <div class="col col-md-6 reveal-result" v-if="hasPatentFacets">
                     <b-card header="Patent Facets">
                         <facets :facets="patentFacets"></facets>
                         <a class="card-link" :href="'/lens/search?v=analysis&q=' + q">View in patent analysis</a>
                     </b-card>
                 </div>
 
-                <div class="col col-md-4 reveal-result" v-if="hasScholarFacets">
+                <div class="col col-md-6 reveal-result" v-if="hasScholarFacets">
                     <b-card header="Scholar Facets">
                         <facets :facets="scholarFacets"></facets>
                         <a class="card-link" :href="'/lens/scholar/search/analysis?q=' + q">View in scholar analysis</a>
