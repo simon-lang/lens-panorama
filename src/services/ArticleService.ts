@@ -3,29 +3,6 @@ import { Article, Facet, FacetValue } from '../models'
 
 import { SearchResponse } from '../interfaces'
 
-const createFacetsFromScholarlyAggs = aggregations => {
-    let facets: Facet[] = []
-    Object.keys(aggregations).forEach(key => {
-        const agg = aggregations[key]
-        if (!agg.buckets) {
-            console.warn('No buckets for agg', key)
-            return
-        }
-        const values = agg.buckets.map(d => new FacetValue({
-            key,
-            label: key,
-            value: d.doc_count,
-        }))
-        const facet: Facet = new Facet({
-            type: 'scholar',
-            key,
-            values,
-            sumOtherDocCount: agg.sum_other_doc_count,
-        })
-        facets.push(facet)
-    })
-    return facets
-}
 
 export class ArticleService {
     query(query: object, endpoint: string = 'multi/search?request_cache=true') {
@@ -44,7 +21,7 @@ export class ArticleService {
     facets(query: object): Promise<Facet[]> {
         return this.query(query).then((res: SearchResponse) => {
             const { aggregations } = res.query_result
-            return createFacetsFromScholarlyAggs(aggregations)
+            return this.createFacetsFromScholarlyAggs(aggregations)
         })
     }
     get(ids: number | number[]) {
@@ -56,6 +33,30 @@ export class ArticleService {
         }
         return this.query(query, 'scholarly/store')
     }
+    createFacetsFromScholarlyAggs(aggregations) {
+        let facets: Facet[] = []
+        Object.keys(aggregations).forEach(key => {
+            const agg = aggregations[key]
+            if (!agg.buckets) {
+                console.warn('No buckets for agg', key, agg)
+                return
+            }
+            const values = agg.buckets.map(d => new FacetValue({
+                key: d.key,
+                label: d.key,
+                value: d.doc_count,
+            }))
+            const facet: Facet = new Facet({
+                type: 'scholar',
+                key,
+                values,
+                sumOtherDocCount: agg.sum_other_doc_count,
+            })
+            facets.push(facet)
+        })
+        return facets
+    }
+
 }
 
 export default ArticleService
