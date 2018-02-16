@@ -11,7 +11,7 @@
                     spellcheck="false"
                     autofocus
                 >
-                <!-- <b-form-textarea v-model="q" size="lg" @keyup="keyup"></b-form-textarea> -->
+                <!-- <b-form-textarea v-model="q" size="lg" keyup="keyup"></b-form-textarea> -->
                 <b-form-invalid-feedback v-if="error">
                     {{error.message}}
                     <span v-if="error.location">
@@ -69,47 +69,56 @@
                 Loading...
             </div>
 
-            <div class="row">
-                <div v-if="articles.length" class="col">
-                    <h3>Most relevant Scholarly Works:</h3>
-                    <ol>
-                        <li v-for="article in articles">
-                            {{article.title}}
-                        </li>
-                    </ol>
-                    <a :href="'/lens/scholar/search?q=' + q">View all results in scholar search</a>
-                </div>
+            <b-card v-if="articles.length" title="Most relevant Scholarly Works">
+                <ol>
+                    <li v-for="article in articles">
+                        {{article.title}}
+                    </li>
+                </ol>
+                <a :href="'/lens/scholar/search?q=' + q">View all results in scholar search</a>
+            </b-card>
 
-                <div v-if="patents.length" class="col">
-                    <h3>Most relevant Patents:</h3>
-                    <ul>
-                        <li v-for="patent in patents">
-                            {{patent.displayKey}}:
-                            {{patent.title}}
+            <b-card v-if="patents.length" title="Most relevant Patents">
+                <ul>
+                    <li v-for="patent in patents">
+                        {{patent.displayKey}}:
+                        {{patent.title}}
+                    </li>
+                </ul>
+                <!--
+                <vue-good-table
+                    title="Demo Table"
+                    :columns="columns"
+                    :rows="patents"
+                    :paginate="true"
+                    :lineNumbers="true"/>
+                -->
+                <a :href="'/lens/search?q=' + q">View all results in patent search</a>
+            </b-card>
+
+            <b-card v-if="hasPatentFacets" title="Patent Facets">
+                <div v-for="facet in patentFacets">
+                    <p class="card-text">{{facet.key}}</p>
+                    <ul v-if="facet.values.length">
+                        <li v-for="item in facet.values">
+                            <span>{{item.label || item.key}}:</span>
+                            <strong>{{item.value}}</strong>
                         </li>
                     </ul>
-                    <!--
-                    <vue-good-table
-                        title="Demo Table"
-                        :columns="columns"
-                        :rows="patents"
-                        :paginate="true"
-                        :lineNumbers="true"/>
-                    -->
-                    <a :href="'/lens/search?q=' + q">View all results in patent search</a>
                 </div>
-            </div>
-            <div class="row">
-                <div v-if="hasPatentFacets" class="col">
-                    <h3>Patent Facets</h3>
-                    <pre>{{patentFacets}}</pre>
-                </div>
+            </b-card>
 
-                <div v-if="hasScholarFacets" class="col">
-                    <h3>Scholar Facets</h3>
-                    <pre>{{scholarFacets}}</pre>
+            <b-card v-if="hasScholarFacets" title="Scholar Facets">
+                <div v-for="facet in scholarFacets">
+                    <p class="card-text">{{facet.key}}</p>
+                    <ul v-if="facet.values.length">
+                        <li v-for="item in facet.values">
+                            <span>{{item.label || item.key}}:</span>
+                            <strong>{{item.value}}</strong>
+                        </li>
+                    </ul>
                 </div>
-            </div>
+            </b-card>
         </div>
 
         <div v-if="!q.length" class="get-started">
