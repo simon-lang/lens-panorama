@@ -11,4 +11,7 @@ dev:
 proxy:
 	nodemon src/proxy/server.js
 
-.PHONY: dev
+test:
+	npm test
+
+.PHONY: dev test
