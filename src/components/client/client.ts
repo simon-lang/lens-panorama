@@ -105,7 +105,6 @@ export class ClientComponent extends Vue {
 
     mounted() {
         this.interval = setInterval(this.updatePlaceholder, 3000)
-        this.searchClassifications()
     }
 
     beforeDestroy() {
@@ -150,6 +149,7 @@ export class ClientComponent extends Vue {
         this.hasScholarFacets = false
         this.patents = []
         this.hasPatentFacets = false
+        this.classifications = []
     }
 
     keyup(event: KeyboardEvent) {
@@ -278,6 +278,9 @@ export class ClientComponent extends Vue {
         if (this.looksLike.patentQuery || keywordQuery) {
             this.searchPatents()
             this.searchPatentFacets()
+        }
+        if (this.looksLike.classification) {
+            this.searchClassifications()
         }
     }
 
