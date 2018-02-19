@@ -30,4 +30,5 @@ export interface QueryResult {
 
 export interface Hits {
     hits: any[]
+    total: number,
 }

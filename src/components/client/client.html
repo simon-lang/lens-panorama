@@ -102,6 +102,7 @@
 
                 <div class="col col-md-6 reveal-result" v-if="articles.length">
                     <b-card header="Most relevant Scholarly Works">
+                        <p>{{totalArticles}} results</p>
                         <div v-for="(article, i) in articles">
                             <h4>{{i}}. doi ...</h4>
                             <small>{{article.title}}</small>

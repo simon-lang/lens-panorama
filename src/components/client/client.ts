@@ -10,6 +10,7 @@ import _uniq from 'lodash/uniq'
 import parser from 'lucene-query-parser'
 
 import { Article, Patent, Facet, Classification } from '../../models'
+import { SearchResponse } from '../../interfaces'
 
 import { ArticleService, PatentService, ClassificationService } from '../../services'
 const articleService = new ArticleService()
@@ -101,6 +102,8 @@ export class ClientComponent extends Vue {
     scholarFacets: Facet[] = []
     hasScholarFacets = false
 
+    totalArticles = 0
+
     interval: any
 
     mounted() {
@@ -146,6 +149,7 @@ export class ClientComponent extends Vue {
 
     clearResults() {
         this.articles = []
+        this.totalArticles = 0
         this.hasScholarFacets = false
         this.patents = []
         this.hasPatentFacets = false
@@ -193,30 +197,23 @@ export class ClientComponent extends Vue {
             //     }
             // }
 
+            // Field/Term autosuggest
             const lastField = this.q.split(' ').slice(-2).shift() // or split on `:`
             const lastTerm = this.q.split(' ').pop()
-            console.log({lastTerm, lastField})
             if (lastField && lastField.trim().slice(-1) === ':') {
-                // this is a field
                 const field = lastField.trim().slice(0, -1)
-                console.log({field})
                 if (_includes(AllFields, field)) {
-                    // Valid field
-                    console.log('Valid')
                     this.patentFacets.forEach(facet => {
                         if (facet.key === field) {
-                            console.log({facet})
                             this.suggestTerms = facet.values.map(d => d.label).filter(label => {
-                                const term = lastTerm.toLowerCase()
-                                const match = label.toLowerCase().indexOf(term) >= 0
-                                console.log({match})
-                                return match
+                                return label.toLowerCase().indexOf(lastTerm.toLowerCase()) >= 0
                             })
                         }
                     })
                 }
             }
 
+            // Prediate uppercase
             const keywords = ['and', 'or', 'not', 'to']
             keywords.forEach(keyword => {
                 const trigger = ` ${keyword} `
@@ -288,8 +285,12 @@ export class ClientComponent extends Vue {
         this.loading.articles = true
         const query = topCitedArticlesQuery(this.q)
         articleService.search(query).then(([articles, res]) => {
+            const response: SearchResponse = res
+            // response.queries.SCHOLAR.joined
+            this.totalArticles = response.query_result.hits.total
             this.articles = articles
             this.loading.articles = false
+            // perform citing patents join search
         }).catch(err => {
             console.warn(err)
             this.loading.articles = false
@@ -314,6 +315,7 @@ export class ClientComponent extends Vue {
         patentService.search(this.q).then(patents => {
             this.patents = patents
             this.loading.patents = false
+            // perform cited articles join search
         }).catch(err => {
             console.warn(err)
             this.loading.patents = false
