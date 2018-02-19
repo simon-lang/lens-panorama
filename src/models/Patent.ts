@@ -1,4 +1,4 @@
-import { IClassification } from './Classification'
+import { Classification } from './Classification'
 
 class Jurisdiction {
     code: string
@@ -44,9 +44,9 @@ export class Patent {
     applicants: Applicant[] // ['UNIV NORTH CAROLINA', ...],
     inventors: Inventor[]
     fulltextCollection: string // 'Application',
-    cpcClassifications: IClassification[]
-    ipcrClassifications: IClassification[]
-    natClassifications: IClassification[]
+    cpcClassifications: Classification[]
+    ipcrClassifications: Classification[]
+    natClassifications: Classification[]
     titleFallbackToDisplayKey: string
     displayKeyAndTitle: string
 

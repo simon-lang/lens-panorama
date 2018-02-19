@@ -1,8 +1,12 @@
+// https://github.com/cambialens/t3as-pat-clas/tree/patcite/pat-clas-service
+
 import IPCSymbolParser from './IPCSymbolParser'
 import LocalStorageService from './LocalStorageService'
 
 import { BASE_PLATCLASS_API_URL } from '../constants'
 import { Classification } from '../models';
+
+type ClassificationType = 'CPC' | 'IPC' | 'US'
 
 export class ClassificationService {
 
@@ -47,15 +51,21 @@ export class ClassificationService {
     }
 
     _invoke(type, endpoint, data, method = 'GET') {
-        const url = this.API_BASE_URL + '/' + type + '/' + endpoint
-        return fetch(url, {
+        const query = Object.keys(data)
+            .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+            .join('&')
+        const url = this.API_BASE_URL + '/' + type + '/' + endpoint + (method === 'GET' ? '?' + query : '')
+        let opts: any = {
             method: method,
             headers: { 'Content-Type': 'application/json' },
-            // body: JSON.stringify(data)
-        }).then(d => d.json())
+        }
+        if (method === 'POST') {
+            opts.body = data
+        }
+        return fetch(url, opts).then(d => d.json())
     }
 
-    suggest(type, prefix) {
+    suggest(type: ClassificationType, prefix: string): Promise<string[]> {
         let cached = this._checkCache('suggest', type, prefix)
         if (cached) {
             // const d = new $.Deferred()
@@ -65,12 +75,13 @@ export class ClassificationService {
             'prefix': prefix,
             'num': 10,
         }).then((response) => {
-            this._updateCache('suggest', type, prefix, response)
-            return response
+            const suggestions = response.exact.concat(response.fuzzy)
+            this._updateCache('suggest', type, prefix, suggestions)
+            return suggestions
         })
     }
 
-    search(type, term, prefix, symbol) {
+    search(type, term, prefix = null, symbol = null) {
         if (!term) {
             return
         }
@@ -99,11 +110,12 @@ export class ClassificationService {
             'symbol': symbol,
         }).then((items) => {
             this._updateCache('search', type, symbol, items)
-            return items.map(item => new Classification(item)).reverse()
+            return items.map(item => new Classification(item))
         })
     }
 
-    bulkAncestorsAndSelf(type, symbols) {
+    bulkAncestorsAndSelf(type, symbols: string[] = []) {
+        symbols = symbols.map(d => d.toUpperCase())
         let data = JSON.stringify({
             'format': 'text',
             'symbols': symbols,

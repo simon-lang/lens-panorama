@@ -65,8 +65,9 @@
                 <b-badge variant="success" v-if="looksLike.scholarlyId">
                     Scholarly ID: {{idType}}
                 </b-badge>
-                <b-badge variant="success" v-if="looksLike.classification">
-                    Classification
+                <b-badge variant="success" v-if="classificationSymbols.length > 0">
+                    {{classificationSymbols.length}}
+                    Classifications found
                 </b-badge>
                 <b-badge variant="success" v-if="looksLike.patentQuery && !looksLike.scholarly">
                     Valid Patent Query
@@ -88,23 +89,25 @@
                     </b-card>
                 </div>
 
-                <div class="col col-md-6 reveal-result" v-if="q.length && classifications.length">
+                <div class="col col-md-6 reveal-result" v-if="q.length && classifications.length" v-for="classification in classifications">
                     <b-card header="Classification">
-                        <div v-for="item in classifications">
+                        <div v-for="(item, i) in classification" v-if="showClassificationContext || i === 0">
                             <h4>{{item.symbol}}</h4>
                             <small>{{item.classTitle}}</small>
                             <hr>
                             <!-- <pre>{{item}}</pre> -->
                         </div>
+                        <a class="card-link" href="#" @click="toggleClassificationContext">Toggle Context</a>
                         <!-- <a class="card-link" :href="'/lens/#/classification-viewer/CPC/' + q">View in Classification Viewer</a> -->
                     </b-card>
                 </div>
 
                 <div class="col col-md-6 reveal-result" v-if="articles.length">
                     <b-card header="Most relevant Scholarly Works">
-                        <p>{{totalArticles}} results</p>
+                        <p>{{totalArticles.toLocaleString()}} results</p>
                         <div v-for="(article, i) in articles">
-                            <h4>{{i}}. doi ...</h4>
+                            <strong>{{article.id}}</strong>
+                            <br>
                             <small>{{article.title}}</small>
                             <hr>
                         </div>
@@ -114,12 +117,12 @@
 
                 <div class="col col-md-6 reveal-result" v-if="patents.length">
                     <b-card header="Most relevant Patents">
-                        <ul>
-                            <li v-for="patent in patents">
-                                {{patent.displayKey}}:
-                                {{patent.title}}
-                            </li>
-                        </ul>
+                        <div v-for="patent in patents">
+                            <strong>{{patent.displayKey}}</strong>
+                            <br>
+                            <small>{{patent.title}}</small>
+                            <hr>
+                        </div>
                         <a class="card-link" :href="'/lens/search?q=' + q">View all results in patent search</a>
                     </b-card>
                 </div>
@@ -164,14 +167,15 @@
             <p class="lead">Start typing to start your guided knowledge journey with the Lens.</p>
             <p>Depending on the contents of your query, we will attempt to provide intelligent results.</p>
             <p>Full boolean query syntax is supported for patent and scholarly searches.</p>
-            <!--
-            <ul class="hidden">
-                <li v-for="suggestion in suggestions">
-                    <span class="" @click="suggest(suggestion)">{{suggestion}}</span>
-                </li>
-            </ul>
-            -->
         </div>
+
+        <ul v-if="showSuggestions">
+            <hr>
+            <p>Full boolean query syntax is supported for patent and scholarly searches.</p>
+            <li v-for="suggestion in suggestions">
+                <span class="btn btn-link" @click="suggest(suggestion)">{{suggestion}}</span>
+            </li>
+        </ul>
 
     </section>
 </div>

@@ -31,7 +31,7 @@ interface IJournal {
 }
 
 interface IArticle {
-    id: IArticleID
+    // id: IArticleID
     title: string
     abstract: string
     journal: IJournal
@@ -51,7 +51,8 @@ const aliases = {
 }
 
 export class Article implements IArticle {
-    id: IArticleID
+    // id: IArticleID
+    id: string = ''
     ids: any[] = []
     title: string = ''
     abstract: string = ''
@@ -60,7 +61,7 @@ export class Article implements IArticle {
     affiliations: Set<Affiliation> = new Set()
     meshTerms: MeshTerm[] = []
     chemicals: Chemical[] = []
-    constructor(init?: Partial<Article>) {
+    constructor(init?: Partial<Article>, meta: any = {}) {
         if (init) {
             Object.keys(init).forEach(k => {
                 const alias: string = aliases[k] || k
@@ -89,5 +90,9 @@ export class Article implements IArticle {
                 this.affiliations.add(affiliation)
             })
         })
+
+        if (meta.id) {
+            this.id = meta.id
+        }
     }
 }

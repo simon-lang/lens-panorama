@@ -6,6 +6,7 @@ import { topCitedArticlesQuery, articleFacetsQuery } from '../../queries'
 
 import _includes from 'lodash/includes'
 import _uniq from 'lodash/uniq'
+import _values from 'lodash/values'
 
 import parser from 'lucene-query-parser'
 
@@ -15,6 +16,7 @@ import { SearchResponse } from '../../interfaces'
 import { ArticleService, PatentService, ClassificationService } from '../../services'
 const articleService = new ArticleService()
 const patentService = new PatentService()
+const classificationService = new ClassificationService({})
 
 import { ArticleFieldsList, PatentFieldsList } from '../../enums'
 const AllFields = _uniq(ArticleFieldsList.concat(PatentFieldsList)).sort()
@@ -24,6 +26,12 @@ import { QueryComponent, FacetsComponent, SimpleBarChartComponent } from '../'
 import suggestions from './suggestions'
 
 import './client.scss'
+
+const stripHtml = html => {
+    const tmp = document.createElement('DIV')
+    tmp.innerHTML = html
+    return tmp.textContent || tmp.innerText || ''
+}
 
 const DEFAULT_PLACEHOLDER = 'Explore the world of patents, science, technology and innovation...'
 
@@ -78,11 +86,15 @@ export class ClientComponent extends Vue {
     suggestTerms: any[] = []
     selectedFieldIndex: number = 0
 
+    showSuggestions = true
     suggestions: any[] = suggestions
+
     suggestIndex: number = 0
 
+    showClassificationContext: boolean = false
     error?: ParserError = null
     looksLike: any = {}
+    classificationSymbols: string[] = []
     idType: string = ''
     q: string = ''
     query: object = {}
@@ -105,9 +117,17 @@ export class ClientComponent extends Vue {
     totalArticles = 0
 
     interval: any
+    autoRunSearch: true
 
     mounted() {
         this.interval = setInterval(this.updatePlaceholder, 3000)
+
+        this.q = this.$route.query.q || ''
+        // not working
+        if (this.q.length && this.autoRunSearch) {
+            this.parseQuery()
+            this.submit()
+        }
     }
 
     beforeDestroy() {
@@ -211,6 +231,10 @@ export class ClientComponent extends Vue {
                         }
                     })
                 }
+                classificationService.suggest('CPC', lastTerm).then(suggestions => {
+                    const truncated = suggestions.map(stripHtml).slice(0, 5)
+                    this.suggestTerms = truncated
+                })
             }
 
             // Prediate uppercase
@@ -232,11 +256,12 @@ export class ClientComponent extends Vue {
             if (isId) {
                 this.idType = type
             }
-            this.looksLike.classification = looksLikeClassificationSymbol(this.q)
             this.query = parser.parse(this.q)
 
             const fields = extractFields(this.query)
             this.invalidFields = _uniq(fields.filter(field => !_includes(AllFields, field)))
+
+            this.classificationSymbols = this.q.match(/[A-HY][\d][\dA-Z/]*\w/gi) || []
 
             const term = this.q.split(' ').pop().toLowerCase()
             if (term.length > 1) {
@@ -251,6 +276,8 @@ export class ClientComponent extends Vue {
                     this.looksLike.patentQuery = true
                 }
             })
+
+            this.$router.push({query: {q: this.q}})
         } catch (err) {
             // console.warn(err)
             this.error = err
@@ -276,8 +303,8 @@ export class ClientComponent extends Vue {
             this.searchPatents()
             this.searchPatentFacets()
         }
-        if (this.looksLike.classification) {
-            this.searchClassifications()
+        if (this.classificationSymbols.length) {
+            this.lookupClassifications()
         }
     }
 
@@ -301,7 +328,7 @@ export class ClientComponent extends Vue {
         this.loading.articleFacets = true
         const facetsQuery = articleFacetsQuery(this.q)
         articleService.facets(facetsQuery).then(facets => {
-            this.scholarFacets = facets
+            this.scholarFacets = facets // .filter(facet => facet.key !== 'dates')
             this.loading.articleFacets = false
             this.hasScholarFacets = true
         }).catch(err => {
@@ -337,11 +364,22 @@ export class ClientComponent extends Vue {
     searchCollections() { }
 
     searchClassifications() {
-        const service = new ClassificationService({})
-        service.ancestorsAndSelf('CPC', 'C07K').then(classifications => {
-            this.classifications = classifications
+        classificationService.search('CPC', this.q).then(classifications => {
+            console.log({ classifications })
+            // this.classifications = _values(classifications)
+        })
+    }
+
+    lookupClassifications() {
+        classificationService.bulkAncestorsAndSelf('CPC', this.classificationSymbols).then(classifications => {
+            this.classifications = _values(classifications)
         })
     }
 
     searchInstitutions() { }
+
+    toggleClassificationContext() {
+        this.showClassificationContext = !this.showClassificationContext
+    }
+
 }

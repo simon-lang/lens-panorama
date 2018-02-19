@@ -14,7 +14,7 @@ export class ArticleService {
     }
     search(query: object): Promise<any[]> {
         return this.query(query).then((res: SearchResponse) => {
-            const articles = res.query_result.hits.hits.map(d => new Article(d._source))
+            const articles = res.query_result.hits.hits.map(d => new Article(d._source, d))
             return [articles, res]
         })
     }
@@ -46,8 +46,8 @@ export class ArticleService {
                 return
             }
             const values = agg.buckets.map(d => new FacetValue({
-                key: d.key,
-                label: d.key,
+                key: d.key_as_string,
+                label: d.key_as_string || d.key,
                 value: d.doc_count,
             }))
             const facet: Facet = new Facet({
