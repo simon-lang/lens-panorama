@@ -8,18 +8,24 @@ $border-radius: 2px;
 $border-radius-lg: 2px;
 
 $theme-colors: (
-  "primary": #1b75bc,
-  "secondary": #ffb300,
-  "tertiary": #418e37,
-  "danger": #b10d28
+"primary": #1b75bc,
+"secondary": #ffb300,
+"tertiary": #418e37,
+"danger": #b10d28
 );
 
 @import "~bootstrap/scss/bootstrap.scss";
 
 
 body {
-  font-size: 1em;
-  font-family: "Source Sans Pro";
+    font-size: 1em;
+    font-family: "Source Sans Pro";
+    line-height: 1.5;
+    background: #f9f9f9;
+}
+
+.bg-dark {
+    background: #031A43 !important;
 }
 
 .btn-primary, .btn-secondary {
@@ -28,6 +34,10 @@ body {
 
 .pad {
     padding: 1em;
+}
+
+.flat {
+    margin: 0 !important;
 }
 
 input[type="search"]::-webkit-search-cancel-button {

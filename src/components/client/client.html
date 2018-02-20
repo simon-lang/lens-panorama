@@ -1,58 +1,58 @@
 <div>
-    <section class="client pad">
-        <div class="form-row">
-            <div class="col-md-11">
-                <div style="position: relative;">
-                    <input class="form-control form-control-lg"
-                        type="search"
-                        v-model="q"
-                        @keyup="keyup"
-                        :placeholder="placeholder"
-                        :class="{'is-invalid': error}"
-                        spellcheck="false"
-                        autofocus
-                    >
+    <div class="search">
+        <h4 class="search__title">Start typing to begin your guided knowledge journey with the Lens.</h4>
+        <div class="search__box">
+            <input class="form-control form-control-lg"
+                type="search"
+                v-model="q"
+                @keyup="keyup"
+                :placeholder="placeholder"
+                :class="{'is-invalid': error, 'search__input': true}"
+                spellcheck="false"
+                autofocus
+            >
+            <button class="search__btn btn btn-primary btn-lg" @click="submit">Search</button>
+            <div class="search__tags">
+                <p class="flat">Search by</p>
+                <div class="tags">
+                    <button class="tag">Title</button>
+                    <button class="tag">Citation</button>
+                    <button class="tag">Juristiction</button>
+                    <button class="tag">Date range</button>
+                </div>
+            </div>
+        </div>
+        <div class="search__feedback">
+            <b-form-invalid-feedback v-if="error">
+                {{error.message}}
+                <span v-if="error.location">
+                    :{{error.location.start.offset}}
+                </span>
+            </b-form-invalid-feedback>
 
-                    <b-form-invalid-feedback v-if="error">
-                        {{error.message}}
-                        <span v-if="error.location">
-                            :{{error.location.start.offset}}
-                        </span>
-                    </b-form-invalid-feedback>
+            <b-form-text v-if="looksLike.patentQuery && looksLike.scholarQuery">
+                <strong>Warning: </strong>
+                boolean query references both scholarly and patent fields, which may result in reduced results.
+            </b-form-text>
+        </div>
 
-                    <b-form-text v-if="looksLike.patentQuery && looksLike.scholarQuery">
-                        <strong>Warning: </strong>
-                        boolean query references both scholarly and patent fields, which may result in reduced results.
-                    </b-form-text>
-
-                    <div v-if="suggestFields.length || suggestTerms.length" class="suggest-fields-container">
-                        <div v-for="(field, i) in suggestFields" class="suggest-fields">
-                            <div @click="selectField(field)" class="suggest-field" :class="{active: i === selectedFieldIndex}">
-                                {{field}}
-                            </div>
-                        </div>
-                        <div v-for="(field, i) in suggestTerms" class="suggest-fields">
-                            <div @click="selectTerm(field)" class="suggest-field" :class="{active: selectedFieldIndex === (i + suggestFields.length)}">
-                                {{field}}
-                            </div>
-                        </div>
+        <div class="search__results">
+            <div v-if="suggestFields.length || suggestTerms.length" class="suggest-fields-container">
+                <div v-for="(field, i) in suggestFields" class="suggest-fields">
+                    <div @click="selectField(field)" class="suggest-field" :class="{active: i === selectedFieldIndex}">
+                        {{field}}
+                    </div>
+                </div>
+                <div v-for="(field, i) in suggestTerms" class="suggest-fields">
+                    <div @click="selectTerm(field)" class="suggest-field" :class="{active: selectedFieldIndex === (i + suggestFields.length)}">
+                        {{field}}
                     </div>
                 </div>
             </div>
-            <div class="col-md-1">
-                <button class="btn btn-primary btn-lg" @click="submit">Search</button>
-            </div>
-            <!--
-            <div class="col col-md-2">
-                <b-form-group label="Data Sources:">
-                    <b-form-checkbox-group id="checkboxes1" name="flavour1" v-model="show" :options="dataSourceOptions">
-                    </b-form-checkbox-group>
-                </b-form-group>
-            </div>
-            -->
         </div>
+    </div>
+    <section class="client pad">
         <div v-if="q.length > 0">
-
             <div class="query-display well pad" :class="{'show': show.formattedQuery}">
                 <query :message="q" :query="query" :depth="1"></query>
             </div>
@@ -177,13 +177,6 @@
                 </div>
             </div>
 
-        </div>
-
-        <div v-if="!q.length" class="get-started">
-            <h2>What can I search for?</h2>
-            <p class="lead">Start typing to start your guided knowledge journey with the Lens.</p>
-            <p>Depending on the contents of your query, we will attempt to provide intelligent results.</p>
-            <p>Full boolean query syntax is supported for patent and scholarly searches.</p>
         </div>
 
         <b-card v-if="!q.length && showSuggestions" header="Suggestions">
