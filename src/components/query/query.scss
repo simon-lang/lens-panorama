@@ -1,25 +1,5 @@
 @import "../../sass/_variables";
 
-@keyframes revealQuery {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.query-display {
-    opacity: 0;
-    font-size: 1.6em;
-    padding: 1em;
-    &.show {
-        animation: revealQuery 375ms ease forwards;
-    }
-}
-
 .operator {
     color: $col-meta-2;
 }

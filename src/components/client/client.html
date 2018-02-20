@@ -14,6 +14,7 @@
                         type="search"
                         v-model="q"
                         @keyup="keyup"
+                        @blur="parseQuery"
                         :placeholder="placeholder"
                         :class="{'is-invalid': error, 'search__input': true}"
                         spellcheck="false"
@@ -72,10 +73,6 @@
     </div>
     <section class="client__content pad">
 
-        <div v-if="loading.articles || loading.patents">
-            Loading...
-        </div>
-
         <div class="row">
 
             <div class="col col-md-6 reveal-result" v-if="q.length && show.queryParserResult">
@@ -84,22 +81,9 @@
                 </b-card>
             </div>
 
-            <div class="col col-md-12 reveal-result" v-if="hasPatentFacets && show.applicantLogoGrid">
-                <div class="row" v-for="facet in patentFacets" v-if="facet.key === 'applicant'">
-                    <div class="col-md-3" v-for="applicant in facet.values">
-                        <b-card :title="applicant.key"
-                            :sub-title="applicant.value.toLocaleString()"
-                            :img-src="'https://static.lens.org/lens/5.5.4/in4m-ui-data/public/logos/' + applicant.key + '.png'"
-                            img-top
-                        >
-                        </b-card>
-                    </div>
-                </div>
-            </div>
-
             <div class="col col-md-6 reveal-result" v-if="q.length && classifications.length" v-for="classification in classifications">
                 <b-card header="Classification">
-                    <div v-for="(item, i) in classification" v-if="showClassificationContext || i === 0">
+                    <div v-for="(item, i) in classification" v-if="showClassificationContext || i === (classification.length - 1)">
                         <h4>{{item.symbol}}</h4>
                         <small>{{item.classTitle}}</small>
                         <hr>
@@ -111,8 +95,7 @@
             </div>
 
             <div class="col col-md-6 reveal-result" v-if="articles.length">
-                <b-card header="Most relevant Scholarly Works">
-                    <p>{{totalArticles.toLocaleString()}} results</p>
+                <b-card :header="'Most relevant of ' + totalArticles.toLocaleString() + ' Scholarly Works'">
                     <div v-for="(article, i) in articles">
                         <strong>{{article.id}}</strong>
                         <br>
@@ -127,7 +110,7 @@
             </div>
 
             <div class="col col-md-6 reveal-result" v-if="patents.length">
-                <b-card header="Most relevant Patents" :title="patentStats.size.toLocaleString()">
+                <b-card :header="'Most relevant of ' + patentStats.size.toLocaleString() + ' Patents'">
                     <!--
                     <div v-if="patentStats.size">
                         Total Patents: {{patentStats.size.toLocaleString()}}
@@ -157,6 +140,20 @@
                 </b-card>
             </div>
 
+            <div class="col col-md-12 reveal-result" v-if="hasPatentFacets && show.applicantLogoGrid">
+                <h2>Which legal entities have applied for these patents?</h2>
+                <div class="row" v-for="facet in patentFacets" v-if="facet.key === 'applicant'">
+                    <div class="col-md-2" v-for="applicant in facet.values">
+                        <b-card :title="applicant.value.toLocaleString()"
+                            :sub-title="applicant.key"
+                            :img-src="'https://static.lens.org/lens/5.5.4/in4m-ui-data/public/logos/' + applicant.key + '.png'"
+                            img-top
+                        >
+                        </b-card>
+                    </div>
+                </div>
+            </div>
+
             <div class="col col-md-12 reveal-result" v-if="patents.length && show.table">
                 <vue-good-table
                     :columns="columns"
@@ -176,7 +173,7 @@
             </div>
         </div>
 
-        <b-card v-if="!q.length && showSuggestions" header="Suggestions">
+        <b-card v-if="!q.length" header="Suggestions">
             <div v-for="suggestion in suggestions">
                 <span class="btn btn-link" @click="suggest(suggestion)">{{suggestion}}</span>
             </div>

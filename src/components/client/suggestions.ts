@@ -8,7 +8,7 @@ export default [
     '"invalid field" AND ownar: "Microsoft Inc"',
     '"scholar" AND source.title: Nature',
     '"conflicting fields" AND source.title: Nature AND pub_key: 123',
-    'classification detection AND "A61K38/00 C07K14/415 A01H5/10 C07K2319/00"',
+    'classification_cpc: ("A61K38/00" "C07K14/415" "A01H5/10")',
     'abstract:(a OR b) && title:(c OR d)',
 
     // Translate / map from plain english descriptions like below to boolean queries above

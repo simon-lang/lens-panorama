@@ -19,6 +19,7 @@ export const ArticleFieldsList = [
     'chemical.mesh_ui',
     'funding.country',
     'funding.funding_name',
+    'funding.organisation.keyword',
     'funding.funding_id',
     'funding.organisation',
     'clinical_trial.registry',
