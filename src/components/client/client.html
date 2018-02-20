@@ -168,7 +168,7 @@
             <p>Full boolean query syntax is supported for patent and scholarly searches.</p>
         </div>
 
-        <b-card v-if="!q.length" v-if="showSuggestions" header="Suggestions">
+        <b-card v-if="!q.length && showSuggestions" header="Suggestions">
             <div v-for="suggestion in suggestions">
                 <span class="btn btn-link" @click="suggest(suggestion)">{{suggestion}}</span>
             </div>
