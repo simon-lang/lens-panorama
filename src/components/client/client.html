@@ -53,7 +53,7 @@
         </div>
         <div v-if="q.length > 0">
 
-            <div class="query-display well pad" :class="{'show': q.length}">
+            <div class="query-display well pad" :class="{'show': show.formattedQuery}">
                 <query :message="q" :query="query" :depth="1"></query>
             </div>
 
@@ -83,6 +83,19 @@
                     <b-card header="Parsed query">
                         <pre>{{query}}</pre>
                     </b-card>
+                </div>
+
+                <div class="col col-md-12 reveal-result" v-if="hasPatentFacets && show.applicantLogoGrid">
+                    <div class="row" v-for="facet in patentFacets" v-if="facet.key === 'applicant'">
+                        <div class="col-md-3" v-for="applicant in facet.values">
+                            <b-card :title="applicant.key"
+                                :sub-title="applicant.value.toLocaleString()"
+                                :img-src="'https://static.lens.org/lens/5.5.4/in4m-ui-data/public/logos/' + applicant.key + '.png'"
+                                img-top
+                            >
+                            </b-card>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col col-md-6 reveal-result" v-if="q.length && classifications.length" v-for="classification in classifications">
@@ -115,7 +128,12 @@
                 </div>
 
                 <div class="col col-md-6 reveal-result" v-if="patents.length">
-                    <b-card header="Most relevant Patents">
+                    <b-card header="Most relevant Patents" :title="patentStats.size.toLocaleString()">
+                        <!--
+                        <div v-if="patentStats.size">
+                            Total Patents: {{patentStats.size.toLocaleString()}}
+                        </div>
+                        -->
                         <div v-for="patent in patents">
                             <strong>{{patent.displayKey}}</strong>
                             <br>
