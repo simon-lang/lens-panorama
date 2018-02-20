@@ -1,4 +1,5 @@
 export default [
+    'title:glucuronidase',
     'pub_key:US_5599670_A',
     'author:"Richard Jefferson" OR abstract:glucuronidase AND title:GUS',
     '"malaria vaccine" AND year_published:[1970 TO 1980]',

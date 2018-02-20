@@ -11,8 +11,8 @@ export class PatentService {
         })
     }
     facets(q: string): Promise<Facet[]> {
-        return this.query(`search/facetData?q=${q}`).then(d => {
-            return this.createFacetsFromRawData(d.facets)
+        return this.query(`search/facetData?q=${q}`).then(facets => {
+            return this.createFacetsFromRawData(facets)
         })
     }
     createFacetsFromRawData(raw) {

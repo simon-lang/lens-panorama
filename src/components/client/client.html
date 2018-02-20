@@ -1,7 +1,7 @@
 <div>
     <section class="client pad">
         <div class="form-row">
-            <div class="col-md-9">
+            <div class="col-md-11">
                 <div style="position: relative;">
                     <input class="form-control form-control-lg"
                         type="search"
@@ -32,14 +32,10 @@
                             </div>
                         </div>
                         <div v-for="(field, i) in suggestTerms" class="suggest-fields">
-                            <div @click="selectTerm(field)" class="suggest-field" :class="{active: i === selectedFieldIndex}">
+                            <div @click="selectTerm(field)" class="suggest-field" :class="{active: selectedFieldIndex === (i + suggestFields.length)}">
                                 {{field}}
                             </div>
                         </div>
-                        <!--
-                        final repeat here for classification suggest endpoint results or scholar store suggest endpoint
-                        if cors is a pain just do simple dictionary endpoint on node server
-                        -->
                     </div>
                 </div>
             </div>
@@ -169,13 +165,11 @@
             <p>Full boolean query syntax is supported for patent and scholarly searches.</p>
         </div>
 
-        <ul v-if="showSuggestions">
-            <hr>
-            <p>Full boolean query syntax is supported for patent and scholarly searches.</p>
-            <li v-for="suggestion in suggestions">
+        <b-card v-if="showSuggestions" header="Suggestions">
+            <div v-for="suggestion in suggestions">
                 <span class="btn btn-link" @click="suggest(suggestion)">{{suggestion}}</span>
-            </li>
-        </ul>
+            </div>
+        </b-card>
 
     </section>
 </div>

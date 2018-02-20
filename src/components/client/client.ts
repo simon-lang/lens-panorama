@@ -185,7 +185,8 @@ export class ClientComponent extends Vue {
             return
         }
         if (event.keyCode === 40) {
-            this.selectedFieldIndex = Math.min(this.suggestFields.length, this.selectedFieldIndex + 1)
+            const length = this.suggestFields.length + this.suggestTerms.length
+            this.selectedFieldIndex = Math.min(length, this.selectedFieldIndex + 1)
             return
         }
         if (event.keyCode === 13) {
@@ -230,11 +231,13 @@ export class ClientComponent extends Vue {
                             })
                         }
                     })
+                    // TODO: scholar facets too
                 }
-                classificationService.suggest('CPC', lastTerm).then(suggestions => {
-                    const truncated = suggestions.map(stripHtml).slice(0, 5)
-                    this.suggestTerms = truncated
-                })
+                // Remote autosuggest
+                // classificationService.suggest('CPC', lastTerm).then(suggestions => {
+                //     const truncated = suggestions.map(stripHtml).slice(0, 5)
+                //     this.suggestTerms = truncated
+                // })
             }
 
             // Prediate uppercase
@@ -291,6 +294,11 @@ export class ClientComponent extends Vue {
             }
             return
         }
+
+        console.log('todo: add to history')
+        // let history = localStorage.getItem('history') || []
+        // history.unshift(this.q)
+        // localStorage.setItem('history', history)
 
         this.clearResults()
 
