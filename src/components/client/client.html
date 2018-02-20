@@ -104,7 +104,10 @@
                         <div v-for="(article, i) in articles">
                             <strong>{{article.id}}</strong>
                             <br>
-                            <small>{{article.title}}</small>
+                            <span>{{article.title}}</span>
+                            <div v-if="articles.length === 1">
+                                <small>{{article.abstract}}</small>
+                            </div>
                             <hr>
                         </div>
                         <a class="card-link" :href="'/lens/scholar/search?q=' + q">View all results in scholar search</a>
@@ -165,7 +168,7 @@
             <p>Full boolean query syntax is supported for patent and scholarly searches.</p>
         </div>
 
-        <b-card v-if="showSuggestions" header="Suggestions">
+        <b-card v-if="!q.length" v-if="showSuggestions" header="Suggestions">
             <div v-for="suggestion in suggestions">
                 <span class="btn btn-link" @click="suggest(suggestion)">{{suggestion}}</span>
             </div>
