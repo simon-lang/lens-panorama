@@ -7,6 +7,7 @@ import { topCitedArticlesQuery, articleFacetsQuery } from '../../queries'
 import _includes from 'lodash/includes'
 import _uniq from 'lodash/uniq'
 import _values from 'lodash/values'
+import _get from 'lodash/get'
 
 import parser from 'lucene-query-parser'
 
@@ -99,9 +100,11 @@ export class ClientComponent extends Vue {
     q: string = ''
     query: object = {}
 
-    show: object = {
+    show: any = {
+        formattedQuery: false,
         queryParserResult: false,
         table: true,
+        applicantLogoGrid: false,
     }
 
     patents: Patent[] = []
@@ -110,6 +113,7 @@ export class ClientComponent extends Vue {
 
     patentFacets: Facet[] = []
     hasPatentFacets = false
+    patentStats: any = {}
 
     scholarFacets: Facet[] = []
     hasScholarFacets = false
@@ -175,6 +179,7 @@ export class ClientComponent extends Vue {
         this.patents = []
         this.hasPatentFacets = false
         this.classifications = []
+        this.show.suggestions = false
     }
 
     keyup(event: KeyboardEvent) {
@@ -262,6 +267,8 @@ export class ClientComponent extends Vue {
             }
             this.query = parser.parse(this.q)
 
+            this.show.formattedQuery = _get(this.query, 'right') || (_get(this.query, 'left.field') && _get(this.query, 'left.field') !== '<implicit>')
+
             const fields = extractFields(this.query)
             this.invalidFields = _uniq(fields.filter(field => !_includes(AllFields, field)))
 
@@ -295,6 +302,7 @@ export class ClientComponent extends Vue {
             }
             return
         }
+        this.show.suggestions = true
 
         console.log('todo: add to history')
         // let history = localStorage.getItem('history') || []
@@ -348,11 +356,19 @@ export class ClientComponent extends Vue {
 
     searchPatents() {
         this.loading.patents = true
-        patentService.search(this.q).then(patents => {
-            this.patents = patents
+        patentService.search(this.q)
+        .then(d => {
             this.loading.patents = false
+            const { patents, response } = d
+            // console.log(response)
+            this.patents = patents
+            const { size, numFamilies } = response.result
+            const { searchId, capped, joinResultSize } = response.joinedQueryStats.PATENT
+            console.log({ patentSearchId: searchId})
+            this.patentStats = { size, numFamilies, searchId, capped, joinResultSize }
             // perform cited articles join search
-        }).catch(err => {
+        })
+        .catch(err => {
             console.warn(err)
             this.loading.patents = false
         })
@@ -362,6 +378,10 @@ export class ClientComponent extends Vue {
         this.loading.patentFacets = true
         patentService.facets(this.q).then(facets => {
             this.patentFacets = facets
+            let map = {}
+            facets.forEach(d => {
+                map[d.key] = d
+            })
             this.hasPatentFacets = true
             this.loading.patentFacets = false
         }).catch(err => {

@@ -1,13 +1,23 @@
 import { BASE_URL } from '../constants'
 import { Patent, Facet, FacetValue } from '../models'
 
+interface PatentSearchResponse {
+    patents: Patent[]
+    response: any
+}
+
 export class PatentService {
     query(endpoint) {
         return fetch(`${BASE_URL}/${endpoint}`).then(d => d.json())
     }
-    search(q: string): Promise<Patent[]> {
-        return this.query(`search?q=${q}&json=1`).then(d => {
-            return d.result.hits.map((patent) => new Patent(patent))
+    search(q: string): Promise<PatentSearchResponse> {
+        return this.query(`search?q=${q}&json=1`).then(response => {
+            const { hits } = response.result
+            const patents = hits.map(patent => new Patent(patent))
+            return {
+                response,
+                patents,
+            }
         })
     }
     facets(q: string): Promise<Facet[]> {
