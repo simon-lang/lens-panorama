@@ -87,7 +87,7 @@ export class ClientComponent extends Vue {
     suggestTerms: any[] = []
     selectedFieldIndex: number = 0
 
-    showSuggestions = true
+    showSuggestions = false
     suggestions: any[] = suggestions
 
     suggestIndex: number = 0
@@ -122,6 +122,9 @@ export class ClientComponent extends Vue {
 
     interval: any
     autoRunSearch: true
+
+    loadingAll: boolean = false
+    loadedAll: boolean = false
 
     mounted() {
         this.interval = setInterval(this.updatePlaceholder, 3000)
@@ -173,6 +176,8 @@ export class ClientComponent extends Vue {
     }
 
     clearResults() {
+        // this.loadedAll = false // test this out
+        // this.loadingAll = false // test this out
         this.articles = []
         this.totalArticles = 0
         this.hasScholarFacets = false
@@ -288,7 +293,6 @@ export class ClientComponent extends Vue {
                 }
             })
 
-            this.$router.push({query: {q: this.q}})
         } catch (err) {
             // console.warn(err)
             this.error = err
@@ -302,7 +306,8 @@ export class ClientComponent extends Vue {
             }
             return
         }
-        this.show.suggestions = true
+        // this.show.suggestions = true
+        this.$router.push({ query: { q: this.q } })
 
         console.log('todo: add to history')
         // let history = localStorage.getItem('history') || []
@@ -312,17 +317,38 @@ export class ClientComponent extends Vue {
         this.clearResults()
 
         const keywordQuery = this.q && !this.looksLike.scholarQuery && !this.looksLike.patentQuery
-        if (this.looksLike.scholarQuery || keywordQuery) {
-            this.searchScholar()
-            this.searchScholarFacets()
-        }
-        if (this.looksLike.patentQuery || keywordQuery) {
-            this.searchPatents()
-            this.searchPatentFacets()
-        }
+        // if (this.looksLike.scholarQuery || keywordQuery) {
+        //     this.searchScholar()
+        //     this.searchScholarFacets()
+        // }
+        // if (this.looksLike.patentQuery || keywordQuery) {
+        //     this.searchPatents()
+        //     this.searchPatentFacets()
+        // }
+        this.loadingAll = true
+        setTimeout(() => {
+            const requests = [
+                this.searchScholar(),
+                this.searchScholarFacets(),
+                this.searchPatents(),
+                this.searchPatentFacets(),
+            ]
+            Promise.all(requests).then(responses => {
+                // this.loadingAll = false
+                this.loadedAll = true
+            })
+        }, 400)
         if (this.classificationSymbols.length) {
             this.lookupClassifications()
         }
+    }
+
+    anyLoading() {
+        return this.loading.patents || this.loading.articles || this.loading.patentFacets || this.loading.articleFacets
+    }
+
+    allLoaded() {
+        return this.hasPatentFacets && this.hasScholarFacets && this.patents.length && this.articles.length
     }
 
     searchScholar() {
@@ -357,21 +383,21 @@ export class ClientComponent extends Vue {
     searchPatents() {
         this.loading.patents = true
         patentService.search(this.q)
-        .then(d => {
-            this.loading.patents = false
-            const { patents, response } = d
-            // console.log(response)
-            this.patents = patents
-            const { size, numFamilies } = response.result
-            const { searchId, capped, joinResultSize } = response.joinedQueryStats.PATENT
-            console.log({ patentSearchId: searchId})
-            this.patentStats = { size, numFamilies, searchId, capped, joinResultSize }
-            // perform cited articles join search
-        })
-        .catch(err => {
-            console.warn(err)
-            this.loading.patents = false
-        })
+            .then(d => {
+                this.loading.patents = false
+                const { patents, response } = d
+                // console.log(response)
+                this.patents = patents
+                const { size, numFamilies } = response.result
+                const { searchId, capped, joinResultSize } = response.joinedQueryStats.PATENT
+                console.log({ patentSearchId: searchId })
+                this.patentStats = { size, numFamilies, searchId, capped, joinResultSize }
+                // perform cited articles join search
+            })
+            .catch(err => {
+                console.warn(err)
+                this.loading.patents = false
+            })
     }
 
     searchPatentFacets() {

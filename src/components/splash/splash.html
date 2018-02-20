@@ -1,4 +1,4 @@
-<div>
+    <div>
     <div class="splash">
         <div class="text-center">
             <img class="logo" src="assets/img/logo.png" alt="LENS.ORG - Solving the problem of problem solving">
@@ -13,13 +13,13 @@
         </div>
     </div>
     <div id="docs" class="docs container">
-        <nav class="docs-nav">
-            <a href="#" class="docs-nav-item">Home</a>
-            <a href="#goal" class="docs-nav-item">Goal</a>
-            <a href="#prior-work" class="docs-nav-item">Prior Work</a>
-            <a href="#workflow" class="docs-nav-item">Workflow</a>
-            <a href="#technical-goals" class="docs-nav-item">Technical Goals</a>
+        <nav class="docs-nav" v-scroll-spy-active v-scroll-spy-link>
+            <a v-scroll-to="'#'" class="docs-nav-item">Home</a>
+            <a v-scroll-to="'#goal'" class="docs-nav-item">Goal</a>
+            <a v-scroll-to="'#prior-work'" class="docs-nav-item">Prior Work</a>
+            <a v-scroll-to="'#workflow'" class="docs-nav-item">Workflow</a>
+            <a v-scroll-to="'#technical-goals'" class="docs-nav-item">Technical Goals</a>
         </nav>
-        <div v-html="docs"></div>
+        <div v-html="docs" v-scroll-spy></div>
     </div>
 </div>

@@ -185,3 +185,8 @@ npm run build
 # clean the production build
 npm run clean
 ```
+
+
+## TODO
+
+- Structured Search

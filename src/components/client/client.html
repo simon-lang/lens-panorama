@@ -1,182 +1,179 @@
-<div>
-    <div class="search">
-        <h4 class="search__title">Start typing to begin your guided knowledge journey with the Lens.</h4>
-        <div class="search__box">
-            <input class="form-control form-control-lg"
-                type="search"
-                v-model="q"
-                @keyup="keyup"
-                :placeholder="placeholder"
-                :class="{'is-invalid': error, 'search__input': true}"
-                spellcheck="false"
-                autofocus
-            >
-            <button class="search__btn btn btn-primary btn-lg" @click="submit">Search</button>
-            <div class="search__tags">
-                <p class="flat">Search by</p>
-                <div class="tags">
-                    <button class="tag">Title</button>
-                    <button class="tag">Citation</button>
-                    <button class="tag">Juristiction</button>
-                    <button class="tag">Date range</button>
-                </div>
-            </div>
+<div :class="{client: true, loading: loadingAll, loaded: loadedAll}">
+    <div class="curtain"></div>
+    <div :class="{search: true, found: show.formattedQuery && loadedAll}">
+        <div class="search__hero">
+            <img class="logo" src="assets/img/logo-white.png" alt="LENS.ORG - Solving the problem of problem solving">
         </div>
-        <div class="search__feedback">
-            <b-form-invalid-feedback v-if="error">
-                {{error.message}}
-                <span v-if="error.location">
-                    :{{error.location.start.offset}}
-                </span>
-            </b-form-invalid-feedback>
-
-            <b-form-text v-if="looksLike.patentQuery && looksLike.scholarQuery">
-                <strong>Warning: </strong>
-                boolean query references both scholarly and patent fields, which may result in reduced results.
-            </b-form-text>
-        </div>
-
-        <div class="search__results">
-            <div v-if="suggestFields.length || suggestTerms.length" class="suggest-fields-container">
-                <div v-for="(field, i) in suggestFields" class="suggest-fields">
-                    <div @click="selectField(field)" class="suggest-field" :class="{active: i === selectedFieldIndex}">
-                        {{field}}
+        <div class="search__wrap">
+            <h4 class="search__title">
+                Start typing to begin your guided knowledge journey with the Lens
+            </h4>
+            <div class="search__box-wrap">
+                <div class="search__box">
+                    <input class="form-control form-control-lg"
+                        type="search"
+                        v-model="q"
+                        @keyup="keyup"
+                        :placeholder="placeholder"
+                        :class="{'is-invalid': error, 'search__input': true}"
+                        spellcheck="false"
+                        autofocus
+                    >
+                    <div class="search__query">
+                        <query :message="q" :query="query" :depth="1"></query>
                     </div>
+
+                    <button class="search__btn btn btn-primary btn-lg" @click="submit">Search</button>
                 </div>
-                <div v-for="(field, i) in suggestTerms" class="suggest-fields">
-                    <div @click="selectTerm(field)" class="suggest-field" :class="{active: selectedFieldIndex === (i + suggestFields.length)}">
-                        {{field}}
+                <div class="search__results">
+                    <div v-if="suggestFields.length || suggestTerms.length" class="suggest-fields-container">
+                        <div v-for="(field, i) in suggestFields" class="suggest-fields">
+                            <div @click="selectField(field)" class="suggest-field" :class="{active: i === selectedFieldIndex}">
+                                {{field}}
+                            </div>
+                        </div>
+                        <div v-for="(field, i) in suggestTerms" class="suggest-fields">
+                            <div @click="selectTerm(field)" class="suggest-field" :class="{active: selectedFieldIndex === (i + suggestFields.length)}">
+                                {{field}}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="search__feedback">
+                <div class="badges">
+                    <b-badge variant="success" v-if="looksLike.scholarlyId">
+                        Scholarly ID: {{idType}}
+                    </b-badge>
+                    <b-badge variant="success" v-if="classificationSymbols.length > 0">
+                        {{classificationSymbols.length}} Classifications found
+                    </b-badge>
+                    <b-badge variant="success" v-if="looksLike.patentQuery && !looksLike.scholarly">
+                        Valid Patent Query
+                    </b-badge>
+                    <b-badge variant="success" v-if="looksLike.scholarQuery && !looksLike.patentQuery">
+                        Valid Scholar Query
+                    </b-badge>
+                </div>
+                <b-form-invalid-feedback v-if="error">
+                    {{error.message}}
+                    <span v-if="error.location">
+                        :{{error.location.start.offset}}
+                    </span>
+                </b-form-invalid-feedback>
+
+                <b-form-text v-if="looksLike.patentQuery && looksLike.scholarQuery">
+                    <strong>Warning: </strong>
+                    boolean query references both scholarly and patent fields, which may result in reduced results.
+                </b-form-text>
+            </div>
+
         </div>
     </div>
-    <section class="client pad">
-        <div v-if="q.length > 0">
-            <div class="query-display well pad" :class="{'show': show.formattedQuery}">
-                <query :message="q" :query="query" :depth="1"></query>
+    <section class="client__content pad">
+
+        <div v-if="loading.articles || loading.patents">
+            Loading...
+        </div>
+
+        <div class="row">
+
+            <div class="col col-md-6 reveal-result" v-if="q.length && show.queryParserResult">
+                <b-card header="Parsed query">
+                    <pre>{{query}}</pre>
+                </b-card>
             </div>
 
-            <div class="badges">
-                <b-badge variant="success" v-if="looksLike.scholarlyId">
-                    Scholarly ID: {{idType}}
-                </b-badge>
-                <b-badge variant="success" v-if="classificationSymbols.length > 0">
-                    {{classificationSymbols.length}}
-                    Classifications found
-                </b-badge>
-                <b-badge variant="success" v-if="looksLike.patentQuery && !looksLike.scholarly">
-                    Valid Patent Query
-                </b-badge>
-                <b-badge variant="success" v-if="looksLike.scholarQuery && !looksLike.patentQuery">
-                    Valid Scholar Query
-                </b-badge>
-            </div>
-
-            <div v-if="loading.articles || loading.patents">
-                Loading...
-            </div>
-
-            <div class="row">
-
-                <div class="col col-md-6 reveal-result" v-if="q.length && show.queryParserResult">
-                    <b-card header="Parsed query">
-                        <pre>{{query}}</pre>
-                    </b-card>
-                </div>
-
-                <div class="col col-md-12 reveal-result" v-if="hasPatentFacets && show.applicantLogoGrid">
-                    <div class="row" v-for="facet in patentFacets" v-if="facet.key === 'applicant'">
-                        <div class="col-md-3" v-for="applicant in facet.values">
-                            <b-card :title="applicant.key"
-                                :sub-title="applicant.value.toLocaleString()"
-                                :img-src="'https://static.lens.org/lens/5.5.4/in4m-ui-data/public/logos/' + applicant.key + '.png'"
-                                img-top
-                            >
-                            </b-card>
-                        </div>
+            <div class="col col-md-12 reveal-result" v-if="hasPatentFacets && show.applicantLogoGrid">
+                <div class="row" v-for="facet in patentFacets" v-if="facet.key === 'applicant'">
+                    <div class="col-md-3" v-for="applicant in facet.values">
+                        <b-card :title="applicant.key"
+                            :sub-title="applicant.value.toLocaleString()"
+                            :img-src="'https://static.lens.org/lens/5.5.4/in4m-ui-data/public/logos/' + applicant.key + '.png'"
+                            img-top
+                        >
+                        </b-card>
                     </div>
                 </div>
-
-                <div class="col col-md-6 reveal-result" v-if="q.length && classifications.length" v-for="classification in classifications">
-                    <b-card header="Classification">
-                        <div v-for="(item, i) in classification" v-if="showClassificationContext || i === 0">
-                            <h4>{{item.symbol}}</h4>
-                            <small>{{item.classTitle}}</small>
-                            <hr>
-                            <!-- <pre>{{item}}</pre> -->
-                        </div>
-                        <a class="card-link" href="#" @click="toggleClassificationContext">Toggle Context</a>
-                        <!-- <a class="card-link" :href="'/lens/#/classification-viewer/CPC/' + q">View in Classification Viewer</a> -->
-                    </b-card>
-                </div>
-
-                <div class="col col-md-6 reveal-result" v-if="articles.length">
-                    <b-card header="Most relevant Scholarly Works">
-                        <p>{{totalArticles.toLocaleString()}} results</p>
-                        <div v-for="(article, i) in articles">
-                            <strong>{{article.id}}</strong>
-                            <br>
-                            <span>{{article.title}}</span>
-                            <div v-if="articles.length === 1">
-                                <small>{{article.abstract}}</small>
-                            </div>
-                            <hr>
-                        </div>
-                        <a class="card-link" :href="'/lens/scholar/search?q=' + q">View all results in scholar search</a>
-                    </b-card>
-                </div>
-
-                <div class="col col-md-6 reveal-result" v-if="patents.length">
-                    <b-card header="Most relevant Patents" :title="patentStats.size.toLocaleString()">
-                        <!--
-                        <div v-if="patentStats.size">
-                            Total Patents: {{patentStats.size.toLocaleString()}}
-                        </div>
-                        -->
-                        <div v-for="patent in patents">
-                            <strong>{{patent.displayKey}}</strong>
-                            <br>
-                            <small>{{patent.title}}</small>
-                            <hr>
-                        </div>
-                        <a class="card-link" :href="'/lens/search?q=' + q">View all results in patent search</a>
-                    </b-card>
-                </div>
-
-                <div class="col col-md-6 reveal-result" v-if="hasPatentFacets">
-                    <b-card header="Patent Facets">
-                        <facets :facets="patentFacets"></facets>
-                        <a class="card-link" :href="'/lens/search?v=analysis&q=' + q">View in patent analysis</a>
-                    </b-card>
-                </div>
-
-                <div class="col col-md-6 reveal-result" v-if="hasScholarFacets">
-                    <b-card header="Scholar Facets">
-                        <facets :facets="scholarFacets"></facets>
-                        <a class="card-link" :href="'/lens/scholar/search/analysis?q=' + q">View in scholar analysis</a>
-                    </b-card>
-                </div>
-
-                <div class="col col-md-12 reveal-result" v-if="patents.length && show.table">
-                    <vue-good-table
-                        :columns="columns"
-                        :rows="patents"
-                        :paginate="true"
-                        :lineNumbers="true"
-                    />
-                </div>
-
-                <div class="col col-md-12 reveal-result" v-if="articles.length && show.table">
-                    <vue-good-table
-                        :columns="articleColumns"
-                        :rows="articles"
-                        :paginate="true"
-                        :lineNumbers="true"
-                    />
-                </div>
             </div>
 
+            <div class="col col-md-6 reveal-result" v-if="q.length && classifications.length" v-for="classification in classifications">
+                <b-card header="Classification">
+                    <div v-for="(item, i) in classification" v-if="showClassificationContext || i === 0">
+                        <h4>{{item.symbol}}</h4>
+                        <small>{{item.classTitle}}</small>
+                        <hr>
+                        <!-- <pre>{{item}}</pre> -->
+                    </div>
+                    <a class="card-link" href="#" @click="toggleClassificationContext">Toggle Context</a>
+                    <!-- <a class="card-link" :href="'/lens/#/classification-viewer/CPC/' + q">View in Classification Viewer</a> -->
+                </b-card>
+            </div>
+
+            <div class="col col-md-6 reveal-result" v-if="articles.length">
+                <b-card header="Most relevant Scholarly Works">
+                    <p>{{totalArticles.toLocaleString()}} results</p>
+                    <div v-for="(article, i) in articles">
+                        <strong>{{article.id}}</strong>
+                        <br>
+                        <span>{{article.title}}</span>
+                        <div v-if="articles.length === 1">
+                            <small>{{article.abstract}}</small>
+                        </div>
+                        <hr>
+                    </div>
+                    <a class="card-link" :href="'/lens/scholar/search?q=' + q">View all results in scholar search</a>
+                </b-card>
+            </div>
+
+            <div class="col col-md-6 reveal-result" v-if="patents.length">
+                <b-card header="Most relevant Patents" :title="patentStats.size.toLocaleString()">
+                    <!--
+                    <div v-if="patentStats.size">
+                        Total Patents: {{patentStats.size.toLocaleString()}}
+                    </div>
+                    -->
+                    <div v-for="patent in patents">
+                        <strong>{{patent.displayKey}}</strong>
+                        <br>
+                        <small>{{patent.title}}</small>
+                        <hr>
+                    </div>
+                    <a class="card-link" :href="'/lens/search?q=' + q">View all results in patent search</a>
+                </b-card>
+            </div>
+
+            <div class="col col-md-6 reveal-result" v-if="hasPatentFacets">
+                <b-card header="Patent Facets">
+                    <facets :facets="patentFacets"></facets>
+                    <a class="card-link" :href="'/lens/search?v=analysis&q=' + q">View in patent analysis</a>
+                </b-card>
+            </div>
+
+            <div class="col col-md-6 reveal-result" v-if="hasScholarFacets">
+                <b-card header="Scholar Facets">
+                    <facets :facets="scholarFacets"></facets>
+                    <a class="card-link" :href="'/lens/scholar/search/analysis?q=' + q">View in scholar analysis</a>
+                </b-card>
+            </div>
+
+            <div class="col col-md-12 reveal-result" v-if="patents.length && show.table">
+                <vue-good-table
+                    :columns="columns"
+                    :rows="patents"
+                    :paginate="true"
+                    :lineNumbers="true"
+                />
+            </div>
+
+            <div class="col col-md-12 reveal-result" v-if="articles.length && show.table">
+                <vue-good-table
+                    :columns="articleColumns"
+                    :rows="articles"
+                    :paginate="true"
+                    :lineNumbers="true"
+                />
+            </div>
         </div>
 
         <b-card v-if="!q.length && showSuggestions" header="Suggestions">

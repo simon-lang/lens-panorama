@@ -1,12 +1,4 @@
-<div>
+<div class="wrapper">
     <navbar class="show-navbar"></navbar>
-    <!--
-    <button class="btn btn-light" v-if="clients.length === 1" @click="compare">New Comparison</button>
-    <button class="btn btn-light" v-if="clients.length > 1" @click="compare">Remove Comparison</button>
-    -->
-    <div class="row">
-        <div v-for="client in clients" class="col">
-            <Client />
-        </div>
-    </div>
+    <Client />
 </div>

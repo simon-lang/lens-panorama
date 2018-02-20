@@ -3,17 +3,31 @@
 @keyframes revealClient {
   from {
     opacity: 0;
-    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
 .client {
+    position: relative;
+    transform: translateZ(0);
+    transition: transform 375ms ease-out;
+    z-index: 50;
+    padding-top: 56px;
+    height: 100%;
+    padding-top: 300px;
+}
+
+html,
+body,
+.wrapper,
+#app-main {
+    height: 100%;
+}
+
+.client__content {
     opacity: 0;
-    animation: revealClient 200ms 400ms ease forwards;
     padding-top: 1.25rem;
 }
 
@@ -22,19 +36,18 @@
     opacity: 0.8;
 }
 
-// Typeahead. TODO: Component and BEM
+// Typeahe`ad. TODO: Component and BEM
 .suggest-fields-container {
     position: absolute;
-    left: 1.25rem;
+    left: 0;
+    right: 8.75rem;
     width: auto;
     z-index: 1;
 }
 .suggest-field {
     cursor: pointer;
     background: #fff;
-    padding: 0.25rem 0.5rem;
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
+    padding: 0.25rem 1.25rem;
     border-bottom: 1px solid $col-borders;
     &.active, &:hover {
         font-weight: bold;
@@ -54,42 +67,99 @@
   }
 }
 
-.reveal-result {
-    opacity: 0;
-    animation: revealResult 375ms 375ms ease forwards;
-}
+// .reveal-result {
+//     opacity: 0;
+//     animation: revealResult 375ms 375ms ease forwards;
+// }
 
 .search {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 2rem;
-    padding-top: 2.25rem;
-    padding-bottom: 4rem;
-    background-image: linear-gradient(-180deg, #031A43 0%, #1B5888 100%);
+    transition: transform 200ms ease;
+    width: 800px;
+    margin-left: -400px;
+    left: 50%;
+    top: 56px;
+    height: 400px;
+    margin-top: -144px;
+    transform: translateY(100%);
+}
+
+.search__hero {
+    transition: opacity 200ms ease;
+    margin-bottom: 6.25rem;
+}
+
+.search__query {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 8.75rem;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 1.25rem;
+    background: white;
+    transition: opacity 200ms ease;
+    opacity: 0;
+    transform: translateY(-100%);
+    z-index: 20;
+}
+.client.loaded .search__query {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.search__wrap {
+    position: relative;
+    width: 100%;
+}
+
+.search__box-wrap {
+    position: relative;
 }
 
 .search__box {
     display: flex;
     position: relative;
+    overflow: hidden;
+}
+
+.search__feedback {
+    height: 3.125rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 .search__title {
+    font-size: 1.375rem;
     margin-bottom: 1.25rem;
     text-align: center;
     color: #fff;
 }
 
 .search__input {
+    position: relative;
+    z-index: 5;
     border-radius: 2px 0 0 2px;
     outline: 0 !important;
     height: 3.75rem;
     font-size: 1rem;
+    flex: 1;
 }
 
 .search__btn {
     border-radius: 0 2px 2px 0;
-    padding: 0 3rem;
+    padding: 0;
     height: 3.75rem;
     line-height: 3.75rem;
     font-size: 1rem;
+    width: 8.75rem;
 }
 
 .search__tags {
@@ -107,4 +177,34 @@
 
 .tags {
     display: flex;
+}
+
+.curtain {
+    background: #031A43;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: transform 375ms ease;
+    position: fixed;
+}
+
+.client.loading .curtain {
+    transform: translateY(calc(-100% + 300px));
+}
+
+.client.loading .search {
+    transform: translateY(0);
+}
+
+.client.loading .search__hero {
+    opacity: 0;
+}
+
+.client.loaded .client__content {
+    animation: revealClient 200ms 375ms ease forwards;
+}
+
+.client.loaded .search__box:hover .search__query {
+    transform: translateY(-100%);
 }
