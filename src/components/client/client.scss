@@ -85,8 +85,7 @@ body,
     left: 50%;
     top: 56px;
     height: 400px;
-    margin-top: -144px;
-    transform: translateY(100%);
+    transform: translateY(calc(50vh - 50%));
 }
 
 .search__hero {
@@ -209,7 +208,7 @@ body,
 }
 
 .client.loading .search {
-    transform: translateY(0);
+    transform: translateY(-144px);
 }
 
 .client.loading .search__hero {
