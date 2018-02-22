@@ -1,0 +1,26 @@
+@import "../../sass/_variables";
+
+.docs {
+  opacity: 0;
+  padding-top: $maybe-the-curtain-height;
+  animation: revealLinks 200ms ease forwards;
+  h2 {
+      margin-top: 1.5em;
+      border-bottom: 1px solid #f0f0f0;
+  }
+  h3 {
+      margin-top: 1em;
+      border-bottom: 1px solid #f5f5f5;
+  }
+  h4 {
+      margin-top: 1em;
+  }
+  td {
+      vertical-align: top;
+      padding: 0.2em;
+  }
+}
+
+// .docs {
+//     position: relative;
+// }

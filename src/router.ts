@@ -3,6 +3,7 @@ import VueRouter, { Location, Route, RouteConfig } from 'vue-router'
 import { makeHot, reload } from './util/hot-reload'
 
 const appComponent = () => import('./components/app').then(({ AppComponent }) => AppComponent)
+const docsComponent = () => import('./components/docs').then(({ DocsComponent }) => DocsComponent)
 const splashComponent = () => import('./components/splash').then(({ SplashComponent }) => SplashComponent)
 const clientComponent = () => import('./components/client').then(({ ClientComponent }) => ClientComponent)
 const queryComponent = () => import('./components/query').then(({ QueryComponent }) => QueryComponent)
@@ -30,6 +31,10 @@ export const createRoutes: () => RouteConfig[] = () => [
     {
         path: '/app',
         component: appComponent
+    },
+    {
+        path: '/docs',
+        component: docsComponent
     },
 ]
 

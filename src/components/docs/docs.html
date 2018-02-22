@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <b-navbar :sticky="sticky" toggleable="md" type="dark" variant="dark">
+
+        <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+
+        <b-navbar-brand :to="'/'">
+            <img src="assets/img/logo-menu.png" alt="Lens.org" class="logo-menu">
+        </b-navbar-brand>
+
+        <b-navbar-nav v-scroll-spy-active v-scroll-spy-link>
+            <b-nav-item v-scroll-to="'#'" class="docs-nav-item">Home</b-nav-item>
+            <b-nav-item v-scroll-to="'#goal'" class="docs-nav-item">Goal</b-nav-item>
+            <b-nav-item v-scroll-to="'#prior-work'" class="docs-nav-item">Prior Work</b-nav-item>
+            <b-nav-item v-scroll-to="'#workflow'" class="docs-nav-item">Workflow</b-nav-item>
+            <b-nav-item v-scroll-to="'#technical-goals'" class="docs-nav-item">Technical Goals</b-nav-item>
+        </b-navbar-nav>
+
+        <b-collapse is-nav id="nav_collapse">
+            <b-navbar-nav class="ml-auto">
+                <b-nav-item :to="'/app'">Home</b-nav-item>
+            </b-navbar-nav>
+        </b-collapse>
+    </b-navbar>
+    <div class="docs container">
+        <div v-html="content" v-scroll-spy></div>
+    </div>
+</div>

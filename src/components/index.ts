@@ -2,6 +2,7 @@
 
 export * from './app';
 export * from './client';
+export * from './docs';
 export * from './navbar';
 export * from './facets';
 export * from './query';

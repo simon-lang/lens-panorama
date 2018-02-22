@@ -3,23 +3,13 @@
         <div class="text-center">
             <img class="logo" src="assets/img/logo.png" alt="LENS.ORG - Solving the problem of problem solving">
             <div class="links pad">
-                <a class="btn btn-secondary" v-scroll-to="'#docs'">
+                <router-link class="btn btn-secondary" to="/docs">
                     Learn More
-                </a>
+                </router-link>
                 <router-link class="btn btn-primary" to="/app">
                     Get Started
                 </router-link>
             </div>
         </div>
-    </div>
-    <div id="docs" class="docs container">
-        <nav class="docs-nav" v-scroll-spy-active v-scroll-spy-link>
-            <a v-scroll-to="'#'" class="docs-nav-item">Home</a>
-            <a v-scroll-to="'#goal'" class="docs-nav-item">Goal</a>
-            <a v-scroll-to="'#prior-work'" class="docs-nav-item">Prior Work</a>
-            <a v-scroll-to="'#workflow'" class="docs-nav-item">Workflow</a>
-            <a v-scroll-to="'#technical-goals'" class="docs-nav-item">Technical Goals</a>
-        </nav>
-        <div v-html="docs" v-scroll-spy></div>
     </div>
 </div>

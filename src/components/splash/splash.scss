@@ -40,36 +40,3 @@
   padding-top: 2em;
   animation: revealLinks 200ms 600ms ease forwards;
 }
-
-.docs {
-  opacity: 0;
-  animation: revealLinks 200ms ease forwards;
-  h2 {
-      margin-top: 1.5em;
-      border-bottom: 1px solid #f0f0f0;
-  }
-  h3 {
-      margin-top: 1em;
-      border-bottom: 1px solid #f5f5f5;
-  }
-  h4 {
-      margin-top: 1em;
-  }
-  td {
-      vertical-align: top;
-      padding: 0.2em;
-  }
-}
-
-.docs {
-    position: relative;
-}
-.docs-nav {
-    width: 200px;
-    position: fixed;
-    top: 0;
-    right: 0;
-}
-.docs-nav-item {
-    display: block;
-}
