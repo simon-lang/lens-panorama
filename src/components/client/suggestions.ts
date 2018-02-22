@@ -2,6 +2,7 @@ export default [
     'title:carbon', // Search all articles with title "carbon"
     'citation_id:"3327686"', // view an article by scholarly identifier (doi / pmid)
     'pub_key:US_5599670_A',
+    'source.title: Nature AND funding.organisation.keyword: "Wellcome Trust"',
     'author:"Richard Jefferson" OR abstract:glucuronidase AND title:GUS',
     '"malaria vaccine" AND year_published:[1970 TO 1980]',
     'title:(leishmani* AND diagnos*) || abstract:(leishmani* AND diagnos*)',
