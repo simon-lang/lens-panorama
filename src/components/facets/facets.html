@@ -1,16 +1,21 @@
 <div class="facets">
-    <div v-for="facet in facets">
-        <p class="card-text">{{facet.key}}</p>
-        <!--
-        <div v-if="facet.values.length">
-            <simple-bar-chart :values="facet.values"></simple-bar-chart>
-        </div>
-        -->
-        <ul v-if="facet.values.length">
-            <li v-for="item in facet.values">
-                <span>{{item.label || item.key}}:</span>
-                <strong>{{item.value}}</strong>
-            </li>
-        </ul>
-    </div>
+    <b-card-group columns>
+        <b-card v-for="(facet, i) in facets"
+            :header="facet.label || facet.key"
+            :key="'facet-' + facet.key"
+        >
+            <!--
+            <div v-if="facet.values.length">
+                <simple-bar-chart :values="facet.values"></simple-bar-chart>
+            </div>
+            -->
+            <ul v-if="facet.values.length">
+                <li v-for="item in facet.values.slice(0, facet.limit || 10)">
+                    <span>{{item.label || item.key}}:</span>
+                    <strong>{{item.value.toLocaleString()}}</strong>
+                </li>
+            </ul>
+            <a v-if="facet.values.length > 10" @click="facet.limit = 100" class="card-text">Show all</a>
+        </b-card>
+    </b-card-group>
 </div>

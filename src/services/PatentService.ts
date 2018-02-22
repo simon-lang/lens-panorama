@@ -10,9 +10,14 @@ export class PatentService {
     query(endpoint) {
         return fetch(`${BASE_URL}/${endpoint}`).then(d => d.json())
     }
-    search(q: string): Promise<PatentSearchResponse> {
+    search(q: string, scholarlySearchId?: string): Promise<PatentSearchResponse> {
         const encodedQ = encodeURIComponent(q)
-        return this.query(`search?q=${encodedQ}&json=1&n=100`).then(response => {
+        let url = `search?q=${encodedQ}&json=1&n=100`
+        // TODO: separate method call for this
+        if (scholarlySearchId) {
+            url += '&scholarlySearchId=' + scholarlySearchId
+        }
+        return this.query(url).then(response => {
             const { hits } = response.result
             const patents = hits.map(patent => new Patent(patent))
             return {

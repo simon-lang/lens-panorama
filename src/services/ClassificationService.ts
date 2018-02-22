@@ -85,16 +85,16 @@ export class ClassificationService {
         if (!term) {
             return
         }
-        let data = {
+        let data: any = {
             'q': term,
             'stem': true,
-            prefix: null, // ?
-            symbol: null, // ?
         }
         if (prefix) data.prefix = prefix
         if (symbol) data.symbol = symbol
 
-        return this._invoke(type, 'search', data)
+        return this._invoke(type, 'search', data).then(items => {
+            return items.map(item => new Classification(item))
+        })
     }
 
     ancestorsAndSelf(type, symbol): Promise<Classification[]> {

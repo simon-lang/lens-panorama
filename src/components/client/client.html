@@ -49,10 +49,10 @@
                     <b-badge variant="success" v-if="classificationSymbols.length > 0">
                         {{classificationSymbols.length}} Classifications found
                     </b-badge>
-                    <b-badge variant="success" v-if="looksLike.patentQuery && !looksLike.scholarly">
+                    <b-badge variant="success" v-if="looksLike.patentQuery">
                         Valid Patent Query
                     </b-badge>
-                    <b-badge variant="success" v-if="looksLike.scholarQuery && !looksLike.patentQuery">
+                    <b-badge variant="success" v-if="looksLike.scholarQuery">
                         Valid Scholar Query
                     </b-badge>
                 </div>
@@ -71,7 +71,44 @@
 
         </div>
     </div>
+    <div class="client__loader">
+        Generating report...
+    </div>
     <section class="client__content pad">
+        <b-card-group deck class="mb-6" v-if="q.length">
+            <b-card header-bg-variant="default"
+                    header="Patents"
+                    class="text-center"
+                    :title="totals.patents ? totals.patents.toLocaleString() : '0'"
+            ></b-card>
+            <b-card header-bg-variant="light"
+                    header="Cited Works"
+                    class="text-center"
+                    :title="totals.citedArticles ? totals.citedArticles.toLocaleString() : '0'"
+            ></b-card>
+            <b-card header-bg-variant="default"
+                    header="Scholarly"
+                    class="text-center"
+                    :title="totals.articles ? totals.articles.toLocaleString() : '0'"
+            ></b-card>
+            <b-card header-bg-variant="light"
+                    header="Citing Patents"
+                    class="text-center"
+                    :title="totals.citingPatents ? totals.citingPatents.toLocaleString() : '0'"
+            ></b-card>
+            <b-card header-bg-variant="default"
+                    header="Classifications"
+                    class="text-center"
+                    :title="classifications.length ? classifications.length.toLocaleString() : '0'"
+            ></b-card>
+            <b-card header-bg-variant="light"
+                    header="Collections"
+                    class="text-center"
+                    title="?"
+            ></b-card>
+        </b-card-group>
+
+        <div id="results-top" class="pad"></div>
 
         <div class="row">
 
@@ -81,67 +118,129 @@
                 </b-card>
             </div>
 
-            <div class="col col-md-6 reveal-result" v-if="q.length && classifications.length" v-for="classification in classifications">
-                <b-card header="Classification">
-                    <div v-for="(item, i) in classification" v-if="showClassificationContext || i === (classification.length - 1)">
-                        <h4>{{item.symbol}}</h4>
-                        <small>{{item.classTitle}}</small>
-                        <hr>
-                        <!-- <pre>{{item}}</pre> -->
-                    </div>
-                    <a class="card-link" href="#" @click="toggleClassificationContext">Toggle Context</a>
-                    <!-- <a class="card-link" :href="'/lens/#/classification-viewer/CPC/' + q">View in Classification Viewer</a> -->
+            <!-- Patent Table -->
+            <div class="col col-md-12 reveal-result" v-if="patents.length && show.table">
+                <h3>{{'Most relevant of ' + patentStats.size.toLocaleString() + ' Patents'}}</h3>
+                <vue-good-table
+                    :columns="columns"
+                    :rows="patents"
+                    :paginate="true"
+                    :lineNumbers="true"
+                />
+                <div class="pad">
+                    <a href="#results-top" class="btn btn-link" @click="toggleShow('table')">Display as List</a>
+                </div>
+            </div>
+
+            <!-- Scholarly Table -->
+            <div class="col col-md-12 reveal-result" v-if="articles.length && show.table">
+                <h3>{{'Most relevant of ' + totals.articles.toLocaleString() + ' Scholarly Works'}}</h3>
+                <vue-good-table
+                    :columns="articleColumns"
+                    :rows="articles"
+                    :paginate="true"
+                    :lineNumbers="true"
+                />
+                <div class="pad">
+                    <a href="#results-top" class="btn btn-link" @click="toggleShow('table')">Display as List</a>
+                </div>
+            </div>
+
+            <!-- Single Patent Hit -->
+            <div class="col col-md-12 reveal-result" v-if="patents.length === 1">
+                <b-card v-for="patent in patents"
+                    :title="patent.title"
+                    :sub-title="patent.displayKey"
+                    :key="patent.lensId.value"
+                >
+                    <p class="card-text">{{patent.docType}}</p>
+                    <p class="card-text">Applicants: {{patent.applicants.join(', ')}}</p>
+                    <p class="card-text">Cited By: {{patent.citedByCount.toLocaleString()}}</p>
+                    <small class="text-muted">Published {{patent.publicationDate.toLocaleDateString()}}</small>
+                    <small>{{patent.abstract}}</small>
+                    <!-- <pre>{{patent}}</pre> -->
+                    <a :href="'https://www.lens.org/lens/patent/' + patent.publicationKey" class="card-link">
+                        View Patent in The Lens
+                    </a>
                 </b-card>
             </div>
 
-            <div class="col col-md-6 reveal-result" v-if="articles.length">
-                <b-card :header="'Most relevant of ' + totalArticles.toLocaleString() + ' Scholarly Works'">
-                    <div v-for="(article, i) in articles">
-                        <strong>{{article.id}}</strong>
-                        <br>
-                        <span>{{article.title}}</span>
-                        <div v-if="articles.length === 1">
-                            <small>{{article.abstract}}</small>
-                        </div>
-                        <hr>
-                    </div>
-                    <a class="card-link" :href="'/lens/scholar/search?q=' + q">View all results in scholar search</a>
-                </b-card>
-            </div>
-
-            <div class="col col-md-6 reveal-result" v-if="patents.length">
-                <b-card :header="'Most relevant of ' + patentStats.size.toLocaleString() + ' Patents'">
-                    <!--
-                    <div v-if="patentStats.size">
-                        Total Patents: {{patentStats.size.toLocaleString()}}
-                    </div>
-                    -->
-                    <div v-for="patent in patents">
+            <!-- Patent List -->
+            <div class="col col-md-6 reveal-result" v-if="patents.length > 1">
+                <b-card :title="'Most relevant of ' + patentStats.size.toLocaleString() + ' Patents'">
+                    <div v-for="patent in patents.slice(0, 10)">
                         <strong>{{patent.displayKey}}</strong>
                         <br>
                         <small>{{patent.title}}</small>
                         <hr>
                     </div>
                     <a class="card-link" :href="'/lens/search?q=' + q">View all results in patent search</a>
+                    <a class="card-link" href="#results-top" @click="toggleShow('table')">Display as table</a>
                 </b-card>
             </div>
 
-            <div class="col col-md-6 reveal-result" v-if="hasPatentFacets">
-                <b-card header="Patent Facets">
-                    <facets :facets="patentFacets"></facets>
-                    <a class="card-link" :href="'/lens/search?v=analysis&q=' + q">View in patent analysis</a>
+
+            <!-- Single Article Hit -->
+            <div class="col col-md-12 reveal-result" v-if="articles.length === 1">
+                <b-card v-for="article in articles"
+                    :title="article.title"
+                    :sub-title="article.id"
+                    :key="article.id"
+                >
+                    <p class="card-text">
+                        Authors: {{article.authors.map(d => d.displayName).join(', ')}}
+                    </p>
+                    <div>
+                        <small>{{article.abstract}}</small>
+                    </div>
+                    <!-- <pre>{{article}}</pre> -->
+                    <a :href="'https://www.lens.org/lens/scholar/article/' + article.id" class="card-link">
+                        View Article in The Lens
+                    </a>
                 </b-card>
             </div>
 
-            <div class="col col-md-6 reveal-result" v-if="hasScholarFacets">
-                <b-card header="Scholar Facets">
-                    <facets :facets="scholarFacets"></facets>
-                    <a class="card-link" :href="'/lens/scholar/search/analysis?q=' + q">View in scholar analysis</a>
+            <!-- Articles List -->
+            <div class="col col-md-6 reveal-result" v-if="articles.length > 1">
+                <b-card :title="'Most relevant of ' + totals.articles.toLocaleString() + ' Scholarly Works'">
+                    <div v-for="(article, i) in articles.slice(0, 10)">
+                        <strong>{{article.id}}</strong>
+                        <br>
+                        <span>{{article.title}}</span>
+                        <hr>
+                    </div>
+                    <a class="card-link" :href="'/lens/scholar/search?q=' + q">View all results in scholar search</a>
+                    <a class="card-link" href="#results-top" @click="toggleShow('table')">Display as table</a>
                 </b-card>
+            </div>
+
+
+            <div class="col col-md-6 reveal-result" v-if="q.length && classifications.length" v-for="classification in classifications">
+                <b-card header="Classification">
+                    <div v-for="(item, i) in classification">
+                        <h4>{{item.symbol}}</h4>
+                        <small v-html="item.classTitle"></small>
+                        <hr>
+                    </div>
+                    <a class="card-link" href="#results-top" @click="toggleClassificationContext">Toggle Context</a>
+                    <!-- <a class="card-link" :href="'/lens/#/classification-viewer/CPC/' + q">View in Classification Viewer</a> -->
+                </b-card>
+            </div>
+
+            <div class="pad"></div>
+
+            <div class="col col-md-12 reveal-result" v-if="hasPatentFacets">
+                <h3>Patent Analysis</h3>
+                <facets :facets="patentFacets" title="Patent Analysis"></facets>
+            </div>
+
+            <div class="col col-md-12 reveal-result" v-if="hasScholarFacets">
+                <h3>Scholarly Analysis</h3>
+                <facets :facets="scholarFacets" title="Scholarly Analysis"></facets>
             </div>
 
             <div class="col col-md-12 reveal-result" v-if="hasPatentFacets && show.applicantLogoGrid">
-                <h2>Which legal entities have applied for these patents?</h2>
+                <h3>Which legal entities have applied for these patents</h3>
                 <div class="row" v-for="facet in patentFacets" v-if="facet.key === 'applicant'">
                     <div class="col-md-2" v-for="applicant in facet.values">
                         <b-card :title="applicant.value.toLocaleString()"
@@ -154,32 +253,13 @@
                 </div>
             </div>
 
-            <div class="col col-md-12 reveal-result" v-if="patents.length && show.table">
-                <vue-good-table
-                    :columns="columns"
-                    :rows="patents"
-                    :paginate="true"
-                    :lineNumbers="true"
-                />
-            </div>
-
-            <div class="col col-md-12 reveal-result" v-if="articles.length && show.table">
-                <vue-good-table
-                    :columns="articleColumns"
-                    :rows="articles"
-                    :paginate="true"
-                    :lineNumbers="true"
-                />
-            </div>
         </div>
 
-        <!--
         <b-card v-if="!q.length" header="Suggestions">
             <div v-for="suggestion in suggestions">
                 <span class="btn btn-link" @click="suggest(suggestion)">{{suggestion}}</span>
             </div>
         </b-card>
-        -->
 
     </section>
 </div>

@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <b-navbar :sticky="sticky" toggleable="md" type="dark" variant="dark">
+    <b-navbar :sticky="sticky" toggleable="md" type="dark" variant="dark" v-b-scrollspy>
 
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -9,17 +9,18 @@
 
         <b-collapse is-nav id="nav_collapse">
             <b-navbar-nav>
-                <b-nav-item v-scroll-to="'#the-problem'">Problem</b-nav-item>
-                <b-nav-item v-scroll-to="'#goal'">Goal</b-nav-item>
-                <b-nav-item v-scroll-to="'#workflow'">Workflow</b-nav-item>
-                <b-nav-item v-scroll-to="'#technical-goals'">Technology</b-nav-item>
+                <b-nav-item href="#the-problem">Problem</b-nav-item>
+                <b-nav-item href="#goal">Goal</b-nav-item>
+                <b-nav-item href="#workflow">Workflow</b-nav-item>
+                <b-nav-item href="#technical-goals">Technology</b-nav-item>
             </b-navbar-nav>
             <b-navbar-nav class="ml-auto">
                 <b-nav-item :to="'/app'">Home</b-nav-item>
+                <b-nav-item :to="'/docs'">Learn More</b-nav-item>
             </b-navbar-nav>
         </b-collapse>
     </b-navbar>
-    <div class="docs container">
+    <div id="docs" class="docs container">
         <div v-html="content"></div>
     </div>
 </div>

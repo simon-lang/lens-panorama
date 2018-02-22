@@ -31,12 +31,7 @@ body,
     padding-top: 1.25rem;
 }
 
-.get-started {
-    margin: 2rem;
-    opacity: 0.8;
-}
-
-// Typeahe`ad. TODO: Component and BEM
+// Typeahead
 .suggest-fields-container {
     position: absolute;
     left: 0;
@@ -55,23 +50,6 @@ body,
     }
 }
 
-
-@keyframes revealResult {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// .reveal-result {
-//     opacity: 0;
-//     animation: revealResult 375ms 375ms ease forwards;
-// }
-
 .search {
     position: absolute;
     display: flex;
@@ -86,6 +64,7 @@ body,
     top: 56px;
     height: 400px;
     transform: translateY(calc(50vh - 50%));
+    z-index: 1; // Simon - stop stacking over splash
 }
 
 .search__hero {
@@ -221,4 +200,18 @@ body,
 
 .client.loaded .search__box:hover .search__query {
     transform: translateY(-100%);
+}
+
+.client__loader {
+    text-align: center;
+    padding: 10rem 2rem;
+    opacity: 0;
+}
+
+.client.loading .client__loader {
+    animation: revealClient 375ms 375ms ease forwards;
+}
+
+.client.loaded .client__loader {
+    display: none;
 }

@@ -13,5 +13,6 @@ import { SimpleBarChartComponent } from '../';
     }
 })
 export class FacetsComponent extends Vue {
+    @Prop() title: string
     @Prop() facets: Facet[]
 }

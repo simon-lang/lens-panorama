@@ -2,12 +2,13 @@ import { Component, Vue } from 'vue-property-decorator'
 import Icon from 'vue-awesome'
 
 import { looksLikeScholarlyId, looksLikeClassificationSymbol, extractFields } from '../../helpers'
-import { topCitedArticlesQuery, articleFacetsQuery } from '../../queries'
+import { topCitedArticlesQuery, articleFacetsQuery, citedArticlesCountQuery } from '../../queries'
 
 import _includes from 'lodash/includes'
 import _uniq from 'lodash/uniq'
 import _values from 'lodash/values'
 import _get from 'lodash/get'
+import _intersection from 'lodash/intersection'
 
 import parser from 'lucene-query-parser'
 
@@ -69,6 +70,7 @@ export class ClientComponent extends Vue {
     ]
 
     articleColumns: GoodTableColumn[] = [
+        { field: 'id', label: 'ID' },
         { field: 'title', label: 'Title' },
     ]
 
@@ -105,11 +107,15 @@ export class ClientComponent extends Vue {
         applicantLogoGrid: true,
         formattedQuery: false,
         queryParserResult: false,
-        table: true,
+        table: false,
     }
 
+    totals: any = {}
+
     patents: Patent[] = []
+    citingPatents: Patent[] = []
     articles: Article[] = []
+    citedArticles: Article[] = []
     classifications: Classification[] = []
 
     patentFacets: Facet[] = []
@@ -118,8 +124,6 @@ export class ClientComponent extends Vue {
 
     scholarFacets: Facet[] = []
     hasScholarFacets = false
-
-    totalArticles = 0
 
     interval
     autoRunSearch: boolean = true
@@ -147,6 +151,7 @@ export class ClientComponent extends Vue {
     suggest(v) {
         this.q = v
         this.parseQuery()
+        this.submit()
     }
 
     selectField(field) {
@@ -180,12 +185,12 @@ export class ClientComponent extends Vue {
         this.loadedAll = false // test this out
         this.loadingAll = false // test this out
         this.articles = []
-        this.totalArticles = 0
         this.hasScholarFacets = false
         this.patents = []
         this.hasPatentFacets = false
         this.classifications = []
         this.show.suggestions = false
+        this.totals = {}
     }
 
     keyup(event: KeyboardEvent) {
@@ -294,14 +299,8 @@ export class ClientComponent extends Vue {
                 this.suggestFields = AllFields.filter(field => field.toLowerCase().indexOf(term) >= 0)
             }
 
-            fields.forEach((field: string) => {
-                if (!this.looksLike.scholarQuery && _includes(ArticleFieldsList, field) && !_includes(PatentFieldsList, field)) {
-                    this.looksLike.scholarQuery = true
-                }
-                if (!this.looksLike.patentQuery && _includes(PatentFieldsList, field) && !_includes(ArticleFieldsList, field)) {
-                    this.looksLike.patentQuery = true
-                }
-            })
+            this.looksLike.scholarQuery = this.q.length > 3 && _intersection(fields, ArticleFieldsList).length === fields.length
+            this.looksLike.patentQuery = this.q.length > 3 && _intersection(fields, PatentFieldsList).length === fields.length
 
         } catch (err) {
             // console.warn(err)
@@ -337,11 +336,16 @@ export class ClientComponent extends Vue {
                 requests.push(this.searchPatents())
                 requests.push(this.searchPatentFacets())
             }
+            // todo: this shouldn't branch like this
             if (this.classificationSymbols.length) {
                 requests.push(this.lookupClassifications())
+            } else {
+                requests.push(this.searchClassifications())
             }
             Promise.all(requests).then(responses => {
-                this.loadedAll = true
+                setTimeout(() => {
+                    this.loadedAll = true
+                }, 400)
             })
         }, 400)
     }
@@ -349,13 +353,14 @@ export class ClientComponent extends Vue {
     searchScholar() {
         this.loading.articles = true
         const query = topCitedArticlesQuery(this.q)
-        articleService.search(query).then(([articles, res]) => {
+        return articleService.search(query).then(([articles, res]) => {
             const response: SearchResponse = res
             // response.queries.SCHOLAR.joined
-            this.totalArticles = response.query_result.hits.total
+            this.totals.articles = response.query_result.hits.total
             this.articles = articles
             this.loading.articles = false
-            // perform citing patents join search
+            const {searchId} = response.queries.SCHOLAR
+            this.fetchCitingPatents(searchId)
         }).catch(err => {
             console.warn(err)
             this.loading.articles = false
@@ -365,7 +370,7 @@ export class ClientComponent extends Vue {
     searchScholarFacets() {
         this.loading.scholarFacets = true
         const facetsQuery = articleFacetsQuery(this.q)
-        articleService.facets(facetsQuery).then(facets => {
+        return articleService.facets(facetsQuery).then(facets => {
             this.scholarFacets = facets.filter(facet => facet.values.length && facet.key !== 'dates')
             this.loading.scholarFacets = false
             this.hasScholarFacets = this.scholarFacets.length > 0
@@ -377,19 +382,16 @@ export class ClientComponent extends Vue {
 
     searchPatents() {
         this.loading.patents = true
-        patentService.search(this.q)
-            .then(d => {
+        return patentService.search(this.q).then(d => {
                 this.loading.patents = false
                 const { patents, response } = d
-                // console.log(response)
                 this.patents = patents
                 const { size, numFamilies } = response.result
                 const { searchId, capped, joinResultSize } = response.joinedQueryStats.PATENT
-                console.log({ patentSearchId: searchId })
                 this.patentStats = { size, numFamilies, searchId, capped, joinResultSize }
-                // perform cited articles join search
-            })
-            .catch(err => {
+                this.totals.patents = size
+                this.fetchCitedArticles(searchId)
+            }).catch(err => {
                 console.warn(err)
                 this.loading.patents = false
             })
@@ -397,8 +399,8 @@ export class ClientComponent extends Vue {
 
     searchPatentFacets() {
         this.loading.patentFacets = true
-        patentService.facets(this.q).then(facets => {
-            this.patentFacets = facets.filter(facet => facet.key !== 'pub_year')
+        return patentService.facets(this.q).then(facets => {
+            this.patentFacets = facets
             this.hasPatentFacets = facets.length > 0
             this.loading.patentFacets = false
         }).catch(err => {
@@ -407,12 +409,28 @@ export class ClientComponent extends Vue {
         })
     }
 
+    fetchCitedArticles(searchId: string) {
+        // console.log('fetchCitedArticles', searchId)
+        const query = citedArticlesCountQuery(searchId)
+        return articleService.search(query).then(([articles, res]) => {
+            const response: SearchResponse = res
+            this.totals.citedArticles = response.query_result.hits.total
+        })
+    }
+
+    fetchCitingPatents(searchId: string) {
+        // console.log('fetchCitingPatents', searchId)
+        return patentService.search('', searchId).then(({ patents, response }) => {
+            this.citingPatents = patents
+            this.totals.citingPatents = response.result.size
+        })
+    }
+
     searchCollections() { }
 
     searchClassifications() {
         classificationService.search('CPC', this.q).then(classifications => {
-            console.log({ classifications })
-            // this.classifications = _values(classifications)
+            this.classifications = _values(classifications).map(d => [d]) // hack
         })
     }
 
@@ -428,4 +446,7 @@ export class ClientComponent extends Vue {
         this.showClassificationContext = !this.showClassificationContext
     }
 
+    toggleShow(k) {
+        this.show[k] = !this.show[k]
+    }
 }

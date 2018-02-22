@@ -43,3 +43,9 @@ body {
 input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: searchfield-cancel-button;
 }
+
+.hlight {
+    color: $col-success;
+    background-color: $col-success-bg;
+    padding: 0 0.2em;
+}

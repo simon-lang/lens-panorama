@@ -52,6 +52,10 @@ export class Patent {
 
     constructor(init?: Partial<Patent>) {
         Object.assign(this, init)
+
+        if (init.publicationDate) {
+            this.publicationDate = new Date(init.publicationDate)
+        }
     }
 }
 
