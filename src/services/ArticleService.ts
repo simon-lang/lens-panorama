@@ -49,7 +49,7 @@ export class ArticleService {
                 key: d.key_as_string,
                 label: d.key_as_string || d.key,
                 value: d.doc_count,
-            }))
+            })).sort((a, b) => a.value < b.value)
             const facet: Facet = new Facet({
                 type: 'scholar',
                 key,
