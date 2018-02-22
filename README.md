@@ -7,7 +7,7 @@ Next-gen lightweight Lens client. Mobile first, ultra fast, real-time report gen
 
 Lens.org is not truly one application, but 7+ largely independent systems: patents, scholar, classifications, sequences, citations, institutions, work area, about & support. There is some interlinking between these silos but they are not truly integrated - both in the front and backends.
 
-This also means a multitude of technology: spring, freemarker, bootstrap, jquery ui, backbone, angular, react, redux, 3rd party jquery plugins, skyforms, stylus, sass, eqcss, handlebars, coffeescript, es5, es6. Data is delivered embedded in DOM, via properties attached to the window, JSONP, REST APIs, and numerous other APIs including Elastic search, scholar data store.
+This also means a multitude of technology: spring, freemarker, bootstrap, jquery ui, backbone, angular, react, redux, 3rd party jquery plugins, skyforms, stylus, sass, eqcss, handlebars, coffeescript, es5, es6. Data is delivered embedded in DOM, via properties attached to the window, JSONP, REST APIs, and numerous other APIs including Elastic search, scholar data store. And this is just for the frontend.
 
 This issue has been documented in detail in [this frontend architecture overview document](https://s3-us-west-2.amazonaws.com/build.lens.org/lens-ui/LENSUI-DEVELOP/1352/architecture.html).
 
@@ -32,7 +32,9 @@ Instead of our home page showing of a static tour of our suite, it should instea
 
 The focus is on a small set of functionality, but executed beautifully, applying smarts to get the user to find the right app/section of our site for them.
 
-Having an issue with an excess of technology, you'd think adding more diverse tech into the mix is not going to help. In a way this is true, however it is my earnest hope that this will provide a solid enough foundation for rapid development, that the scope of this application could gradually grow to replace legacy areas of the site. For example, start with the work area, and retire backbone at the same time. So while the short term goal is not to rewrite all existing frontend, I hope this will provide the foundation to achieve that in the future.
+Having an issue with an excess of technology, you'd think adding more diverse tech into the mix is not going to help. In a way this is true, however it is my earnest hope that this will provide a solid enough foundation for rapid development, that the scope of this application could gradually grow to replace legacy areas of the site.
+
+For example, if this search experience turns out to be superior to our existing searches, the first to get retired/migrated would be Patent/Scholar/Citation searches. So while the short term goal is not to rewrite all existing frontend, I hope this will provide the foundation to achieve that in the future.
 
 
 ## Why the name?
@@ -50,35 +52,34 @@ This project is inspired by the following research / groundwork.
 - [Advanced Search Editor Requirements](https://docs.google.com/document/d/18TENgghdqa_IQIZlr8Ct4LDwOk1o6mx9stjrOW0dIos/edit)
 - [Advanced Search Editor Screencast](https://slack-files.com/T0QP5SYMD-F8NJAC9FX-4546fc4567)
 - [Report View Mockup](https://projects.invisionapp.com/d/main#/console/13082565/273619768/preview)
-
+- [Frontend Architecture Overview](https://s3-us-west-2.amazonaws.com/build.lens.org/lens-ui/LENSUI-DEVELOP/1352/architecture.html)
 
 ## Workflow
 
 #### 1. Intro
 
-Lens logo and tagline animate into center viewport with nothing else. Click link to instantly launch app with a smooth animation.
-
-Notice there is NO main menu. The black bar and logo is there but top right is just "Exit" or "Back to Lens Home".
+Lens logo, tagline and search bar animate into center viewport.  Only options are Search or Learn More.
 
 Custor autofocus on the hugely prominent search input.
-
-Nearby is text-rotate placeholder suggestions that are syntax-highlighted using lucene-query-parser
 
 
 #### 2. First Interaction
 
-As the user starts typing, instant feedback:
+As the user starts typing, instant feedback is provided:
 
 - Field autosuggest
-- Boolean query errors
-- Parsed boolean query display
-- Looks like: doi, pmid, patent pubkey ([parsers](https://github.com/cambialens/cujo/tree/develop/cujo-common/src/main/java/org/cambia/cujo/common/keys/parsers)), classification
+- Term autosuggest
+- Boolean query syntax error information
+- Formatted boolean query display
+- Looks like: doi, pmid, patent pubkey ([parsers](https://github.com/cambialens/cujo/tree/develop/cujo-common/src/main/java/org/cambia/cujo/common/keys/parsers)), classification ([parsers](https://github.com/USPTO/PatentPublicData/blob/master/PatentDocument/src/main/java/gov/uspto/patent/model/classification/CpcClassification.java))
 - Suggested form actions if multiple
+
+Additionally, any cheap search operations could potentially be triggered eagerly, once the user stops typing for a reasonable length of time. These results could be helped to update autosuggest values or add additional prompts or context to the search.
 
 
 #### 3. Submit Form
 
-Depending on the detected query elements:
+Depending on the detected query elements, we can display different results:
 
 |**field**||**display**|
 |---|---|---|
@@ -157,36 +158,3 @@ Don't try to reproduce patent or scholar search. Actually, try not to delve into
 
 Use a proper router from the start OR with any luck this is a single page with nearly zero permalink state beyond the `q` query variable. maybe a subsection name.
 
-
-## Build
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# lint the Typescript
-npm run lint
-
-# run the tests
-npm test
-
-# run the tests on changes
-npm run test:watch
-
-# run the test suite and generate a coverage report
-npm run coverage
-
-# build for production with minification
-npm run build
-
-# clean the production build
-npm run clean
-```
-
-
-## TODO
-
-- Structured Search
