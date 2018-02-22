@@ -11,7 +11,8 @@ export class PatentService {
         return fetch(`${BASE_URL}/${endpoint}`).then(d => d.json())
     }
     search(q: string): Promise<PatentSearchResponse> {
-        return this.query(`search?q=${q}&json=1`).then(response => {
+        const encodedQ = encodeURIComponent(q)
+        return this.query(`search?q=${encodedQ}&json=1&n=100`).then(response => {
             const { hits } = response.result
             const patents = hits.map(patent => new Patent(patent))
             return {
