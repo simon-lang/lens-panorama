@@ -46,7 +46,6 @@ export class ArticleService {
                     label: field ? field.label : key,
                     value: agg.value,
                 })
-                console.log(facet.label)
                 facets.push(facet)
                 return
             }

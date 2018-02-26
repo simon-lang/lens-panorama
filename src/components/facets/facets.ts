@@ -19,10 +19,8 @@ export class FacetsComponent extends Vue {
     @Prop() title: string
     @Prop() facets: Facet[]
 
-    view: string = 'chart'
-
-    setView(v) {
-        this.view = v
+    setView(facet, view) {
+        facet.view = view
     }
 
     barStyle(item, facet, i) {

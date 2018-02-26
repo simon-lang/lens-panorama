@@ -84,6 +84,15 @@ export class ClientComponent extends Vue {
     ]
     selectedDataSources: string[] = [...this.dataSourceOptions]
 
+    ignorePatentFacetFields = [
+        'jurisdiction',
+        'pub_year',
+    ]
+    ignoreScholarFacetFields = [
+        'dates',
+        'source.country',
+    ]
+
     placeholder: string = DEFAULT_PLACEHOLDER
 
     invalidFields: any[] = []
@@ -117,6 +126,7 @@ export class ClientComponent extends Vue {
     articles: Article[] = []
     citedArticles: Article[] = []
     classifications: Classification[] = []
+    classificationAncestors: Classification[] = []
 
     patentFacets: Facet[] = []
     hasPatentFacets = false
@@ -353,12 +363,11 @@ export class ClientComponent extends Vue {
         this.loading.articles = true
         const query = topCitedArticlesQuery(this.q)
         return articleService.search(query).then(({ articles, response }) => {
-            // response.queries.SCHOLAR.joined
             this.totals.articles = response.query_result.hits.total
             this.articles = articles
             this.loading.articles = false
             const {searchId} = response.queries.SCHOLAR
-            this.fetchCitingPatents(searchId)
+            // this.fetchCitingPatents(searchId)
         }).catch(err => {
             console.warn(err)
             this.loading.articles = false
@@ -369,7 +378,7 @@ export class ClientComponent extends Vue {
         this.loading.scholarFacets = true
         const facetsQuery = articleFacetsQuery(this.q)
         return articleService.facets(facetsQuery).then(facets => {
-            this.scholarFacets = facets.filter(facet => facet.values.length && facet.key !== 'dates')
+            this.scholarFacets = facets.filter(facet => facet.values.length && this.ignoreScholarFacetFields.indexOf(facet.key) === -1)
             this.loading.scholarFacets = false
             this.hasScholarFacets = this.scholarFacets.length > 0
         }).catch(err => {
@@ -397,7 +406,7 @@ export class ClientComponent extends Vue {
     searchPatentFacets() {
         this.loading.patentFacets = true
         return patentService.facets(this.q).then(facets => {
-            this.patentFacets = facets
+            this.patentFacets = facets.filter(facet => this.ignorePatentFacetFields.indexOf(facet.key) === -1)
             this.hasPatentFacets = facets.length > 0
             this.loading.patentFacets = false
         }).catch(err => {
@@ -424,13 +433,13 @@ export class ClientComponent extends Vue {
 
     searchClassifications() {
         classificationService.search('CPC', this.q).then(classifications => {
-            this.classifications = _values(classifications).map(d => [d]) // hack
+            this.classifications = _values(classifications)
         })
     }
 
     lookupClassifications() {
         classificationService.bulkAncestorsAndSelf('CPC', this.classificationSymbols).then(classifications => {
-            this.classifications = _values(classifications)
+            this.classificationAncestors = _values(classifications).map(arr => arr.reverse())
         })
     }
 

@@ -281,6 +281,12 @@ const AnalysisViews = {
     }
 }
 
+// Map
+let map = {}
+PatentFields.forEach(field => {
+    map[field.key] = field
+})
+export const PatentFieldsMap = map
 
 export const PatentFieldsList = PatentFields.map(d => d.key)
 

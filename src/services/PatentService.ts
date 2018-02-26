@@ -2,6 +2,8 @@ import { BASE_URL } from '../constants'
 import { Patent, Facet, FacetValue } from '../models'
 import { PatentSearchResponse } from '../interfaces';
 
+import orderBy from 'lodash/orderBy'
+import { PatentFieldsMap } from '../enums';
 
 export class PatentService {
     query(endpoint) {
@@ -32,7 +34,8 @@ export class PatentService {
         let facets: Facet[] = []
         Object.keys(raw).forEach(key => {
             let data = raw[key]
-            let values: FacetValue[] = Object.keys(data).map(v => new FacetValue({
+            const field = PatentFieldsMap[key]
+            let facetValues: FacetValue[] = Object.keys(data).map(v => new FacetValue({
                 key: v,
                 label: data[v].displayName,
                 value: data[v].count,
@@ -40,7 +43,8 @@ export class PatentService {
             let facet = new Facet({
                 type: 'patent',
                 key,
-                values
+                label: field ? field.label : '',
+                values: orderBy(facetValues, 'value').reverse()
             })
             facets.push(facet)
         })

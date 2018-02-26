@@ -16,6 +16,7 @@ export class Facet {
     label: string = ''
     value?: number
     values: FacetValue[] = []
+    view?: string = '' // warning: presentational logic
     sumOtherDocCount?: number
 
     constructor(init?: Partial<Facet>) {

@@ -214,22 +214,37 @@
                 </b-card>
             </div>
 
-            <div class="col col-md-6 reveal-result" v-if="q.length && classifications.length" v-for="classification in classifications">
-                <b-card header="Classification">
-                    <div v-for="(item, i) in classification">
-                        <h4>{{item.symbol}}</h4>
-                        <small v-html="item.classTitle"></small>
-                        <hr>
-                    </div>
-                    <a class="card-link" href="#results-top" @click="toggleClassificationContext">Toggle Context</a>
-                    <!-- <a class="card-link" :href="'/lens/#/classification-viewer/CPC/' + q">View in Classification Viewer</a> -->
-                </b-card>
+            <div id="classifications pad"></div>
+
+            <!-- Classifications from search -->
+            <div class="col col-md-12 reveal-result" v-if="q.length">
+                <b-card-group columns>
+                    <b-card v-for="classification in classificationAncestors"
+                        :header="'Detected Classification: ' + classification[0].symbol"
+                    >
+                        <div v-for="(item, i) in classification" v-if="i === 0 || showClassificationContext">
+                            <h4>{{item.symbol}}</h4>
+                            <small v-html="item.classTitle"></small>
+                            <hr>
+                        </div>
+                        <a class="card-link" href="#classifications" @click="toggleClassificationContext">Toggle Context</a>
+                        <a class="card-link" :href="'/lens/#/classification-viewer/CPC/' + q">View in Classification Viewer</a>
+                    </b-card>
+                    <b-card header="Relevant Classifications" v-if="classifications.length">
+                        <div v-for="(item, i) in classifications">
+                            <h4>{{item.symbol}}</h4>
+                            <small v-html="item.classTitle"></small>
+                            <hr>
+                        </div>
+                        <!-- <a class="card-link" href="#classifications" @click="toggleClassificationContext">Toggle Context</a> -->
+                        <!-- <a class="card-link" :href="'/lens/#/classification-viewer/CPC/' + q">View in Classification Viewer</a> -->
+                    </b-card>
+                </b-card-group>
             </div>
 
             <div class="pad"></div>
 
             <div class="col col-md-12 reveal-result" v-if="hasPatentFacets">
-                <h3>Patent Analysis</h3>
                 <facets :facets="patentFacets" title="Patent Analysis"></facets>
             </div>
 
