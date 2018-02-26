@@ -1,12 +1,12 @@
 @import "../../sass/_variables";
 
 @keyframes revealClient {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .client {
@@ -39,12 +39,14 @@ body,
     width: auto;
     z-index: 1;
 }
+
 .suggest-field {
     cursor: pointer;
     background: #fff;
     padding: 0.25rem 1.25rem;
     border-bottom: 1px solid $col-borders;
-    &.active, &:hover {
+    &.active,
+    &:hover {
         font-weight: bold;
         color: $col-ter;
     }
@@ -89,20 +91,21 @@ body,
     white-space: nowrap;
     overflow-x: scroll;
 }
+
 .client.loaded .search__query {
     opacity: 1;
     transform: translateY(0)
 }
 
 @keyframes revealSearchWrap {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .search__wrap {
