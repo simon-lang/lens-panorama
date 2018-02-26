@@ -1,8 +1,0 @@
-<div class="simple-bar-chart">
-    <div v-for="(item, i) in values">
-        {{item.label}}
-        <div class="simple-bar-chart-bar" :style="barStyle(item, i)" @click="clickItem({data:item})">
-            <span class="simple-bar-chart-value">{{item.value}}</span>
-        </div>
-    </div>
-</div>

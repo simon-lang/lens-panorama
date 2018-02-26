@@ -2,7 +2,6 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 import Icon from 'vue-awesome'
 
 import { Facet } from '../../models'
-import { SimpleBarChartComponent } from '../';
 import { ChartColours } from '../../enums';
 
 import './facets.scss'
@@ -12,7 +11,6 @@ import './facets.scss'
     name: 'facets',
     components: {
         icon: Icon,
-        barchart: SimpleBarChartComponent
     }
 })
 export class FacetsComponent extends Vue {

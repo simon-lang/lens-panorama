@@ -24,9 +24,9 @@ const classificationService = new ClassificationService({})
 import { ArticleFieldsList, PatentFieldsList } from '../../enums'
 const AllFields = _uniq(ArticleFieldsList.concat(PatentFieldsList)).sort()
 
-import { QueryComponent, FacetsComponent, SimpleBarChartComponent, FauxLoader } from '../'
+import { QueryComponent, FacetsComponent, FauxLoader } from '../'
 
-import {SearchSuggestions} from './../../enums/SearchSuggestions'
+import { SearchSuggestions } from './../../enums/SearchSuggestions'
 
 import './client.scss'
 
@@ -56,7 +56,6 @@ interface ParserError {
         'icon': Icon,
         'query': QueryComponent,
         'facets': FacetsComponent,
-        'simple-bar-chart': SimpleBarChartComponent,
         FauxLoader
     }
 })
