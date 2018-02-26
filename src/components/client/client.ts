@@ -13,7 +13,7 @@ import _intersection from 'lodash/intersection'
 import parser from 'lucene-query-parser'
 
 import { Article, Patent, Facet, Classification } from '../../models'
-import { SearchResponse } from '../../interfaces'
+import { MultiSearchResponse } from '../../interfaces'
 
 import { ArticleService, PatentService, ClassificationService } from '../../services'
 const articleService = new ArticleService()
@@ -25,7 +25,7 @@ const AllFields = _uniq(ArticleFieldsList.concat(PatentFieldsList)).sort()
 
 import { QueryComponent, FacetsComponent, SimpleBarChartComponent } from '../'
 
-import suggestions from './suggestions'
+import {SearchSuggestions} from './../../enums/SearchSuggestions'
 
 import './client.scss'
 
@@ -91,7 +91,7 @@ export class ClientComponent extends Vue {
     suggestTerms: any[] = []
     selectedFieldIndex: number = 0
 
-    suggestions: any[] = suggestions
+    suggestions: any[] = SearchSuggestions
 
     suggestIndex: number = 0
 
@@ -120,7 +120,6 @@ export class ClientComponent extends Vue {
 
     patentFacets: Facet[] = []
     hasPatentFacets = false
-    patentStats: any = {}
 
     scholarFacets: Facet[] = []
     hasScholarFacets = false
@@ -300,7 +299,7 @@ export class ClientComponent extends Vue {
             }
 
             this.looksLike.scholarQuery = this.q.length > 3 && _intersection(fields, ArticleFieldsList).length === fields.length
-            this.looksLike.patentQuery = this.q.length > 3 && _intersection(fields, PatentFieldsList).length === fields.length
+            this.looksLike.patentQuery = this.q.length > 3 && _intersection(fields, PatentFieldsList.map).length === fields.length
 
         } catch (err) {
             // console.warn(err)
@@ -353,8 +352,7 @@ export class ClientComponent extends Vue {
     searchScholar() {
         this.loading.articles = true
         const query = topCitedArticlesQuery(this.q)
-        return articleService.search(query).then(([articles, res]) => {
-            const response: SearchResponse = res
+        return articleService.search(query).then(({ articles, response }) => {
             // response.queries.SCHOLAR.joined
             this.totals.articles = response.query_result.hits.total
             this.articles = articles
@@ -383,18 +381,17 @@ export class ClientComponent extends Vue {
     searchPatents() {
         this.loading.patents = true
         return patentService.search(this.q).then(d => {
-                this.loading.patents = false
-                const { patents, response } = d
-                this.patents = patents
-                const { size, numFamilies } = response.result
-                const { searchId, capped, joinResultSize } = response.joinedQueryStats.PATENT
-                this.patentStats = { size, numFamilies, searchId, capped, joinResultSize }
-                this.totals.patents = size
-                this.fetchCitedArticles(searchId)
-            }).catch(err => {
-                console.warn(err)
-                this.loading.patents = false
-            })
+            this.loading.patents = false
+            const { patents, response } = d
+            this.patents = patents
+            const { size, numFamilies } = response.result
+            const { searchId, capped, joinResultSize } = response.joinedQueryStats.PATENT
+            this.totals.patents = size
+            this.fetchCitedArticles(searchId)
+        }).catch(err => {
+            console.warn(err)
+            this.loading.patents = false
+        })
     }
 
     searchPatentFacets() {
@@ -410,16 +407,13 @@ export class ClientComponent extends Vue {
     }
 
     fetchCitedArticles(searchId: string) {
-        // console.log('fetchCitedArticles', searchId)
         const query = citedArticlesCountQuery(searchId)
-        return articleService.search(query).then(([articles, res]) => {
-            const response: SearchResponse = res
+        return articleService.search(query).then(({ articles, response}) => {
             this.totals.citedArticles = response.query_result.hits.total
         })
     }
 
     fetchCitingPatents(searchId: string) {
-        // console.log('fetchCitingPatents', searchId)
         return patentService.search('', searchId).then(({ patents, response }) => {
             this.citingPatents = patents
             this.totals.citingPatents = response.result.size

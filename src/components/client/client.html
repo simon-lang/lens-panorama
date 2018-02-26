@@ -120,7 +120,7 @@
 
             <!-- Patent Table -->
             <div class="col col-md-12 reveal-result" v-if="patents.length && show.table">
-                <h3>{{'Most relevant of ' + patentStats.size.toLocaleString() + ' Patents'}}</h3>
+                <h3>{{'Most relevant of ' + totals.patents.toLocaleString() + ' Patents'}}</h3>
                 <vue-good-table
                     :columns="columns"
                     :rows="patents"
@@ -167,7 +167,7 @@
 
             <!-- Patent List -->
             <div class="col col-md-6 reveal-result" v-if="patents.length > 1">
-                <b-card :title="'Most relevant of ' + patentStats.size.toLocaleString() + ' Patents'">
+                <b-card :title="'Most relevant of ' + totals.patents.toLocaleString() + ' Patents'">
                     <div v-for="patent in patents.slice(0, 10)">
                         <strong>{{patent.displayKey}}</strong>
                         <br>
@@ -214,7 +214,6 @@
                 </b-card>
             </div>
 
-
             <div class="col col-md-6 reveal-result" v-if="q.length && classifications.length" v-for="classification in classifications">
                 <b-card header="Classification">
                     <div v-for="(item, i) in classification">
@@ -235,7 +234,6 @@
             </div>
 
             <div class="col col-md-12 reveal-result" v-if="hasScholarFacets">
-                <h3>Scholarly Analysis</h3>
                 <facets :facets="scholarFacets" title="Scholarly Analysis"></facets>
             </div>
 

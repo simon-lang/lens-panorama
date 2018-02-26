@@ -9,7 +9,7 @@ interface BarItem {
 
 @Component({
     template: require('./simple-bar-chart.html'),
-    name: 'simple-bar-chart',
+    name: 'barchart',
     components: {}
 })
 export class SimpleBarChartComponent extends Vue {

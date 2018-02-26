@@ -23,4 +23,10 @@ export class Facet {
             Object.assign(this, init)
         }
     }
+
+    getMaxValue() {
+        const values = this.values.map(d => d.value)
+        const max = Math.max.apply(null, values)
+        return max
+    }
 }

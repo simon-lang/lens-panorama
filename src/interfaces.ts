@@ -1,3 +1,7 @@
+import { Article, Patent } from './models'
+
+// Common
+
 export type QueryType = 'SCHOLAR' | 'PATENT'
 
 export interface QueryDetails {
@@ -15,10 +19,11 @@ export interface QueryDetailsMap {
     SCHOLAR?: QueryDetails
 }
 
-export interface SearchResponse {
-    query_result: QueryResult
-    joiner_limit: number
-    queries: QueryDetailsMap
+// Scholarly
+
+export interface Hits {
+    hits: any[]
+    total: number,
 }
 
 export interface QueryResult {
@@ -28,7 +33,34 @@ export interface QueryResult {
     took: number
 }
 
-export interface Hits {
+export interface MultiSearchResponse {
+    query_result: QueryResult
+    joiner_limit: number
+    queries: QueryDetailsMap
+}
+
+export interface ArticleSearchResponse {
+    articles: Article[]
+    response: MultiSearchResponse
+}
+
+// Patent
+
+export interface LegacyPatentSearchResult {
     hits: any[]
-    total: number,
+    elapsedTime: number
+    numFamilies: number
+    size: number
+}
+
+export interface LegacyPatentSearchResponse {
+    joinedQueryStats: QueryDetailsMap
+    filters: any
+    query: any
+    result: LegacyPatentSearchResult
+}
+
+export interface PatentSearchResponse {
+    patents: Patent[]
+    response: LegacyPatentSearchResponse
 }

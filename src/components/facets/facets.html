@@ -3,18 +3,38 @@
         <b-card v-for="(facet, i) in facets"
             :header="facet.label || facet.key"
             :key="'facet-' + facet.key"
+            class="p-0"
         >
-            <!--
+            <a class="btn btn-sm" @click="setView('chart')">
+                <icon name="bar-chart-o"></icon>
+            </a>
+            <a class="btn btn-sm" @click="setView('list')">
+                <icon name="th-list"></icon>
+            </a>
+            <a class="btn btn-sm" @click="setView('table')">
+                <icon name="table"></icon>
+            </a>
+
             <div v-if="facet.values.length">
-                <simple-bar-chart :values="facet.values"></simple-bar-chart>
+                <div class="simple-bar-chart" v-if="view === 'chart'">
+                    <div v-for="(item, i) in facet.values">
+                        {{item.label}}
+                        <div class="simple-bar-chart-bar"
+                            :style="barStyle(item, facet, i)"
+                            @click="clickItem({data:item})"
+                        >
+                            <span class="simple-bar-chart-value">{{item.value}}</span>
+                        </div>
+                    </div>
+                </div>
+                <ul v-if="view === 'list'">
+                    <li v-for="item in facet.values.slice(0, facet.limit || 10)">
+                        <span>{{item.label || item.key}}:</span>
+                        <strong>{{item.value.toLocaleString()}}</strong>
+                    </li>
+                </ul>
+                <b-table v-if="view === 'table'" :items="facet.values" :fields="['label', 'value']"></b-table>
             </div>
-            -->
-            <ul v-if="facet.values.length">
-                <li v-for="item in facet.values.slice(0, facet.limit || 10)">
-                    <span>{{item.label || item.key}}:</span>
-                    <strong>{{item.value.toLocaleString()}}</strong>
-                </li>
-            </ul>
             <a v-if="facet.values.length > 10" @click="facet.limit = 100" class="card-text">Show all</a>
         </b-card>
     </b-card-group>

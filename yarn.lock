@@ -4661,6 +4661,10 @@ lru-cache@^4.0.1, lru-cache@^4.1.1:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
+lucene-query-generator@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/lucene-query-generator/-/lucene-query-generator-0.2.0.tgz#ac3b90498eb5b26de4354e741da255bbf6b9b32c"
+
 lucene-query-parser@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/lucene-query-parser/-/lucene-query-parser-1.2.0.tgz#46dad5b4ddc59abbf27f9df4c519d959c2033432"
@@ -7893,6 +7897,10 @@ vue-good-table@^1.19.2:
 vue-hot-reload-api@~2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.4.tgz#683bd1d026c0d3b3c937d5875679e9a87ec6cd8f"
+
+vue-i18n@^7.4.2:
+  version "7.4.2"
+  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-7.4.2.tgz#ef954f80898bb3609f132f77d51a7053379e03b2"
 
 vue-property-decorator@~6.0.0:
   version "6.0.0"

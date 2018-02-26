@@ -1,10 +1,7 @@
 import { BASE_URL } from '../constants'
 import { Patent, Facet, FacetValue } from '../models'
+import { PatentSearchResponse } from '../interfaces';
 
-interface PatentSearchResponse {
-    patents: Patent[]
-    response: any
-}
 
 export class PatentService {
     query(endpoint) {
