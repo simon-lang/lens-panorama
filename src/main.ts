@@ -8,7 +8,6 @@ import VueGoodTable from 'vue-good-table'
 import VueI18n from 'vue-i18n'
 import Icon from 'vue-awesome'
 
-// Vue.use(Icon)
 Vue.use(BootstrapVue)
 Vue.use(VueGoodTable)
 Vue.use(VueI18n)
@@ -18,10 +17,13 @@ const i18n = new VueI18n({
     messages,
 })
 
+import store from './store'
+
 import './sass/main.scss'
 
 new Vue({
     el: '#app-main',
+    store,
     router: createRouter(),
     components: {
         icon: Icon

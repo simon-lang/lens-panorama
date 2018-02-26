@@ -1,5 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 import Icon from 'vue-awesome'
+import { State, Getter, Mutation } from 'vuex-class'
 
 import { looksLikeScholarlyId, looksLikeClassificationSymbol, extractFields } from '../../helpers'
 import { topCitedArticlesQuery, articleFacetsQuery, citedArticlesCountQuery } from '../../queries'
