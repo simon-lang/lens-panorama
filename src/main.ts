@@ -14,7 +14,7 @@ Vue.use(VueGoodTable)
 Vue.use(VueI18n)
 
 const i18n = new VueI18n({
-    locale: 'es',
+    locale: 'en',
     messages,
 })
 
