@@ -84,7 +84,7 @@
             <b-card header-bg-variant="light"
                     header="Cited Works"
                     class="text-center"
-                    :title="totals.citedArticles ? totals.citedArticles.toLocaleString() : '0'"
+                    :title="loading.citedArticles ? 'Loading...' : totals.citedArticles ? totals.citedArticles.toLocaleString() : '0'"
             ></b-card>
             <b-card header-bg-variant="default"
                     header="Scholarly"
@@ -94,7 +94,7 @@
             <b-card header-bg-variant="light"
                     header="Citing Patents"
                     class="text-center"
-                    :title="totals.citingPatents ? totals.citingPatents.toLocaleString() : '0'"
+                    :title="loading.citingPatents ? 'Loading...' :totals.citingPatents ? totals.citingPatents.toLocaleString() : '0'"
             ></b-card>
             <b-card header-bg-variant="default"
                     header="Classifications"

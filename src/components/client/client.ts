@@ -420,16 +420,20 @@ export class ClientComponent extends Vue {
     }
 
     fetchCitedArticles(searchId: string) {
+        this.loading.citedArticles = true
         const query = citedArticlesCountQuery(searchId)
         return articleService.search(query).then(({ articles, response}) => {
             this.totals.citedArticles = response.query_result.hits.total
+            this.loading.citedArticles = false
         })
     }
 
     fetchCitingPatents(searchId: string) {
+        this.loading.citingPatents = true
         return patentService.search('', searchId).then(({ patents, response }) => {
             this.citingPatents = patents
             this.totals.citingPatents = response.result.size
+            this.loading.citingPatents = false
         })
     }
 
