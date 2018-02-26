@@ -8,3 +8,4 @@ export * from './facets';
 export * from './query';
 export * from './simple-bar-chart';
 export * from './splash';
+export * from './FauxLoader';

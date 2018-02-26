@@ -23,7 +23,7 @@ const classificationService = new ClassificationService({})
 import { ArticleFieldsList, PatentFieldsList } from '../../enums'
 const AllFields = _uniq(ArticleFieldsList.concat(PatentFieldsList)).sort()
 
-import { QueryComponent, FacetsComponent, SimpleBarChartComponent } from '../'
+import { QueryComponent, FacetsComponent, SimpleBarChartComponent, FauxLoader } from '../'
 
 import {SearchSuggestions} from './../../enums/SearchSuggestions'
 
@@ -56,9 +56,13 @@ interface ParserError {
         'query': QueryComponent,
         'facets': FacetsComponent,
         'simple-bar-chart': SimpleBarChartComponent,
+        FauxLoader
     }
 })
 export class ClientComponent extends Vue {
+    @State count
+    @Mutation increment
+
     loading: any = {}
 
     columns: GoodTableColumn[] = [
