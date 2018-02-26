@@ -10,7 +10,7 @@
     },
     "scripts": {
         "proxy": "node src/proxy/server.js",
-        "build": "cross-env-shell NODE_ENV=production npm run clean && npm run lint && npm run test && npm run compile",
+        "build": "cross-env-shell NODE_ENV=production npm run clean && npm run lint && npm run compile",
         "ci:teamcity": "karma --env=tc start config/karma.coverage.js && npm run coverage:remap",
         "ci:jenkins": "karma --env=jk start config/karma.coverage.js && npm run coverage:remap",
         "clean": "rimraf dist && rimraf coverage",

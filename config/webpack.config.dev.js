@@ -7,17 +7,6 @@ const Visualizer = require('webpack-visualizer-plugin')
 
 webpackConfig.module.rules = [...webpackConfig.module.rules,
     {
-        test: /\.css$/,
-        use: [
-            {
-                loader: 'style-loader'
-            },
-            {
-                loader: 'css-loader'
-            },
-        ]
-    },
-    {
         test: /\.scss$/,
         use: [
             {
@@ -34,18 +23,6 @@ webpackConfig.module.rules = [...webpackConfig.module.rules,
     {
         test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader'
-    },
-    {
-        test: /\.md$/,
-        use: [
-            {
-                loader: "html-loader"
-            },
-            {
-                loader: "markdown-loader",
-                options: { }
-            }
-        ]
     }
 ]
 

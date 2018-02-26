@@ -39,6 +39,29 @@ let config = {
     {
         test: /\.txt$/,
         loaders: ['raw-loader']
+    },
+    {
+        test: /\.css$/,
+        use: [
+            {
+                loader: 'style-loader'
+            },
+            {
+                loader: 'css-loader'
+            },
+        ]
+    },
+    {
+        test: /\.md$/,
+        use: [
+            {
+                loader: "html-loader"
+            },
+            {
+                loader: "markdown-loader",
+                options: { }
+            }
+        ]
     }
     ]
   },

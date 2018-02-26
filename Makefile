@@ -1,3 +1,6 @@
+build:
+	npm run build
+
 run:
 	npm start
 
@@ -16,6 +19,9 @@ test:
 
 watch-test:
 	npm run test:watch
+
+deploy:
+	cp -R ./dist/* ~/lens-ui/dist
 
 # usage make component name=widget
 component:

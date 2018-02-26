@@ -26,7 +26,7 @@ Vue.use(VueRouter)
 export const createRoutes: () => RouteConfig[] = () => [
     {
         path: '/',
-        component: splashComponent
+        component: appComponent
     },
     {
         path: '/app',

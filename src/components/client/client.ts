@@ -370,7 +370,7 @@ export class ClientComponent extends Vue {
             this.totals.articles = response.query_result.hits.total
             this.articles = articles
             this.loading.articles = false
-            const {searchId} = response.queries.SCHOLAR
+            const { searchId } = response.queries.SCHOLAR
             // this.fetchCitingPatents(searchId)
         }).catch(err => {
             console.warn(err)
@@ -422,7 +422,7 @@ export class ClientComponent extends Vue {
     fetchCitedArticles(searchId: string) {
         this.loading.citedArticles = true
         const query = citedArticlesCountQuery(searchId)
-        return articleService.search(query).then(({ articles, response}) => {
+        return articleService.search(query).then(({ articles, response }) => {
             this.totals.citedArticles = response.query_result.hits.total
             this.loading.citedArticles = false
         })
