@@ -1,12 +1,12 @@
 export const ChartColours = [
-    '#cc3233',
-    '#cc8732',
-    '#bccc32',
-    '#68cc32',
-    '#32cc51',
-    '#32cca5',
-    '#329ecc',
-    '#3249cc',
-    '#7032cc',
-    '#c432cc'
+    '#4bdad5',
+    '#5192dc',
+    '#6256da',
+    '#aa54dc',
+    '#da5bc9',
+    '#eb4a5a',
+    '#ed9140',
+    '#e4bf3e',
+    '#afdc54',
+    '#5ddc54',
 ]
