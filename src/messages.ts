@@ -1,12 +1,16 @@
 export default {
     en: {
         message: {
-            home: 'Home'
+            'home': 'Home',
+            'patentField.publicationDate': 'Publication Date',
+            'patentField.publicationNumber': 'Publication Number',
         }
     },
-    ja: {
+    es: {
         message: {
-            home: '世界'
+            'home': 'Casa',
+            'patentField.publicationDate': 'Fecha de Publicación',
+            'patentField.publicationNumber': 'Número de Publicación',
         }
     }
 }
