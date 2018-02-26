@@ -1,15 +1,23 @@
 <b-navbar toggleable="md" type="dark" variant="dark">
 
-  <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-  <b-navbar-brand :to="'/'">
-    <img src="assets/img/logo-menu.png" alt="Lens.org" class="logo-menu">
-  </b-navbar-brand>
+    <b-navbar-brand :to="'/'">
+        <img src="assets/img/logo-menu.png" alt="Lens.org" class="logo-menu">
+    </b-navbar-brand>
 
-  <b-collapse is-nav id="nav_collapse">
-    <b-navbar-nav class="ml-auto">
-        <b-nav-item :to="'/app'">{{ $t("message.home") }}</b-nav-item>
-        <b-nav-item :to="'/docs'">Learn More</b-nav-item>
-    </b-navbar-nav>
-  </b-collapse>
+    <b-collapse is-nav id="nav_collapse">
+        <b-navbar-nav v-if="reportReady">
+            <b-nav-item href="#patents">Patents</b-nav-item>
+            <b-nav-item href="#scholar">Scholarly Works</b-nav-item>
+            <b-nav-item href="#citations">Citations</b-nav-item>
+            <b-nav-item href="#classifications">Classifications</b-nav-item>
+            <b-nav-item href="#bio">Sequences</b-nav-item>
+        </b-navbar-nav>
+
+        <b-navbar-nav class="ml-auto">
+            <b-nav-item :to="'/app'">{{ $t("message.home") }}</b-nav-item>
+            <b-nav-item :to="'/docs'">Learn More</b-nav-item>
+        </b-navbar-nav>
+    </b-collapse>
 </b-navbar>

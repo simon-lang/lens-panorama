@@ -10,5 +10,5 @@ import './navbar.scss'
     }
 })
 export class Navbar extends Vue {
-
+    reportReady: boolean = false
 }
