@@ -92,7 +92,7 @@ body,
     overflow-x: scroll;
 }
 
-.client.loaded .search__query {
+.client.loading .search__query {
     opacity: 1;
     transform: translateY(0)
 }
