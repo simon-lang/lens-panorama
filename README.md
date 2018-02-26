@@ -1,13 +1,20 @@
-# lens-panorama
-
-Next-gen lightweight Lens client. Mobile first, ultra fast, real-time report generation using federated search.
-
-
 ## The problem
 
-Lens.org is not truly one application, but 7+ largely independent systems: patents, scholar, classifications, sequences, citations, institutions, work area, about & support. There is some interlinking between these silos but they are not truly integrated - both in the front and backends.
+Lens.org is not truly one application, but 7+ largely independent systems:
 
-This also means a multitude of technology: spring, freemarker, bootstrap, jquery ui, backbone, angular, react, redux, 3rd party jquery plugins, skyforms, stylus, sass, eqcss, handlebars, coffeescript, es5, es6. Data is delivered embedded in DOM, via properties attached to the window, JSONP, REST APIs, and numerous other APIs including Elastic search, scholar data store. And this is just for the frontend.
+- patents
+- scholar
+- classifications
+- sequences
+- citations
+- institutions
+- work area
+- about
+- support
+
+There is some interlinking between these silos but they are not truly integrated - both in the front and backends.
+
+This also means a multitude of technology. The frontend alone uses spring, freemarker, bootstrap, jquery ui, backbone, angular, react, redux, 3rd party jquery plugins, skyforms, stylus, sass, eqcss, handlebars, coffeescript, es5, es6. Data is delivered embedded in DOM, via properties attached to the window, JSONP, REST APIs, and numerous other APIs including Elastic search, scholar data store.
 
 This issue has been documented in detail in [this frontend architecture overview document](https://s3-us-west-2.amazonaws.com/build.lens.org/lens-ui/LENSUI-DEVELOP/1352/architecture.html).
 
@@ -20,9 +27,9 @@ This was showcased by the recent attempts at implementing scholarly-patent joins
 
 ## Goal
 
-Create an ultra fast minimalist ui to power a federated search experience.
+This project has two main goals:
 
-Re-define all model schemas (Patent/Article/Citation/etc) in coherent TypeScript classes, providing type safety. Refactor all data fetching services to provide consistent methods for data access, and make more interlinked data available to the UI.
+#### 1. Create an ultra fast minimalist ui to provide federated search
 
 This is NOT intended to replace any legacy systems, but to provide an overview of the data available for any given query, then to link off into our existing facilities.
 
@@ -31,6 +38,12 @@ Best summed up as: *advanced search editor with intelligent suggestions, real-ti
 Instead of our home page showing of a static tour of our suite, it should instead immediately launch into an interactive showcase of what data we have available based on a user's query.
 
 The focus is on a small set of functionality, but executed beautifully, applying smarts to get the user to find the right app/section of our site for them.
+
+#### 2. Refactor the core UI code that should be shared across projects
+
+Re-define all model schemas (Patent/Article/Citation/etc) in coherent TypeScript classes, providing type safety.
+
+Refactor all data fetching services to provide consistent methods for data access, and make more interlinked data available to the UI.
 
 Having an issue with an excess of technology, you'd think adding more diverse tech into the mix is not going to help. In a way this is true, however it is my earnest hope that this will provide a solid enough foundation for rapid development, that the scope of this application could gradually grow to replace legacy areas of the site.
 
