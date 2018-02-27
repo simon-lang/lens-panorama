@@ -1,5 +1,4 @@
 @import "../../sass/_variables";
-
 @keyframes revealClient {
     from {
         opacity: 0;
@@ -92,7 +91,8 @@ body,
     overflow-x: scroll;
 }
 
-.client.loading .search__query {
+// TODO: on PARSED not loading. Also not just :hover but js blur/focus etc
+.client.loaded .search__query {
     opacity: 1;
     transform: translateY(0)
 }
