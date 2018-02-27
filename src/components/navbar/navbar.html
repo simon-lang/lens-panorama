@@ -7,12 +7,13 @@
     </b-navbar-brand>
 
     <b-collapse is-nav id="nav_collapse">
-        <b-navbar-nav v-if="reportReady">
-            <b-nav-item href="#patents">Patents</b-nav-item>
-            <b-nav-item href="#scholar">Scholarly Works</b-nav-item>
-            <b-nav-item href="#citations">Citations</b-nav-item>
-            <b-nav-item href="#classifications">Classifications</b-nav-item>
-            <b-nav-item href="#bio">Sequences</b-nav-item>
+
+        <b-navbar-nav v-if="loadedAll">
+            <b-nav-item href="#patents" v-if="patents.length">Patents</b-nav-item>
+            <b-nav-item href="#scholar" v-if="articles.length">Scholarly Works</b-nav-item>
+            <!-- <b-nav-item href="#citations">Citations</b-nav-item> -->
+            <!-- <b-nav-item href="#classifications">Classifications</b-nav-item> -->
+            <!-- <b-nav-item href="#bio">Sequences</b-nav-item> -->
         </b-navbar-nav>
 
         <b-navbar-nav class="ml-auto">

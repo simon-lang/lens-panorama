@@ -1,5 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 import bNavbar from 'bootstrap-vue/es/components/navbar/navbar';
+import { State, Getter, Mutation } from 'vuex-class'
 
 import './navbar.scss'
 
@@ -10,5 +11,7 @@ import './navbar.scss'
     }
 })
 export class Navbar extends Vue {
-    reportReady: boolean = false
+    @State patents
+    @State articles
+    @State loadedAll
 }

@@ -29,6 +29,7 @@ import { QueryComponent, FacetsComponent, FauxLoader } from '../'
 import { SearchSuggestions } from './../../enums/SearchSuggestions'
 
 import './client.scss'
+import store from '../../store'
 
 const match = (a, b) => a.toLowerCase().indexOf(b.toLowerCase()) >= 0
 
@@ -125,9 +126,10 @@ export class ClientComponent extends Vue {
 
     totals: any = {}
 
-    patents: Patent[] = []
+    @State patents: Patent[]
+    @State articles: Article[]
+
     citingPatents: Patent[] = []
-    articles: Article[] = []
     citedArticles: Article[] = []
     classifications: Classification[] = []
     classificationAncestors: Classification[] = []
@@ -197,12 +199,11 @@ export class ClientComponent extends Vue {
     clearResults() {
         this.loadedAll = false // test this out
         this.loadingAll = false // test this out
-        this.articles = []
         this.hasScholarFacets = false
-        this.patents = []
         this.hasPatentFacets = false
         this.classifications = []
         this.show.suggestions = false
+        store.commit('reset')
         this.totals = {}
     }
 
@@ -358,6 +359,7 @@ export class ClientComponent extends Vue {
             Promise.all(requests).then(responses => {
                 setTimeout(() => {
                     this.loadedAll = true
+                    store.commit('loadedAll')
                 }, 400)
             })
         }, 400)
@@ -368,10 +370,10 @@ export class ClientComponent extends Vue {
         const query = topCitedArticlesQuery(this.q)
         return articleService.search(query).then(({ articles, response }) => {
             this.totals.articles = response.query_result.hits.total
-            this.articles = articles
             this.loading.articles = false
             const { searchId } = response.queries.SCHOLAR
             // this.fetchCitingPatents(searchId)
+            store.commit('setArticles', articles)
         }).catch(err => {
             console.warn(err)
             this.loading.articles = false
@@ -396,11 +398,11 @@ export class ClientComponent extends Vue {
         return patentService.search(this.q).then(d => {
             this.loading.patents = false
             const { patents, response } = d
-            this.patents = patents
             const { size, numFamilies } = response.result
             const { searchId, capped, joinResultSize } = response.joinedQueryStats.PATENT
             this.totals.patents = size
             this.fetchCitedArticles(searchId)
+            store.commit('setPatents', patents)
         }).catch(err => {
             console.warn(err)
             this.loading.patents = false
