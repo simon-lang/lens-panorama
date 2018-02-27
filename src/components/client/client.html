@@ -24,7 +24,9 @@
                         <query :message="q" :query="query" :depth="1"></query>
                     </div>
 
-                    <button class="search__btn btn btn-primary btn-lg" @click="submit">Search</button>
+                    <button class="search__btn btn btn-primary btn-lg" @click="submit">
+                        {{ $t('common.action.search') }}
+                    </button>
                 </div>
                 <div class="search__results">
                     <div v-if="suggestFields.length || suggestTerms.length" class="suggest-fields-container">
