@@ -192,6 +192,11 @@ export class ClientComponent extends Vue {
         this.parseQuery()
     }
 
+    reset() {
+        this.clear()
+        this.clearResults()
+    }
+
     clear() {
         this.q = ''
         this.$router.push({ query: { q: this.q } })
