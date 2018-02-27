@@ -68,12 +68,12 @@
                         :{{error.location.start.offset}}
                     </span>
                 </b-form-invalid-feedback>
-                -->
 
                 <b-form-text v-if="looksLike.patentQuery && looksLike.scholarQuery">
                     <strong>Warning: </strong>
                     boolean query references both scholarly and patent fields, which may result in reduced results.
                 </b-form-text>
+                -->
             </div>
 
             <div v-if="!loadedAll" header="Suggestions">
