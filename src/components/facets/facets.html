@@ -13,7 +13,7 @@
                             :style="barStyle(item, facet, i)"
                             @click="clickItem({data:item})"
                         >
-                            <span class="simple-bar-chart-value">{{item.value}}</span>
+                            <span class="simple-bar-chart-value">{{item.value.toLocaleString()}}</span>
                         </div>
                     </div>
                 </div>
