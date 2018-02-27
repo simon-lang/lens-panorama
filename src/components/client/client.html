@@ -55,13 +55,18 @@
                     <b-badge variant="success" v-if="looksLike.scholarQuery">
                         Valid Scholar Query
                     </b-badge>
+                    <b-badge variant="danger" v-if="error">
+                        {{error.message}}
+                    </b-badge>
                 </div>
+                <!--
                 <b-form-invalid-feedback v-if="error">
                     {{error.message}}
                     <span v-if="error.location">
                         :{{error.location.start.offset}}
                     </span>
                 </b-form-invalid-feedback>
+                -->
 
                 <b-form-text v-if="looksLike.patentQuery && looksLike.scholarQuery">
                     <strong>Warning: </strong>
