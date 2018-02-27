@@ -57,6 +57,10 @@ export class Patent {
             this.publicationDate = new Date(init.publicationDate)
         }
     }
+
+    getUrl() {
+        return `https://www.lens.org/lens/patent/${this.publicationKey}`
+    }
 }
 
 

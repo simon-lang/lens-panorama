@@ -84,32 +84,55 @@
             <b-card header-bg-variant="default"
                     header="Patents"
                     class="text-center"
-                    :title="totals.patents ? totals.patents.toLocaleString() : '0'"
-            ></b-card>
+            >
+                <h4 class="card-title">
+                    <a :href="'https://www.lens.org/lens/search?q=' + q">
+                        {{totals.patents ? totals.patents.toLocaleString() : '0'}}
+                    </a>
+                </h4>
+            </b-card>
             <b-card header-bg-variant="light"
                     header="Cited Works"
                     class="text-center"
-                    :title="loading.citedArticles ? 'Loading...' : totals.citedArticles ? totals.citedArticles.toLocaleString() : '0'"
-            ></b-card>
+            >
+                <h4 class="card-title">
+                    <span v-if="loading.citedArticles">
+                        <icon name="refresh" spin></icon>
+                    </span>
+                    <a v-if="!loading.citedArticles && totals.citedArticles" :href="'https://www.lens.org/lens/scholar/search/results?patentQueryId='">
+                        {{totals.citedArticles ? totals.citedArticles.toLocaleString() : '0'}}
+                    </a>
+                </h4>
+            </b-card>
             <b-card header-bg-variant="default"
                     header="Scholarly"
                     class="text-center"
-                    :title="totals.articles ? totals.articles.toLocaleString() : '0'"
-            ></b-card>
+            >
+                <h4 class="card-title">
+                    <a :href="'https://www.lens.org/lens/scholar/search/results?q=' + q">
+                        {{totals.articles ? totals.articles.toLocaleString() : '0'}}
+                    </a>
+                </h4>
+            </b-card>
             <b-card header-bg-variant="light"
                     header="Citing Patents"
                     class="text-center"
-                    :title="loading.citingPatents ? 'Loading...' :totals.citingPatents ? totals.citingPatents.toLocaleString() : '0'"
-            ></b-card>
+            >
+                <h4 class="card-title">
+                    {{loading.citingPatents ? 'Loading...' :totals.citingPatents ? totals.citingPatents.toLocaleString() : '0'}}
+                </h4>
+            </b-card>
             <b-card header-bg-variant="default"
                     header="Classifications"
                     class="text-center"
-                    :title="classifications.length ? classifications.length.toLocaleString() : '0'"
-            ></b-card>
+            >
+                <h4 class="card-title">
+                    {{classifications.length ? classifications.length.toLocaleString() : '0'}}
+                </h4>
+            </b-card>
             <b-card header-bg-variant="light"
                     header="Collections"
                     class="text-center"
-                    title="?"
             ></b-card>
         </b-card-group>
 
@@ -151,6 +174,8 @@
                 </div>
             </div>
 
+            <div id="patents"></div>
+
             <!-- Single Patent Hit -->
             <div class="col col-md-12 reveal-result" v-if="patents.length === 1">
                 <b-card v-for="patent in patents"
@@ -174,7 +199,9 @@
             <div class="col col-md-6 reveal-result" v-if="patents.length > 1">
                 <b-card :title="'Most relevant of ' + totals.patents.toLocaleString() + ' Patents'">
                     <div v-for="patent in patents.slice(0, 10)">
-                        <strong>{{patent.displayKey}}</strong>
+                        <strong>
+                            <a :href="patent.getUrl()">{{patent.displayKey}}</a>
+                        </strong>
                         <br>
                         <small>{{patent.title}}</small>
                         <hr>
@@ -184,6 +211,7 @@
                 </b-card>
             </div>
 
+            <div id="scholar"></div>
 
             <!-- Single Article Hit -->
             <div class="col col-md-12 reveal-result" v-if="articles.length === 1">
@@ -209,7 +237,9 @@
             <div class="col col-md-6 reveal-result" v-if="articles.length > 1">
                 <b-card :title="'Most relevant of ' + totals.articles.toLocaleString() + ' Scholarly Works'">
                     <div v-for="(article, i) in articles.slice(0, 10)">
-                        <strong>{{article.id}}</strong>
+                        <strong>
+                            <a :href="article.getUrl()">{{article.id}}</a>
+                        </strong>
                         <br>
                         <span>{{article.title}}</span>
                         <hr>
@@ -225,7 +255,7 @@
             <div class="col col-md-12 reveal-result" v-if="q.length">
                 <b-card-group columns>
                     <b-card v-for="classification in classificationAncestors"
-                        :header="'Detected Classification: ' + classification[0].symbol"
+                        :header="'Detected Classification: '"
                     >
                         <div v-for="(item, i) in classification" v-if="i === 0 || showClassificationContext">
                             <h4>{{item.symbol}}</h4>

@@ -95,4 +95,8 @@ export class Article implements IArticle {
             this.id = meta.id
         }
     }
+
+    getUrl() {
+        return `https://www.lens.org/lens/scholar/article/${this.id}`
+    }
 }
