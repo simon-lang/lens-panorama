@@ -268,8 +268,9 @@
             <!-- Classifications from search -->
             <div class="col col-md-12 reveal-result" v-if="q.length">
                 <b-card-group columns>
-                    <b-card v-for="classification in classificationAncestors"
+                    <b-card v-for="(classification, i) in classificationAncestors"
                         :header="'Detected Classification: '"
+                        :key="classification.symbol ? classification.symbol : 'classification-' + i"
                     >
                         <div v-for="(item, i) in classification" v-if="i === 0 || showClassificationContext">
                             <h4>{{item.symbol}}</h4>
