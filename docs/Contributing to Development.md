@@ -44,3 +44,11 @@ npm run build
 # clean the production build
 npm run clean
 ```
+
+
+## Recommended reading
+
+- [Advanced Static Types in TypeScript](https://egghead.io/courses/advanced-static-types-in-typescript)
+- [Use TypeScript to Develop Vue.js Web Applications](https://egghead.io/courses/use-typescript-to-develop-vue-js-web-applications)
+- [Vue.js State Management with Vuex and TypeScript](https://egghead.io/courses/vue-js-state-management-with-vuex-and-typescript)
+

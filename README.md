@@ -39,6 +39,8 @@ Instead of our home page showing of a static tour of our suite, it should instea
 
 The focus is on a small set of functionality, but executed beautifully, applying smarts to get the user to find the right app/section of our site for them.
 
+Note this is a purely frontend project. The backend services all exist, and this project assumes no changes to any baking services are required.
+
 #### 2. Refactor the core UI code that should be shared across projects
 
 Re-define all model schemas (Patent/Article/Citation/etc) in coherent TypeScript classes, providing type safety.
@@ -125,9 +127,7 @@ hot module reloading from day one
 
 100% test coverage from day one because otherwise it'll never happen.
 
-shared templates with server side rendering (secondary priority)
-
-Localisation as first class feature from day 1
+Localisation as first class feature
 
 Process shift: move to GitHub issues for issue tracking, even if just internally.
 
@@ -171,3 +171,51 @@ Don't try to reproduce patent or scholar search. Actually, try not to delve into
 
 Use a proper router from the start OR with any luck this is a single page with nearly zero permalink state beyond the `q` query variable. maybe a subsection name.
 
+
+
+## New middleware
+
+### Current frontend stack
+
+lens-ui
+
+- Stylesheets
+- Javascript
+- HTML Templates
+- Images, Fonts
+
+bambi
+
+- Search API proxying
+- Work Area management
+- Localisation
+- Some template rendering
+
+### Proposed frontend stack
+
+lens-ui
+
+- Stylesheets
+- Javascript
+- Universal template rendering
+- Images, Fonts
+
+panorama
+
+- Universal template rendering
+- Report caching
+- Localisation
+
+bambi
+
+- Search API proxying
+- Work Area management
+
+
+### Explanation
+
+This means bambi should no longer be concerned with how to present data but purely be concerned with collections, work area and proxying search requests.
+
+The new project will take over all responsibility for rendering templates server side. It might make sense for it to also handle localisation.
+
+Another possibility is "report caching" whereby the key results of a federated search is cached and the pre-rendered html template can be served to end users much quicker than rendering a new one.
