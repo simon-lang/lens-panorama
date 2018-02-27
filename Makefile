@@ -22,6 +22,7 @@ watch-test:
 
 deploy:
 	cp -R ./dist/* ~/lens-ui/dist
+	cp ./dist/index.html ~/bambi/web/src/main/webapp/WEB-INF/freemarker/app.ftl
 
 # usage make component name=widget
 component:
