@@ -159,7 +159,9 @@ body,
 }
 
 .curtain {
-    background: #031A43;
+    // background: #031A43;
+    background: #031A43 url('https://static.lens.org/lens/5.5.5/img/lens-masthead.png') top no-repeat;
+    background-size: cover;
     left: 0;
     top: 0;
     height: 100%;
