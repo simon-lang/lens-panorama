@@ -74,6 +74,18 @@
                 </b-form-text>
             </div>
 
+            <div v-if="!loadedAll" header="Suggestions">
+                <p @click="toggleShow('suggestions')" style="color: white;">
+                    Not sure where to begin?
+                </p>
+                <div v-if="show.suggestions">
+                    <p v-for="(k, v) in suggestionsMap">
+                        <a class="btn btn-sm" :class="{'btn-info': q === k, 'btn-light': q !== k}" @click="suggest(k)">
+                            {{v}}
+                        </a>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="client__loader">
@@ -302,12 +314,6 @@
             </div>
 
         </div>
-
-        <b-card v-if="!q.length" header="Suggestions">
-            <div v-for="suggestion in suggestions">
-                <span class="btn btn-link" @click="suggest(suggestion)">{{suggestion}}</span>
-            </div>
-        </b-card>
 
     </section>
 </div>

@@ -26,7 +26,7 @@ const AllFields = _uniq(ArticleFieldsList.concat(PatentFieldsList)).sort()
 
 import { QueryComponent, FacetsComponent, FauxLoader } from '../'
 
-import { SearchSuggestions } from './../../enums/SearchSuggestions'
+import { SearchSuggestions, SearchSuggestionsMap } from './../../enums/SearchSuggestions'
 
 import './client.scss'
 import store from '../../store'
@@ -106,6 +106,7 @@ export class ClientComponent extends Vue {
     selectedFieldIndex: number = 0
 
     suggestions: any[] = SearchSuggestions
+    suggestionsMap = SearchSuggestionsMap
 
     suggestIndex: number = 0
 
@@ -122,6 +123,7 @@ export class ClientComponent extends Vue {
         formattedQuery: false,
         queryParserResult: false,
         table: false,
+        suggestions: false,
     }
 
     totals: any = {}
@@ -147,7 +149,7 @@ export class ClientComponent extends Vue {
     loadedAll: boolean = false
 
     mounted() {
-        this.interval = setInterval(this.updatePlaceholder, 3000)
+        // this.interval = setInterval(this.updatePlaceholder, 3000)
         this.q = this.$route.query.q || ''
         if (this.q.length && this.autoRunSearch) {
             this.parseQuery()
@@ -166,7 +168,7 @@ export class ClientComponent extends Vue {
     suggest(v) {
         this.q = v
         this.parseQuery()
-        this.submit()
+        // this.submit()
     }
 
     selectField(field) {

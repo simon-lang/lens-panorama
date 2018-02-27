@@ -1,22 +1,17 @@
-export const SearchSuggestions = [
-    'title:carbon', // Search all articles with title "carbon"
-    'citation_id: 3327686', // view an article by scholarly identifier (doi / pmid)
-    'pub_key: US_5599670_A',
-    'source.title: Nature AND funding.organisation.keyword: "Wellcome Trust"',
-    'malaria AND vaccine AND funding.organisation.keyword: "Wellcome Trust"',
-    'author:"Richard Jefferson" OR abstract:glucuronidase AND title:GUS',
-    '"malaria vaccine" AND year_published:[1970 TO 1980]',
-    'title:(leishmani* AND diagnos*) || abstract:(leishmani* AND diagnos*)',
-    '"invalid field" AND ownar: "Microsoft Inc"',
-    '"scholar" AND source.title: Nature',
-    '"conflicting fields" AND source.title: Nature AND pub_key: 123',
-    'classification_cpc: ("A61K38/00" "C07K14/415" "A01H5/10")',
-    'abstract:(a OR b) && title:(c OR d)',
-    'Saccharomyces',
-    'malaria',
+import _values from 'lodash/values'
 
-    // Translate / map from plain english descriptions like below to boolean queries above
-    // The above should be mapped to
+export const SearchSuggestionsMap = {
+    'Search both patents and scholarly simultaneously with keyword search: "malaria"': 'malaria',
+    'Search by common patent and scholarly fields': 'author:"Richard Jefferson" OR abstract:glucuronidase AND title:GUS',
+    'View an article by scholarly identifier (doi / pmid)': 'citation_id: 3327686',
+    'View a patent by publication key': 'pub_key: US_5599670_A',
+    'Search by Journal or Funding info': 'source.title: Nature AND funding.organisation.keyword: "Wellcome Trust"',
+    'Search by date range': '"malaria vaccine" AND year_published:[1970 TO 1980]',
+    'Search Classifications and see verbose descriptions': 'classification_cpc: ("A61K38/00" "C07K14/415" "A01H5/10")',
+    'Example: Wildcards': 'title:(leishmani* AND diagnos*) || abstract:(leishmani* AND diagnos*)',
+    'Example: Field checking': 'ownar: "Microsoft Inc"',
+    'Example: conflicting boolean fields': 'source.title: Nature AND pub_key: 123',
+    // Cited / Citing join demonstration
     // 'Most recent articles in Nature Journal',
     // 'Most patent citations for MeSH Term: "Glucuronidase"',
     // 'Query "malaria vaccine" with open access / fulltext',
@@ -26,4 +21,6 @@ export const SearchSuggestions = [
     // All knowledge artefacts published within the last month
     // 'Author "Lipman DJ"',
     // 'Citation ID 3327686',
-]
+}
+
+export const SearchSuggestions = _values(SearchSuggestionsMap)
