@@ -268,7 +268,7 @@ export class ClientComponent extends Vue {
                     allFacets.forEach(facet => {
                         if (facet.key === field) {
                             this.suggestTerms = facet.values.map(d => d.label).filter(label => {
-                                return match(label, lastTerm)
+                                return label && match(label, lastTerm)
                             })
                         }
                     })
