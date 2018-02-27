@@ -33,6 +33,10 @@ export const createRoutes: () => RouteConfig[] = () => [
         component: appComponent
     },
     {
+        path: '/lens/app',
+        component: appComponent
+    },
+    {
         path: '/docs',
         component: docsComponent
     },
