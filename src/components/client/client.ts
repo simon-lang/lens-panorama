@@ -149,12 +149,22 @@ export class ClientComponent extends Vue {
     loadingAll: boolean = false
     loadedAll: boolean = false
 
+    stuck: boolean = false
+
     mounted() {
         // this.interval = setInterval(this.updatePlaceholder, 3000)
         this.q = this.$route.query.q || ''
         if (this.q.length && this.autoRunSearch) {
             this.parseQuery()
             this.submit()
+        }
+
+        // Sticky search bar
+        const el = document.querySelector('.search__box-wrap')
+        const rect = el.getBoundingClientRect()
+        const top = rect.top
+        window.onscroll = (e) => {
+            this.stuck = window.scrollY >= (top - 5)
         }
     }
 
