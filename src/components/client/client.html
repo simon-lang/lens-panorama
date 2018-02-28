@@ -1,5 +1,7 @@
 <div :class="{client: true, loading: loadingAll, loaded: loadedAll}">
-    <div class="curtain"></div>
+    <div class="curtain">
+        <div class="curtain__bg"></div>
+    </div>
     <div :class="{search: true, found: show.formattedQuery && loadedAll}">
         <div class="search__hero">
             <img class="logo" src="assets/img/logo-white.png" alt="LENS.ORG - Solving the problem of problem solving">
@@ -76,9 +78,13 @@
                 -->
             </div>
 
+            <!--
             <div v-if="!loadedAll" header="Suggestions">
-                <p @click="toggleShow('suggestions')" style="color: white;">
-                    Not sure where to begin?
+                <p style="color: white;">
+                    The Lens serves global patent and scholarly knowledge as a public good to inform science- and technology-enabled problem solving.
+                    <strong @click="toggleShow('suggestions')">
+                        Not sure where to begin?
+                    </strong>
                 </p>
                 <div v-if="show.suggestions">
                     <p v-for="(k, v) in suggestionsMap">
@@ -88,12 +94,14 @@
                     </p>
                 </div>
             </div>
+            -->
         </div>
     </div>
     <div class="client__loader">
         <FauxLoader></FauxLoader>
     </div>
     <section class="client__content pad">
+        <report></report>
         <b-card-group deck class="mb-6" v-if="q.length">
             <b-card header-bg-variant="default"
                     header="Patents"

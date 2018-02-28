@@ -7,6 +7,7 @@ const state = {
     count: 1337,
     patents: [],
     articles: [],
+    loading: {},
     loadedAll: false
 }
 

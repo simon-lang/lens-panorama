@@ -24,7 +24,7 @@ const classificationService = new ClassificationService({})
 import { ArticleFieldsList, PatentFieldsList } from '../../enums'
 const AllFields = _uniq(ArticleFieldsList.concat(PatentFieldsList)).sort()
 
-import { QueryComponent, FacetsComponent, FauxLoader } from '../'
+import { QueryComponent, FacetsComponent, FauxLoader, ReportComponent } from '../'
 
 import { SearchSuggestions, SearchSuggestionsMap } from './../../enums/SearchSuggestions'
 
@@ -57,7 +57,8 @@ interface ParserError {
         'icon': Icon,
         'query': QueryComponent,
         'facets': FacetsComponent,
-        FauxLoader
+        FauxLoader,
+        report: ReportComponent
     }
 })
 export class ClientComponent extends Vue {

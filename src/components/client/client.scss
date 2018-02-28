@@ -15,7 +15,7 @@
     z-index: 50;
     padding-top: 56px;
     height: 100%;
-    padding-top: 300px;
+    padding-top: 254px;
 }
 
 html,
@@ -137,6 +137,7 @@ body,
     margin-bottom: 1.25rem;
     text-align: center;
     color: #fff;
+    transition: opacity 200ms ease;
 }
 
 .search__input {
@@ -159,25 +160,45 @@ body,
 }
 
 .curtain {
-    background: #031A43 url('~/assets/img/masthead.png') top no-repeat;
-    background-size: cover;
+    background: #031A43;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
     transition: transform 375ms ease;
     position: fixed;
+    overflow: hidden;
+}
+
+.curtain__bg {
+    background: url('https://static.lens.org/lens/5.5.5/img/lens-masthead.png') top no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; // transition: transform 375ms ease;
+    transition: opacity 375ms ease;
 }
 
 .client.loading .curtain {
-    transform: translateY(calc(-100% + 300px));
+    transform: translateY(calc(-100% + 254px));
+}
+
+.client.loading .curtain__bg {
+    // transform: translateY(calc(100% - 254px));
+    opacity: 0;
 }
 
 .client.loading .search {
-    transform: translateY(-144px);
+    transform: translateY(-190px);
 }
 
 .client.loading .search__hero {
+    opacity: 0;
+}
+
+.client.loading .search__title {
     opacity: 0;
 }
 
