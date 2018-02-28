@@ -16,6 +16,13 @@ $theme-colors: (
 
 // Global Styles
 
+html,
+body,
+.wrapper,
+#app-main {
+    height: 100%;
+}
+
 body {
     font-size: 1em;
     font-family: "Source Sans Pro";

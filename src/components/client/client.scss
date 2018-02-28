@@ -1,4 +1,7 @@
 @import "../../sass/_variables";
+
+@import "./curtain.scss";
+
 @keyframes revealClient {
     from {
         opacity: 0;
@@ -10,9 +13,6 @@
 
 .client {
     position: relative;
-    transform: translateZ(0);
-    transition: transform 375ms ease-out;
-    z-index: 50;
     padding-top: 56px;
     height: 100%;
     padding-top: 254px;
@@ -24,14 +24,6 @@
 
 .client.loading .client__wrap {
     display: block;
-}
-
-
-html,
-body,
-.wrapper,
-#app-main {
-    height: 100%;
 }
 
 .client__content {
@@ -61,7 +53,7 @@ body,
 }
 
 .search {
-    position: absolute;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,7 +66,7 @@ body,
     top: 56px;
     height: 400px;
     transform: translateY(calc(50vh - 50%));
-    z-index: 1; // Simon - stop stacking over splash
+    z-index: 50;
 }
 
 .search__hero {
@@ -168,39 +160,9 @@ body,
     width: 8.75rem;
 }
 
-.curtain {
-    background: #031A43;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    transition: transform 375ms ease;
-    position: fixed;
-    overflow: hidden;
-}
-
-.curtain__bg {
-    background: url('https://static.lens.org/lens/5.5.5/img/lens-masthead.png') top no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; // transition: transform 375ms ease;
-    transition: opacity 375ms ease;
-}
-
-.client.loading .curtain {
-    transform: translateY(calc(-100% + 254px));
-}
-
-.client.loading .curtain__bg {
-    // transform: translateY(calc(100% - 254px));
-    opacity: 0;
-}
 
 .client.loading .search {
-    transform: translateY(-190px);
+    transform: translateY(-220px);
 }
 
 .client.loading .search__hero {

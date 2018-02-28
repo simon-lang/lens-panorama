@@ -1,0 +1,30 @@
+.curtain {
+    background: #02122f;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: transform 375ms ease;
+    position: fixed;
+    overflow: hidden;
+    z-index: 30;
+}
+
+.curtain__bg {
+    background: url('https://static.lens.org/lens/5.5.5/img/lens-masthead.png') top no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 375ms ease;
+}
+
+.client.loading .curtain {
+    transform: translateY(calc(-100% + 200px));
+}
+
+.client.loading .curtain__bg {
+    opacity: 0;
+}
