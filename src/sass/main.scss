@@ -6,10 +6,10 @@ $border-radius: 2px;
 $border-radius-lg: 2px;
 
 $theme-colors: (
-    "primary": #1b75bc,
-    "secondary": #ffb300,
-    "tertiary": #418e37,
-    "danger": #b10d28
+"primary": #1b75bc,
+"secondary": #ffb300,
+"tertiary": #418e37,
+"danger": #b10d28
 );
 
 @import "~bootstrap/scss/bootstrap.scss";
@@ -28,6 +28,23 @@ body {
     font-family: "Source Sans Pro";
     line-height: 1.5;
     background: #f9f9f9;
+}
+
+.sixteen-nine {
+    position: relative;
+}
+.sixteen-nine:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 56.25%;
+}
+.sixteen-nine > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .bg-dark {

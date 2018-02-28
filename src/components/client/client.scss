@@ -1,6 +1,7 @@
 @import "../../sass/_variables";
 
 @import "./curtain.scss";
+@import "./report.scss";
 
 @keyframes revealClient {
     from {
@@ -13,13 +14,14 @@
 
 .client {
     position: relative;
-    padding-top: 56px;
     height: 100%;
-    padding-top: 254px;
+    padding-top: 200px;
 }
 
 .client__wrap {
     display: none;
+    max-width: 75rem;
+    margin: 0 auto;
 }
 
 .client.loading .client__wrap {
@@ -53,15 +55,15 @@
 }
 
 .search {
-    position: fixed;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 2rem;
     transition: transform 200ms ease;
-    width: 800px;
-    margin-left: -400px;
+    width: 100%;
+    margin-left: -50%;
     left: 50%;
     top: 56px;
     height: 400px;
@@ -193,4 +195,12 @@
 
 .client.loaded .client__loader {
     display: none;
+}
+
+.client.stuck .search {
+    position: fixed;
+}
+
+.client.stuck .curtain {
+    position: fixed;
 }

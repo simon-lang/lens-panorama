@@ -1,0 +1,46 @@
+.hero-chart {
+    height: 12.5rem;
+    background: #666;
+    margin-bottom: 1.25rem;
+}
+
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 1.25rem;
+}
+
+.highlight__title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.highlight p {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.highlight small {
+    opacity: 0.5;
+}
+
+hr {
+    margin: 2.5rem 0;
+    height: 1px;
+    border: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.section {
+    display: flex;
+}
+
+.section__copy {
+    width: 40%;
+}
+
+.section__figure {
+    background: #333;
+    flex: 1;
+    margin-left: 5rem;
+}

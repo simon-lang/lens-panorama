@@ -159,13 +159,14 @@ export class ClientComponent extends Vue {
             this.submit()
         }
 
-        // Sticky search bar
         const el = document.querySelector('.search__box-wrap')
         const rect = el.getBoundingClientRect()
         const top = rect.top
-        window.onscroll = (e) => {
-            this.stuck = window.scrollY >= (top - 5)
-        }
+
+        // Sticky search bar
+        // window.onscroll = (e) => {
+        // this.stuck = window.scrollY >= 85
+        //}
     }
 
     beforeDestroy() {

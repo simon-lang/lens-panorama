@@ -1,11 +1,11 @@
 .curtain {
-    background: #02122f;
+    background: #031A43;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
     transition: transform 375ms ease;
-    position: fixed;
+    position: absolute;
     overflow: hidden;
     z-index: 30;
 }
