@@ -18,6 +18,15 @@
     padding-top: 254px;
 }
 
+.client__wrap {
+    display: none;
+}
+
+.client.loading .client__wrap {
+    display: block;
+}
+
+
 html,
 body,
 .wrapper,
